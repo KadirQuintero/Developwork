@@ -1,0 +1,24 @@
+.login{ 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.50em;
+    text-align: center;
+    margin: auto;
+    border: 1px solid #000;
+    width: 50%;
+}
+
+.H1, .user, .password, .btn_ingresar{
+    margin-left: 30%;
+    margin-bottom: 2%;
+}
+
+.user, .password{
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.btn_ingresar{
+    background-color: white;
+    border-color: rgb(31, 243, 3);
+    border-radius: 10px;
+}
