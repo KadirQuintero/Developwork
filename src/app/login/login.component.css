@@ -1,15 +1,10 @@
-.login{ 
+.container{ 
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.50em;
     text-align: center;
-    margin: auto;
-    border: 1px solid #000;
-    width: 50%;
-}
-
-.H1, .user, .password, .btn_ingresar{
-    margin-left: 30%;
-    margin-bottom: 2%;
+    display: flex;
+    align-self: center;
+    width: 100%;
+    height: 100%;
 }
 
 .user, .password{
@@ -19,6 +14,31 @@
 
 .btn_ingresar{
     background-color: white;
-    border-color: rgb(31, 243, 3);
+    width: 50%;
+    align-self: center;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    transition: background-color 0.2s ease-in-out;
+}
+.btn_ingresar:hover{
+    background-color: orange;
+}
+.login{
+    font-size: 2em;
+    width: 50%;
+    flex-direction: column;
+    margin: 60px;
+}
+.login *{
+    margin: 5px;
+}
+input{
+    font-size: 1.5rem;
+}
+#container-main{
+    border: 1px solid #000;
     border-radius: 10px;
+    box-shadow:  20px 20px black;
+    width: 100%;
+    height: 100%;
 }
