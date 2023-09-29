@@ -1,10 +1,33 @@
+#container-main {
+    border-radius: 10px;
+    box-shadow: -11px -11px 12px #9ca8b3, 11px 11px 12px #9ca8b3;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+}
+
 .container {
-    font-family: 'Nunito Sans', sans-serif;
     text-align: center;
     display: flex;
     align-self: center;
     width: 100%;
     height: 100%;
+}
+
+.login {
+    font-size: 2em;
+    width: 50%;
+    flex-direction: column;
+    margin: 60px;
+}
+
+.login * {
+    margin: 5px;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+input {
+    font-size: 1.5rem;
 }
 
 .user,
@@ -20,33 +43,11 @@
     border-radius: 4px;
     font-size: 1.5rem;
     transition: background-color 0.2s ease-in-out;
+    margin: 100px;
 }
 
 .btn_ingresar:hover {
     background-color: #FF8000;
-}
-
-.login {
-    font-size: 2em;
-    width: 50%;
-    flex-direction: column;
-    margin: 60px;
-}
-
-.login * {
-    margin: 5px;
-}
-
-input {
-    font-size: 1.5rem;
-}
-
-#container-main {
-    border-radius: 10px;
-    box-shadow: -11px -11px 12px #9ca8b3, 11px 11px 12px #9ca8b3;
-    width: 100%;
-    height: 100%;
-    background-color: #FFFFFF;
 }
 
 .image {
