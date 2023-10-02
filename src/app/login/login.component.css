@@ -92,3 +92,28 @@ input {
   height: 100%;
   /* Permitir que la altura se ajuste automáticamente para mantener la proporción original */
 }
+.cont{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  }
+.cont *{
+  width: 100%;
+  height: 100%;
+}
+#div1{
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-right: 40em solid transparent;
+  border-top: 40em solid transparent;
+  border-left: 40em solid #f0ad4e;
+  border-bottom: 40em solid #f0ad4e;
+  transform:rotate(180deg);
+  z-index: 20;
+}
+#div2{
+  position: relative;
+  background-color: aqua;
+}
