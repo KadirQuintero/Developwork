@@ -1,9 +1,3 @@
-body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(https://img.freepik.com/fotos-premium/desenfoque-fondo-oficina-moderna-vacia-centro-ciudad-diseno-interior-espacio-trabajo_31965-63905.jpg);
-    background-size: 100%;
+body{
+    background-color: #FFD;
 }
