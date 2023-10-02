@@ -1,68 +1,94 @@
-.body{
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    height: 100vh;
+/* Ajustes al div que funciona como cuerpo de la pagina web*/
+.body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
 }
 
+/*  */
 #container-main {
-    background-color: #016A70;
-    box-shadow: -11px -11px 12px #9ca8b3, 11px 11px 12px #9ca8b3;
-    border-radius: 0rem 1.875rem 1.875rem 0rem;
-    width: 39.875rem;
-    height: 25rem;
+  background-color: #016A70;
+  border-radius: 1.875rem;
+  height: 50%;
+  width: 100%;
 }
 
+/*  */
 .container {
-    display: flex;
-    text-align: center;
-    align-self: center;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  text-align: center;
+  align-self: center;
+  width: 100%;
+  height: 100%;
 }
 
+/*  */
+.H1{
+  font-size: 3rem;
+}
+
+/*  */
 .login {
-    color: #FFF;
-    font-size: 2em;
-    width: 50%;
-    flex-direction: column;
-    margin: 60px;
-    margin-top: 25%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  font-size: 2em;
+  width: 50%;
 }
 
+/*  */
 .login * {
-    margin: 5px;
-    font-family: 'Nunito Sans', sans-serif;
+  margin: 5px;
 }
 
+/*  */
 input {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
+/*  */
 .user,
 .password {
-    background-color: #016A70;
-    border: none;
-    border-bottom: 1px solid #FFF;
+  background-color: #016A70;
+  border: none;
+  border-bottom: 1px solid #FFF;
 }
 
-.user::placeholder, .password::placeholder{
-    color: #FFF;
+/* Da texto al campo de user y password cuando este se encuentra vacio */
+.user::placeholder,
+.password::placeholder {
+  color: #FFF;
 }
 
+/* Estilos del boton ingresar en el login */
 .btn_ingresar {
-    background-color: #FFFFFF;
-    width: 50%;
-    align-self: center;
-    border-radius: 10px;
-    font-size: 1.5rem;
-    transition: background-color 0.2s ease-in-out;
-    width: 9.5rem;
-    height: 2.8125rem;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  transition: background-color 0.2s ease-in-out;
+  font-size: 1.5rem;
+  width: 9.5rem;
+  height: 2.8125rem;
 }
 
+/* Animacion al pasar el cursor dentro del boton ingresar*/
 .btn_ingresar:hover {
-    background-color: #FF8000;
+  background-color: #FF8000;
+}
+
+/*  */
+#container-background {
+  width: 100px;
+  height: 100px;
+}
+
+/*  */
+#container-background img {
+  width: auto;
+  /* Hacer que la imagen ocupe el 100% del ancho del div */
+  height: 100%;
+  /* Permitir que la altura se ajuste automáticamente para mantener la proporción original */
 }
