@@ -1,10 +1,13 @@
 /*  */
 #container-main {
-  background-color: #fbfcf1;
-  border-radius: 1.875rem;
   height: 50%;
   width: 100%;
-  opacity: 95%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.titulo {
+  font-size: 4em;
+  margin-top: 1em;
 }
 
 /*  */
@@ -15,36 +18,10 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  margin: 1.25rem;
 }
 
-img{
-  width: 25%;
-}
-
-/*  */
-.H1{
-  font-size: 3rem;
-}
-
-/*  */
-.login {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #000;
-  font-size: 2em;
+img {
   width: 50%;
-}
-
-/*  */
-.login * {
-  margin: 0.938rem;
-}
-
-/*  */
-input {
-  font-size: 1.5rem;
 }
 
 /*  */
@@ -52,14 +29,15 @@ input {
 .password {
   background-color: #ededec;
   border: none;
-  border-radius: 0.625rem;
-  width: 18rem;
+  border-radius: 0.3em;
+  padding: 0.4em;
 }
 
 /* Da texto al campo de user y password cuando este se encuentra vacio */
 .user::placeholder,
 .password::placeholder {
   color: #000;
+
 }
 
 /* Estilos del boton ingresar en el login */
@@ -68,8 +46,59 @@ input {
   border-radius: 0.625rem;
   border: none;
   color: #FFF;
-  font-size: 1.5rem;
-  width: 18rem;
-  height: 2.8125rem;
-  margin-top: 0.938rem;
+  width: 100%;
+  padding: 0.3em;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  box-shadow: 0 0 4px 5px #1e512c;
+}
+
+/*div correspondiente a la imagen*/
+#div-img {
+  width: 100%;
+  height: 100%;
+}
+
+/*div correspondiente al login*/
+#div-login {
+  border-left: 2em solid #cad629;
+  height: 100%;
+  width: 100%;
+  padding: 1em;
+  border-top-right-radius: 1.875rem;
+  border-bottom-right-radius: 1.875rem;
+  background-color: rgb(251, 252, 241);
+}
+
+/*Contiene la configuracion de los dos divs anteriores*/
+#container-divs {
+  padding: 0;
+  background-color: rgb(251, 252, 241, 0.5);
+  border-radius: 1.875rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/*Formulario de inicio de Sesión*/
+#formulario {
+  display: grid;
+  width: 100%;
+  font-size: 1.5em;
+  grid-gap: 2em;
+  padding: 1.5em;
+}
+
+/*Estilos de checkBox*/
+input[type="checkbox"] {
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+  appearance: none;
+  border: 2px solid #1e512c;
+  margin-right: .3em;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #1e512c;
+  border: 2px solid black;
 }
