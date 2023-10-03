@@ -1,3 +1,10 @@
 body{
-    background-color: #ebe040;
+    background-color: #FFF;
+    background-image: url(src\resources\ImagenFondo.jpeg);
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
 }

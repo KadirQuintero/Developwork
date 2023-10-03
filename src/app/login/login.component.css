@@ -1,28 +1,25 @@
-/* Ajustes al div que funciona como cuerpo de la pagina web*/
-.body {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  height: 100vh;
-}
-
 /*  */
 #container-main {
-  background-color: #016A70;
+  background-color: #fbfcf1;
   border-radius: 1.875rem;
   height: 50%;
   width: 100%;
+  opacity: 95%;
 }
 
 /*  */
 .container {
   display: flex;
-  text-align: center;
-  align-self: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
+  margin: 1.25rem;
+}
+
+img{
+  width: 25%;
 }
 
 /*  */
@@ -32,17 +29,17 @@
 
 /*  */
 .login {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  color: #FFF;
+  color: #000;
   font-size: 2em;
   width: 50%;
 }
 
 /*  */
 .login * {
-  margin: 5px;
+  margin: 0.938rem;
 }
 
 /*  */
@@ -53,93 +50,26 @@ input {
 /*  */
 .user,
 .password {
-  background-color: #016A70;
+  background-color: #ededec;
   border: none;
-  border-bottom: 1px solid #FFF;
+  border-radius: 0.625rem;
+  width: 18rem;
 }
 
 /* Da texto al campo de user y password cuando este se encuentra vacio */
 .user::placeholder,
 .password::placeholder {
-  color: #FFF;
+  color: #000;
 }
 
 /* Estilos del boton ingresar en el login */
 .btn_ingresar {
-  background-color: #FFFFFF;
-  border-radius: 10px;
-  transition: background-color 0.2s ease-in-out;
+  background-color: #1e512c;
+  border-radius: 0.625rem;
+  border: none;
+  color: #FFF;
   font-size: 1.5rem;
-  width: 9.5rem;
+  width: 18rem;
   height: 2.8125rem;
-}
-
-/* Animacion al pasar el cursor dentro del boton ingresar*/
-.btn_ingresar:hover {
-  background-color: #FF8000;
-}
-
-/*  */
-#container-background {
-  width: 100px;
-  height: 100px;
-}
-
-/*  */
-#container-background img {
-  width: auto;
-  /* Hacer que la imagen ocupe el 100% del ancho del div */
-  height: 100%;
-  /* Permitir que la altura se ajuste automáticamente para mantener la proporción original */
-}
-<<<<<<< HEAD
-
-.cont-bg{
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-#lado1{
-  position: absolute;
-  background-color: red;
-  height: 121%;
-  width: 100%;
-  transform: rotate(34.5deg);
-  z-index: 10;
-  bottom: 9%;
-  right: 41%;
-}
-
-#lado2{
-  background-color: blue;
-  height: 100%;
-  width: 100%;
-=======
-.cont{
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  }
-.cont *{
-  width: 100%;
-  height: 100%;
-}
-#div1{
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-right: 40em solid transparent;
-  border-top: 40em solid transparent;
-  border-left: 40em solid #f0ad4e;
-  border-bottom: 40em solid #f0ad4e;
-  transform:rotate(180deg);
-  z-index: 20;
-}
-#div2{
-  position: relative;
-  background-color: aqua;
->>>>>>> alejo_dev
+  margin-top: 0.938rem;
 }
