@@ -1,12 +1,8 @@
 /*  */
 #container-main {
-  height: 50%;
+  height: 80%;
   width: 100%;
-<<<<<<< HEAD
-  font-family: 'Nunito Sans', sans-serif;
-=======
   font-family:Verdana, Geneva, Tahoma, sans-serif;
->>>>>>> alejo_dev
 }
 
 .titulo {
@@ -24,13 +20,10 @@
   height: 100%;
 }
 
-<<<<<<< HEAD
-=======
 img {
   width: 50%;
 }
 
->>>>>>> alejo_dev
 /*  */
 .user,
 .password {
@@ -38,14 +31,6 @@ img {
   border: none;
   border-radius: 0.3em;
   padding: 0.4em;
-<<<<<<< HEAD
-}
-
-.user:focus::placeholder,
-.password:focus::placeholder{
-  color: transparent;
-=======
->>>>>>> alejo_dev
 }
 
 /* Da texto al campo de user y password cuando este se encuentra vacio */
@@ -79,11 +64,7 @@ img {
   padding: 0.3em;
   font-size: 1.2em;
   margin-bottom: 1em;
-<<<<<<< HEAD
-  box-shadow: 1 1 4px 5px #1e512c;
-=======
   box-shadow: 0 0 4px 5px #1e512c;
->>>>>>> alejo_dev
 }
 
 /*div correspondiente a la imagen*/
@@ -92,14 +73,6 @@ img {
   height: 100%;
 }
 
-<<<<<<< HEAD
-img {
-  width: 50%;
-}
-
-
-=======
->>>>>>> alejo_dev
 /*div correspondiente al login*/
 #div-login {
   border-left: 2em solid #cad629;
@@ -113,35 +86,21 @@ img {
 
 /*Contiene la configuracion de los dos divs anteriores*/
 #container-divs {
-<<<<<<< HEAD
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  background-color: rgb(251, 252, 241, 0.5);
-  border-radius: 1.875rem;
-  padding: 0;
-=======
   padding: 0;
   background-color: rgb(251, 252, 241, 0.5);
   border-radius: 1.875rem;
-  display: grid;
   grid-template-columns: 1fr 1fr;
->>>>>>> alejo_dev
 }
 
 /*Formulario de inicio de Sesión*/
 #formulario {
-  display: grid;
-<<<<<<< HEAD
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 1.5em;
   grid-gap: 1em;
   padding: 1.5em;
-  width: 100%;
-  font-size: 1.5em;
-=======
-  width: 100%;
-  font-size: 1.5em;
-  grid-gap: 2em;
-  padding: 1.5em;
->>>>>>> alejo_dev
 }
 
 /*Estilos de checkBox*/
@@ -157,8 +116,18 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked {
   background-color: #1e512c;
   border: 2px solid black;
-<<<<<<< HEAD
 }
-=======
+.body{
+  background-image: url(src\resources\ImagenFondo.jpeg);
+  background-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
 }
->>>>>>> alejo_dev
+@media only screen and (max-width: 900px) {
+  #container-divs {
+    display: flex;
+  }
+}
