@@ -2,7 +2,7 @@
 #container-main {
   height: 50%;
   width: 100%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .titulo {
@@ -27,6 +27,11 @@
   border: none;
   border-radius: 0.3em;
   padding: 0.4em;
+}
+
+.user:focus::placeholder,
+.password:focus::placeholder{
+  color: transparent;
 }
 
 /* Da texto al campo de user y password cuando este se encuentra vacio */
@@ -59,7 +64,7 @@
   padding: 0.3em;
   font-size: 1.2em;
   margin-bottom: 1em;
-  box-shadow: 0 0 4px 5px #1e512c;
+  box-shadow: 1 1 4px 5px #1e512c;
 }
 
 /*div correspondiente a la imagen*/
