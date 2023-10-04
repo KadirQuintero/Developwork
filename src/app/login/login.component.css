@@ -1,6 +1,6 @@
 /*  */
 #container-main {
-  height: 50%;
+  height: 80%;
   width: 100%;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -86,19 +86,20 @@ img {
 
 /*Contiene la configuracion de los dos divs anteriores*/
 #container-divs {
+  display: grid;
   padding: 0;
   background-color: rgb(251, 252, 241, 0.5);
   border-radius: 1.875rem;
-  display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
 /*Formulario de inicio de Sesión*/
 #formulario {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   font-size: 1.5em;
-  grid-gap: 2em;
+  grid-gap: 1em;
   padding: 1.5em;
 }
 
@@ -115,4 +116,18 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked {
   background-color: #1e512c;
   border: 2px solid black;
+}
+.body{
+  background-image: url(src\resources\ImagenFondo.jpeg);
+  background-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+}
+@media only screen and (max-width: 900px) {
+  #container-divs {
+    display: flex;
+  }
 }
