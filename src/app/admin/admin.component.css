@@ -1,59 +1,60 @@
-#container-main{    
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    background-color:bisque;
-    border: 2px solid black;
-    overflow: hidden;
+#body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url(C:\Users\Kadir\Documents\proyecto\Developwork\src\resources\ImagenFondo.jpeg);
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
-.container-nav{
-    position: absolute;
-    overflow: hidden;
-    text-align: center;
-    margin: 0;
-    float: left;
-    width: 10%;
-    height: auto;
-    padding: 0;
-    font-size: 25px;
-    background-color: aquamarine;
-    transition: 0.5s;
-    z-index: 10;
+#container-main {
+  overflow: hidden;
+  padding: 0;
+  margin: 30px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  background-color: #C3EF8E;
+  border: none;
+  border-radius: 10px;
 }
 
-.nav-bar{
-    list-style: none;
+.container-user{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  grid-gap: 1.6em;
 }
+
+#container-nav{
+  background-color: #E1EA5F;
+  border-radius: 0px 18px 18px 0px;
+  padding: 13px 0px 13px 0px;
+}
+
+
 
 .nav-option{
-    overflow: hidden;
-    width: 35%;
-    margin: 10px 0px 10px 0px;
-    padding: 5px;
-    border: none;
-    border-radius: 10px;
-    background-color: #fff;
+  font-size: 30px;
+  border: none;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 50%;
 }
 
-.container-nav:hover{
-    width: 50%;
+label{
+  font-size: 30px;
 }
 
-.container-info{
-    position: relative;
-    margin: 0;
-    width: 50%;
-    height: 100%;
-    padding: 5px;
-    font-size: 30px;
-    text-align: center;
+.nav-img-user{
+
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.orders{
-    margin: 10px 0px 10px 0px;
-}
-
-img{
-    width: 20%;
+.info-mant{
+  width: 100%;
 }
