@@ -2,7 +2,6 @@
 #container-main {
   height: 80%;
   width: 100%;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .titulo {
@@ -37,19 +36,18 @@ img {
 .user::placeholder,
 .password::placeholder {
   color: #000;
-
 }
 
-.user{
+.user {
   background-image: url(src\resources\Usericon2.svg);
-  background-size: 25px;
+  background-size: 1.25em;
   background-repeat: no-repeat;
   background-position: 98%;
 }
 
-.password{
+.password {
   background-image: url(src\resources\Passicon2.svg);
-  background-size: 25px;
+  background-size: 1.25em;
   background-repeat: no-repeat;
   background-position: 98%;
 }
@@ -59,12 +57,11 @@ img {
   background-color: #1e512c;
   border-radius: 0.625rem;
   border: none;
-  color: #FFF;
+  color: #fff;
   width: 100%;
   padding: 0.3em;
   font-size: 1.2em;
   margin-bottom: 1em;
-  box-shadow: 0 0 4px 5px #1e512c;
 }
 
 /*div correspondiente a la imagen*/
@@ -110,22 +107,14 @@ input[type="checkbox"] {
   height: 1em;
   appearance: none;
   border: 2px solid #1e512c;
-  margin-right: .3em;
+  margin-right: 0.3em;
 }
 
 input[type="checkbox"]:checked {
   background-color: #1e512c;
   border: 2px solid black;
 }
-.body{
-  background-image: url(src\resources\ImagenFondo.jpeg);
-  background-size: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  height: 100vh;
-}
+
 @media only screen and (max-width: 900px) {
   #container-divs {
     display: flex;

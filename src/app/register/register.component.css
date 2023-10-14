@@ -1,0 +1,74 @@
+#container-form {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0.625em;
+  background-color: rgb(251, 252, 241, 0.5);
+  padding: 0.625em;
+}
+
+#cabecera {
+  width: 70vh;
+  text-align: center;
+}
+
+.cab-img {
+  width: 60%;
+}
+
+#formulario {
+  height: 100%;
+  width: 100%;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  grid-gap: 0.5em;
+  border: none;
+  border-radius: 0.625em;
+  background-color: rgb(251, 252, 241);
+}
+
+h1 {
+  font-size: 4em;
+}
+
+.form-input {
+  font-size: 1.5em;
+  width: 75%;
+  margin-bottom: 0.5em;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  background-color: rgb(251, 252, 241);
+  background-size: 1.25em;
+  background-repeat: no-repeat;
+  background-position: 98%;
+}
+
+.input-text {
+  background-image: url(src\resources\Usericon2.svg);
+}
+
+.input-email {
+  background-image: url(src\resources\Emailicon.svg);
+}
+
+.input-pass {
+  background-image: url(src\resources\Eyeicon.svg);
+}
+
+.form-btn-registrar {
+  color: #fff;
+  font-size: 1.5em;
+  width: 70%;
+  border: none;
+  border-radius: 0.938em;
+  background-color: #1e512c;
+}
+
+.form-label {
+  font-size: 1.375em;
+}
