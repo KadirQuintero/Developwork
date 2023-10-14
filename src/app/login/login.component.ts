@@ -11,6 +11,7 @@ export class LoginComponent {
 
   //Btn_IniciarSesion manda al usuario a su vista
   IniciarSesion(): void {
+<<<<<<< HEAD
     this.router.navigate(['/user']);
   }
 
@@ -19,4 +20,8 @@ export class LoginComponent {
   viewpass() {
     this.ChangeType = !this.ChangeType;
   }
+=======
+    this.router.navigate(['/admin']);
+    }
+>>>>>>> Revert "no quiero subir este commit"
 }

@@ -2,6 +2,10 @@
 #container-main {
   height: 80%;
   width: 100%;
+<<<<<<< HEAD
+=======
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+>>>>>>> Revert "no quiero subir este commit"
 }
 
 .titulo {
@@ -38,14 +42,14 @@ img {
   color: #000;
 }
 
-.user {
+.user{
   background-image: url(src\resources\Usericon2.svg);
   background-size: 1.25em;
   background-repeat: no-repeat;
   background-position: 98%;
 }
 
-.password {
+.password{
   background-image: url(src\resources\Passicon2.svg);
   background-size: 1.25em;
   background-repeat: no-repeat;
@@ -114,7 +118,19 @@ input[type="checkbox"]:checked {
   background-color: #1e512c;
   border: 2px solid black;
 }
+<<<<<<< HEAD
 
+=======
+.body{
+  background-image: url(src\resources\ImagenFondo.jpeg);
+  background-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+}
+>>>>>>> Revert "no quiero subir este commit"
 @media only screen and (max-width: 900px) {
   #container-divs {
     display: flex;
