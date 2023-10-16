@@ -7,9 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  constructor(private router: Router) {}
-
   //Btn_IniciarSesion manda al usuario a su vista
+  constructor(private router: Router) {}
   IniciarSesion(): void {
     this.router.navigate(['/user']);
   }

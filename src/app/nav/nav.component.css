@@ -1,0 +1,52 @@
+#container-main {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0.625em;
+  background-color: rgb(251, 252, 241, 0.5);
+  padding: 0.625em;
+}
+
+#navi-admin {
+  width: 100%;
+  height: 100%;
+  font-size: 26px;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 0.5em;
+}
+
+.nav_button {
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  background-color: #fff;
+  background-size: 1.25em;
+  background-repeat: no-repeat;
+  background-position: 98%;
+}
+
+/*.Register {
+  background-image: url(../../resources/Register_Icon_Op1.svg);
+}*/
+
+.Team {
+  background-image: url(../../resources/Teams_Icon.svg);
+}
+
+.Stats {
+  background-image: url(../../resources/Stats_Icon.svg);
+}
+
+.Notifi {
+  background-image: url(../../resources/Notificacion_Icon.svg);
+}
+
+.Info {
+  background-image: url(../../resources/Info_Icon.svg);
+}
+
+.LogOut {
+  background-image: url(../../resources/LogOut_Icon.svg);
+}
