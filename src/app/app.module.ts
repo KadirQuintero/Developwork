@@ -9,6 +9,8 @@ import { NotificationComponent } from './notification/notification.component';
 import { NavComponent } from './nav/nav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TeamsComponent } from './teams/teams.component';
+import { StatsComponent } from './stats/stats.component';
+import { InformationComponent } from './information/information.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { TeamsComponent } from './teams/teams.component';
     registerComponent,
     NotificationComponent,
     NavComponent,
-    TeamsComponent
+    TeamsComponent,
+    StatsComponent,
+    InformationComponent
   ],
   imports: [
     BrowserModule,
