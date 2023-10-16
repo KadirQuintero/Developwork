@@ -1,23 +1,23 @@
-<div id="container-main">
-  <nav id="navi-admin" (mouseenter)="VerBoton()" (mouseleave)="VerBoton()">
+<div id="container-main" (mouseenter)="VerBoton()" (mouseleave)="VerBoton()">
+  <nav id="navi-admin" >
     <Button class="nav_button Register" (click)="RegisterUser()">
       <span *ngIf="MostrarBoton"> Register user </span>
       <img src="" alt="tristeza">
     </Button>
     <Button class="nav_button Team" (click)="Teams()">
-      <span> Teams </span>
+      <span *ngIf="MostrarBoton"> Teams </span>
     </Button>
     <Button class="nav_button Stats" (click)="Stats()">
-      <span> Stats </span>
+      <span *ngIf="MostrarBoton"> Stats </span>
     </Button>
     <Button class="nav_button Notifi" (click)="Notifications()">
-      <span>Notifications</span>
+      <span *ngIf="MostrarBoton">Notifications</span>
     </Button>
     <Button class="nav_button Info" (click)="Information()">
-      <span>Information</span>
+      <span *ngIf="MostrarBoton">Information</span>
     </Button>
     <Button class="nav_button LogOut" (click)="LogOut()">
-      <span>Log Out</span>
+      <span *ngIf="MostrarBoton">Log Out</span>
     </Button>
   </nav>
 </div>

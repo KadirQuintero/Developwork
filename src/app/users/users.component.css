@@ -2,7 +2,7 @@
   overflow: hidden;
   padding: 0;
   margin: 30px;
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(2, 1fr);
   background-color: #c3ef8e;
   border: none;
