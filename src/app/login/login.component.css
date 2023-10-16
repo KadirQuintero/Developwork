@@ -2,10 +2,6 @@
 #container-main {
   height: 80%;
   width: 100%;
-<<<<<<< HEAD
-=======
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
->>>>>>> Revert "no quiero subir este commit"
 }
 
 .titulo {
@@ -117,20 +113,8 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked {
   background-color: #1e512c;
   border: 2px solid black;
-}
-<<<<<<< HEAD
 
-=======
-.body{
-  background-image: url(src\resources\ImagenFondo.jpeg);
-  background-size: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  height: 100vh;
 }
->>>>>>> Revert "no quiero subir este commit"
 @media only screen and (max-width: 900px) {
   #container-divs {
     display: flex;
