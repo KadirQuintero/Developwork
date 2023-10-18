@@ -1,5 +1,5 @@
 #container-main {
-  width: 50%;
+  width: 100%;
   height: 100%;
   border: none;
   border-radius: 0.625em;
@@ -33,9 +33,9 @@
   width: 100%;
 }
 
-/*.Register {
+Register {
   background-image: url(../../resources/Register_Icon_Op1.svg);
-}*/
+}
 
 .Team {
   background-image: url(../../resources/Teams_Icon.svg);
