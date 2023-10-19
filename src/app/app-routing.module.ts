@@ -16,12 +16,17 @@ const routes: Routes = [
     children: [
       { path: '', component: LoginComponent },
       { path: 'login', component: LoginComponent },
-      { path: 'user', component: usersComponent },
-      { path: 'register', component: registerComponent},
-      { path: 'nav', component: NavComponent},
-      { path: 'teams', component: TeamsComponent},
-      { path: 'stats', component: StatsComponent},
-      { path: 'notification', component: NotificationComponent},
+      {
+        path: 'user',
+        component: usersComponent,
+        children: [
+          { path: 'register', component: registerComponent },
+          { path: 'nav', component: NavComponent },
+          { path: 'teams', component: TeamsComponent },
+          { path: 'stats', component: StatsComponent },
+          { path: 'notification', component: NotificationComponent },
+        ],
+      },
       // Otras rutas aquí
     ],
   },
@@ -29,6 +34,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

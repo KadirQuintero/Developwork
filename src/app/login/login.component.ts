@@ -11,5 +11,11 @@ export class LoginComponent {
   constructor(private router: Router) {}
   IniciarSesion(): void {
     this.router.navigate(['/user']);
-    }
+  }
+
+  //Muestra la contraseña con el checkbox
+  ChangeType: boolean = true;
+  viewpass() {
+    this.ChangeType = !this.ChangeType;
+  }
 }

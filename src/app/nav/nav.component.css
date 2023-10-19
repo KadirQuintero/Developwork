@@ -5,6 +5,7 @@
   border-radius: 0.625em;
   background-color: rgb(251, 252, 241, 0.5);
   padding: 0.625em;
+  transition: 0.5s;
 }
 
 #navi-admin {
@@ -21,15 +22,20 @@
   border: none;
   border-radius: 10px;
   width: 100%;
+  height: 2em;
   background-color: #fff;
   background-size: 1.25em;
   background-repeat: no-repeat;
   background-position: 98%;
 }
 
-/*.Register {
+#container-main:hover {
+  width: 100%;
+}
+
+Register {
   background-image: url(../../resources/Register_Icon_Op1.svg);
-}*/
+}
 
 .Team {
   background-image: url(../../resources/Teams_Icon.svg);
