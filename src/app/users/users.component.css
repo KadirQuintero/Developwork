@@ -13,18 +13,18 @@
 }
 #body{
   width: 100%;
-  height: 80vh;
+  height: 100vh;
+  background-color: aquamarine;
 }
 
 #nav {
   position: absolute;
-  width: 100px; /* Ancho del menú */
+  width: 100px;
   top: 0;
   left: -100px; /* Mueve el menú fuera del contenedor hacia la derecha */
   height: 100%; /* Ocupa toda la altura del contenedor */
   transition: 0.3s ease; /* Agrega una transición para animar el despliegue */
 }
 #nav:hover {
-  width: 400px; /* Ancho del menú */
-  left: 0; /* Muestra el menú completamente desplegado */
+  width: 400px;
 }
