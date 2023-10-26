@@ -34,25 +34,25 @@
 }
 
 Register {
-  background-image: url(../../resources/Register_Icon_Op1.svg);
+background-image: url(../../assets/resources/Register_Icon_Op1.svg);
 }
 
 .Team {
-  background-image: url(../../resources/Teams_Icon.svg);
+  background-image: url(../../assets/resources/Teams_Icon.svg);
 }
 
 .Stats {
-  background-image: url(../../resources/Stats_Icon.svg);
+  background-image: url(../../assets/resources/Stats_Icon.svg);
 }
 
 .Notifi {
-  background-image: url(../../resources/Notificacion_Icon.svg);
+  background-image: url(../../assets/resources/Notificacion_Icon.svg);
 }
 
 .Info {
-  background-image: url(../../resources/Info_Icon.svg);
+  background-image: url(../../assets/resources/Info_Icon.svg);
 }
 
 .LogOut {
-  background-image: url(../../resources/LogOut_Icon.svg);
+  background-image: url(../../assets/resources/LogOut_Icon.svg);
 }
