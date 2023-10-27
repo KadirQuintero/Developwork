@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { TeamsComponent } from './teams/teams.component';
 import { StatsComponent } from './stats/stats.component';
 import { NotificationComponent } from './notification/notification.component';
+import { registerComponent } from './register/register.component';
 
 const routes: Routes = [
   {
