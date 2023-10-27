@@ -1,0 +1,42 @@
+<div >
+  <nav>
+    <div>
+      <input type="text" placeholder="Bucar persona">
+      <button>Buscar</button>
+    </div>
+  </nav>
+  <div>
+
+    <table>
+      <thead>
+        <td>Nombre</td>
+        <td>Rol</td>
+        <td>Equipo</td>
+        <td>Estado</td>
+      </thead>
+      <tbody>
+        <tr *ngFor="let persona of lstpersonas">
+          <td>{{persona.nombre}}</td>
+          <td>{{persona.rol?.nombre_rol}}</td>
+          <td>{{persona.equipo?.descripcion}}</td>
+          <td>{{persona.estado?.descripcion}}</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <button (click)="register()">
+    Agregar
+  </button>
+
+  <button>
+
+    Modificar
+  </button>
+
+
+  <button>
+    Eliminar
+  </button>
+</div>

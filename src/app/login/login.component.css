@@ -4,6 +4,17 @@
   width: 100%;
 }
 
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  background-image: url(src\assets\resources\ImagenFondo.jpeg);
+  background-size: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .titulo {
   font-size: 4em;
   margin-top: 1em;
@@ -47,19 +58,18 @@ img {
   color: #000;
 }
 
-.user,
-.password {
+.user {
+  background-image: url(src\assets\resources\Usericon2.svg);
   background-size: 1.25em;
   background-repeat: no-repeat;
   background-position: 98%;
 }
 
-.user {
-  background-image: url(../../assets/resources/Usericon2.svg);
-}
-
 .password {
-  background-image: url(../../assets/resources/Passicon2.svg);
+  background-image: url(src\assets\resources\Passicon2.svg);
+  background-size: 1.25em;
+  background-repeat: no-repeat;
+  background-position: 98%;
 }
 
 /* Estilos del boton ingresar en el login */
@@ -124,6 +134,17 @@ input[type="checkbox"]:checked {
   background-color: #1e512c;
   border: 2px solid black;
 }
+
+.body {
+  background-image: url(src\assets\resources\ImagenFondo.jpeg);
+  background-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+}
+
 @media only screen and (max-width: 900px) {
   #container-divs {
     display: flex;

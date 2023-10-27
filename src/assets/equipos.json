@@ -1,0 +1,12 @@
+[{
+    "id_equipo": 0,
+    "Descripcion": "Equipo de mantenimiento Mecanico",
+    "estado": {
+        "id_estado": 23,
+        "Descripcion": "Estamos de Vagos"
+    },
+    "Persoal": [{
+        "id_persona": 100232,
+        "Nombre": "Peralta es un animal"
+    }]
+}]
