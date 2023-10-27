@@ -35,6 +35,6 @@ export class NavComponent {
   MostrarBoton: boolean = false;
   VerBoton() {
     this.MostrarBoton = !this.MostrarBoton;
-    console.log("Cambios");
+    console.log('Cambios');
   }
 }

@@ -6,6 +6,10 @@
   background-color: rgb(251, 252, 241, 0.5);
   padding: 0.625em;
   transition: 1s;
+
+  &:hover{
+    width: 100%;
+  }
 }
 
 #navi-admin {
@@ -29,12 +33,8 @@
   background-position: 98%;
 }
 
-#container-main:hover {
-  width: 100%;
-}
-
-Register {
-background-image: url(../../assets/resources/Register_Icon_Op1.svg);
+.Register {
+  background-image: url(../../assets/resources/Register_Icon_Op1.svg);
 }
 
 .Team {

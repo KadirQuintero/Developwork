@@ -4,7 +4,8 @@ body{
   align-items: center;
   margin: 0;
   height: 100vh;
-  background-image: url(src\resources\ImagenFondo.jpeg);
+  background-image: url(../src/assets/resources/ImagenFondo.jpeg);
   background-size: 100%;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
+  background-color: aquamarine;
 }

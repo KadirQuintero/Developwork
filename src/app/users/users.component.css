@@ -3,8 +3,10 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-image: url(src\assets\resources\ImagenFondo.jpeg);
+  /*background-image: url(src\assets\resources\ImagenFondo.jpeg);*/
   background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .container {
@@ -12,6 +14,9 @@
   position: relative;
 }
 #body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100vh;
 }
@@ -20,8 +25,8 @@
   position: absolute;
   width: 100px;
   top: 0;
-  left: -100px; 
-  height: 100%; 
+  left: -100px;
+  height: 100%;
   transition: 0.5s ease;
   color: white;
   z-index: 6;
