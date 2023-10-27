@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class NavComponent {
   constructor(private router: Router) {}
   RegisterUser(): void {
-    this.router.navigate(['user/register']);
+    this.router.navigate(['user/personas']);
   }
 
   Teams(): void {
