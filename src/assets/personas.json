@@ -13,7 +13,7 @@
       "nombre_rol": "Administrativo"
     },
     "equipo": {
-      "id_equipo": "342",
+      "id_equipo": "2",
       "descripcion": "Grupo de Administrativos",
       "estado": {
         "id_estado": "1",
@@ -33,7 +33,7 @@
       "nombre_rol": "operario"
     },
     "equipo": {
-      "id_equipo": "342",
+      "id_equipo": "2",
       "descripcion": "Grupo que no hace nada",
       "estado": {
         "id_estado": "1",
@@ -53,7 +53,7 @@
       "nombre_rol": "Operativo"
     },
     "equipo": {
-      "id_equipo": "123",
+      "id_equipo": "1",
       "descripcion": "Grupo de Mecanicos provicionales",
       "estado": {
         "id_estado": "1",
