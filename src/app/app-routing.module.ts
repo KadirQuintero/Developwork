@@ -5,7 +5,7 @@ import { usersComponent } from './users/users.component';
 import { MPersonasComponent } from './personas/m-personas/m-personas.component';
 import { NavComponent } from './nav/nav.component';
 import { AppComponent } from './app.component';
-import { TeamsComponent } from './teams/teams.component';
+import { TeamsComponent } from './Equipos/teams/teams.component';
 import { StatsComponent } from './stats/stats.component';
 import { NotificationComponent } from './notification/notification.component';
 import { registerComponent } from './register/register.component';
@@ -36,7 +36,7 @@ const routes: Routes = [
         ],
       },
       /*
-Estoy generando un nuevo comentario porque git no esta detectando mis cambios 
+Estoy generando un nuevo comentario porque git no esta detectando mis cambios
       Cambios de la ruta
       */
     ],

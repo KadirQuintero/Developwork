@@ -1,12 +1,25 @@
-[{
+[
+  {
     "id_equipo": 0,
-    "Descripcion": "Equipo de mantenimiento Mecanico",
-    "estado": {
-        "id_estado": 23,
-        "Descripcion": "Estamos de Vagos"
-    },
-    "Persoal": [{
-        "id_persona": 100232,
-        "Nombre": "Peralta es un animal"
-    }]
-}]
+    "nombre": "Kadir",
+    "descripcion": "Ocupado pa"
+  },
+
+  {
+    "id_equipo": 1,
+    "nombre": "Luis",
+    "descripcion": "Libre pa"
+  },
+
+  {
+    "id_equipo": 2,
+    "nombre": "Juan",
+    "descripcion": "Libre pa"
+  },
+
+  {
+    "id_equipo": 3,
+    "nombre": "Luis",
+    "descripcion": "Ocupado pa"
+  }
+]

@@ -21,6 +21,7 @@ export class MPersonasComponent implements OnInit {
         });
       });
   }
+
   register(): void {
     this.router.navigate(['user/register']);
   }
