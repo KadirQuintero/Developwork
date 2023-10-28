@@ -71,3 +71,8 @@ background-image: url(src\assets\resources\Emailicon.svg);
 .form-label {
   font-size: 1.375em;
 }
+
+img{
+  height: 200px;
+  width: 50px;
+}

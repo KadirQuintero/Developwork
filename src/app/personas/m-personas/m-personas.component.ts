@@ -23,6 +23,7 @@ export class MPersonasComponent implements OnInit {
   }
 
   register(): void {
+    console.log("checkout ")
     this.router.navigate(['user/register']);
   }
 }

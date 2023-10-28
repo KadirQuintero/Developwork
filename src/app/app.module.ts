@@ -8,10 +8,17 @@ import { registerComponent } from './RegUsuario/register.component';
 import { NotificationComponent } from './Notificaciones/notification.component';
 import { NavComponent } from './nav/nav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+<<<<<<< HEAD
 import { TeamsComponent } from './Equipos/teams/teams.component';
 import { StatsComponent } from './Estadisticas/stats.component';
 import { InformationComponent } from './Informacion/information.component';
 import { TeamservService } from './Equipos/teamserv.service';
+=======
+import { TeamsComponent } from './teams/teams.component';
+import { StatsComponent } from './stats/stats.component';
+import { InformationComponent } from './information/information.component';
+import { MPersonasComponent } from './personas/m-personas/m-personas.component';
+>>>>>>> Cambios de prueba
 
 @NgModule({
   declarations: [
@@ -24,6 +31,16 @@ import { TeamservService } from './Equipos/teamserv.service';
     TeamsComponent,
     StatsComponent,
     InformationComponent,
+<<<<<<< HEAD
+=======
+    MPersonasComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+>>>>>>> Cambios de prueba
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [TeamservService],
