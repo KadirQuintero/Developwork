@@ -8,6 +8,11 @@ import { equipo } from '../../models/equipo';
   styleUrls: ['./teams.component.css'],
 })
 export class TeamsComponent implements OnInit {
+
+  Formteam(): void{
+    this.router.navigate(['user/teams/formteam']);
+  }
+
   verequipo: equipo[] = [];
   constructor(private router: Router) {}
   ngOnInit(): void {

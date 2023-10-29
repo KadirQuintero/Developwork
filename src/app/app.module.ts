@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TeamsComponent } from './Equipos/teams/teams.component';
 import { StatsComponent } from './stats/stats.component';
 import { InformationComponent } from './information/information.component';
+import { FormteamsComponent } from './formteams/formteams.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { InformationComponent } from './information/information.component';
     NavComponent,
     TeamsComponent,
     StatsComponent,
-    InformationComponent
+    InformationComponent,
+    FormteamsComponent
   ],
   imports: [
     BrowserModule,

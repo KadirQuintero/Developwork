@@ -9,6 +9,7 @@ import { TeamsComponent } from './Equipos/teams/teams.component';
 import { StatsComponent } from './stats/stats.component';
 import { NotificationComponent } from './notification/notification.component';
 import { registerComponent } from './register/register.component';
+import { FormteamsComponent } from './formteams/formteams.component';
 
 const routes: Routes = [
   {
@@ -30,15 +31,15 @@ const routes: Routes = [
             component: registerComponent,
           },
           { path: 'nav', component: NavComponent },
-          { path: 'teams', component: TeamsComponent },
+          {
+            path: 'teams',
+            component: TeamsComponent,
+            children: [{ path: 'formteam', component: FormteamsComponent }],
+          },
           { path: 'stats', component: StatsComponent },
           { path: 'notification', component: NotificationComponent },
         ],
       },
-      /*
-Estoy generando un nuevo comentario porque git no esta detectando mis cambios
-      Cambios de la ruta
-      */
     ],
   },
 ];
