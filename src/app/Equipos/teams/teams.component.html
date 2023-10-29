@@ -1,12 +1,17 @@
 <div class="container" id="container-main">
   <div id="container-teams">
-    <ol class="team-list" *ngFor="let equipoItem of verequipo">
-      <li>
-        ID_Equipo: {{ equipoItem.id_equipo }}
-        | Nombre: {{ equipoItem.nombre}} |
-        Descripcion: {{ equipoItem.descripcion}}
-      </li>
-    </ol>
+    <table>
+      <tr>
+        <th>IdEquipo</th>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+      </tr>
+      <tr *ngFor="let equipoItem of verequipo">
+        <td>{{ equipoItem.id_equipo }}</td>
+        <td>{{ equipoItem.nombre }}</td>
+        <td>{{ equipoItem.descripcion }}</td>
+      </tr>
+    </table>
   </div>
   <div id="container-crud">
     <button class="btn-crud crud_crear">Crear</button>

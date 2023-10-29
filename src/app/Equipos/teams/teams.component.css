@@ -7,11 +7,28 @@
 }
 
 #container-teams {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   padding: 10px;
   border-radius: 10px;
   background-color: #fff;
+  text-align: center;
+  font-size: 22px;
+}
+
+table{
+  margin: 10px;
+}
+
+th{
+  font-size: 25px;
+}
+
+tr{
+  border-bottom: 1px solid black;
 }
 
 #container-crud {
@@ -31,10 +48,4 @@
   border: none;
   border-radius: 10px;
   background-color: #1e512c;
-}
-
-.team-list{
-  font-size: 22px;
-  list-style: none;
-  padding: 5px;
 }
