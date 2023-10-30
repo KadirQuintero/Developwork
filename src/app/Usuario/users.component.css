@@ -7,13 +7,13 @@
   background-image: url(src\assets\resources\ImagenFondo.jpeg);
   background-size: 50%;
   background-repeat: no-repeat;
-  display: flex;
-  position: relative;
 }
+
 .container{
   display: grid;
   width: 100vh;
 }
+
 #body {
   display: grid;
   width: 100%;
