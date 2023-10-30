@@ -1,42 +1,34 @@
 <div id="main-div">
   <nav>
     <div>
-      <input type="text" placeholder="Bucar persona">
+      <input type="text" placeholder="Buscar persona" />
       <button>Buscar</button>
     </div>
   </nav>
   <div>
-
     <table>
       <thead>
-        <td>Nombre</td>
-        <td>Rol</td>
-        <td>Equipo</td>
-        <td>Estado</td>
+        <th>Nombre</th>
+        <th>Rol</th>
+        <th>Equipo</th>
+        <th>Estado</th>
       </thead>
       <tbody>
         <tr *ngFor="let persona of lstpersonas">
-          <td>{{persona.nombre}}</td>
-          <td>{{persona.rol?.nombre_rol}}</td>
-          <td>{{persona.equipo?.descripcion}}</td>
-          <td>{{persona.estado?.descripcion}}</td>
+          <td>{{ persona.nombre }}</td>
+          <td>{{ persona.rol?.nombre_rol }}</td>
+          <td>{{ persona.equipo?.descripcion }}</td>
+          <td>{{ persona.estado?.descripcion }}</td>
         </tr>
-
       </tbody>
     </table>
   </div>
 
-  <button (click)="register()">
-    Agregar
-  </button>
+  <div class="btn">
+    <button (click)="register()">Agregar</button>
 
-  <button>
+    <button>Modificar</button>
 
-    Modificar
-  </button>
-
-
-  <button>
-    Eliminar
-  </button>
+    <button>Eliminar</button>
+  </div>
 </div>
