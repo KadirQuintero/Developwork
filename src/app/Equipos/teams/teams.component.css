@@ -31,21 +31,41 @@ tr{
   border-bottom: 1px solid black;
 }
 
+.form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+label{
+  font-size: 20px;
+  margin: 0px 10px 0px 10px;
+}
+
+input{
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 18px;
+}
+
 #container-crud {
   height: 100%;
   width: 100%;
   padding: 10px;
   margin-top: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-crud {
   font-size: 24px;
   color: #fff;
-  width: 130px;
+  width: 150px;
   padding: 8px;
   border: none;
   border-radius: 10px;
   background-color: #1e512c;
+  margin: 10px;
 }

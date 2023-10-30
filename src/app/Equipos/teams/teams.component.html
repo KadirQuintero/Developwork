@@ -6,16 +6,33 @@
         <th>Nombre</th>
         <th>Descripcion</th>
       </tr>
-      <tr *ngFor="let equipoItem of verequipo">
-        <td>{{ equipoItem.id_equipo }}</td>
-        <td>{{ equipoItem.nombre }}</td>
-        <td>{{ equipoItem.descripcion }}</td>
+      <tr *ngFor="let Team of teams; let i = index">
+        <td>{{ Team.idEquipo }}</td>
+        <td>{{ Team.nombre }}</td>
+        <td>{{ Team.descripcion }}</td>
       </tr>
     </table>
   </div>
+
+  <div class="form">
+    <div>
+      <label for="idEquipo">ID Equipo:</label>
+      <input [(ngModel)]="idEquipo" id="idEquipo" />
+    </div>
+
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input [(ngModel)]="nombre" id="nombre" />
+    </div>
+
+    <div>
+      <label for="descripcion">Descripción:</label>
+      <input [(ngModel)]="descripcion" id="descripcion" />
+    </div>
+  </div>
+
   <div id="container-crud">
-    <button class="btn-crud crud_crear">Crear</button>
+    <button class="btn-crud crud_crear" (click)="addTeam()">Crear</button>
     <button class="btn-crud crud_modificar">Modificar</button>
-    <button class="btn-crud crud_eliminar">Eliminar</button>
   </div>
 </div>

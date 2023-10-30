@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TeamsComponent } from './Equipos/teams/teams.component';
 import { StatsComponent } from './Estadisticas/stats.component';
 import { InformationComponent } from './Informacion/information.component';
+import { TeamservService } from './Equipos/teamserv.service';
 
 @NgModule({
   declarations: [
@@ -22,15 +23,10 @@ import { InformationComponent } from './Informacion/information.component';
     NavComponent,
     TeamsComponent,
     StatsComponent,
-    InformationComponent
+    InformationComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  providers: [TeamservService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
