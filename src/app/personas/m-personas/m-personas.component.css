@@ -1,0 +1,46 @@
+#main-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input{
+  width: 25em;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: .625em;
+  padding: .313em;
+  font-size: 1.25em;
+}
+
+table{
+  background-color: bisque ;
+  border-radius: .625em;
+  overflow: hidden;
+  margin-top: .625em;
+}
+
+th, td{
+  padding: .875em;
+  border-bottom: 1px solid black;
+}
+
+button{
+  font-size: 1.125em;
+  color: #fff;
+  width: 13.75em;
+  padding: .313em;
+  border: none;
+  border-radius: .625em;
+  background-color: #1e512c;
+  margin-right: .625em;
+}
+
+.btn{
+  margin-top: .625em;
+  display: flex;
+  align-items: center;
+}

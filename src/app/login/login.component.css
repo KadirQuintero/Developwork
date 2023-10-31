@@ -1,17 +1,7 @@
 /*  */
 #container-main {
-  height: 80%;
+  height: 100%;
   width: 100%;
-}
-.body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  height: 100vh;
-  background-image: url(src\resources\ImagenFondo.jpeg);
-  background-size: 100%;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .titulo {
@@ -42,24 +32,34 @@ img {
   padding: 0.4em;
 }
 
+.user:focus,
+.password:focus {
+  outline: none;
+
+  &::placeholder {
+    color: transparent;
+  }
+}
+
 /* Da texto al campo de user y password cuando este se encuentra vacio */
 .user::placeholder,
 .password::placeholder {
   color: #000;
 }
 
-.user{
-  background-image: url(src\resources\Usericon2.svg);
+.user,
+.password {
   background-size: 1.25em;
   background-repeat: no-repeat;
   background-position: 98%;
 }
 
-.password{
-  background-image: url(src\resources\Passicon2.svg);
-  background-size: 1.25em;
-  background-repeat: no-repeat;
-  background-position: 98%;
+.user {
+  background-image: url(src\assets\resources\Usericon2.svg);
+}
+
+.password {
+  background-image: url(src\assets\resources\Passicon2.svg);
 }
 
 /* Estilos del boton ingresar en el login */
@@ -123,8 +123,18 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked {
   background-color: #1e512c;
   border: 2px solid black;
-
 }
+
+.body {
+  background-image: url(src\assets\resources\ImagenFondo.jpeg);
+  background-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+}
+
 @media only screen and (max-width: 900px) {
   #container-divs {
     display: flex;

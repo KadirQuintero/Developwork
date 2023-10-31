@@ -2,24 +2,25 @@
   <header id="cabecera">
     <img
       class="cab-img"
-      src="../../resources/EcopetrolImg.png"
+      src="../../assets/resources/logo.png"
       alt="logo"
     />
   </header>
-  <form id="formulario">
+  <form id="formulario" (ngSubmit)="addPersona()">
     <h1>Register</h1>
     <label class="form-label" for=""> First Name </label>
-    <input class="form-input input-text" type="text" required />
+    <input [(ngModel)]="persona.nombre" name="nombre" class="form-input input-text" type="text" required />
     <label class="form-label" for=""> Second Name (Optional) </label>
     <input class="form-input input-text" type="text" />
     <label class="form-label" for=""> Last Name </label>
     <input class="form-input input-text" type="text" required  />
     <label class="form-label" for=""> Second Last Name (Optional) </label>
     <input class="form-input input-text" type="text" />
-    <label class="form-label" for=""> Email </label>
-    <input class="form-input input-email" type="email" required />
-    <label class="form-label" for=""> Password </label>
-    <input class="form-input input-pass" type="password" requiered />
+    <label  class="form-label" for=""> Email </label>
+    <input  [(ngModel)]="persona.correo" name="correo"   class="form-input input-email" type="email" required />
+    <label   class="form-label" for=""> Password </label>
+    <input [(ngModel)]="persona.password" name="password" class="form-input input-pass" type="password" requiered />
     <input class="form-btn-registrar" type="submit" value="Create Account" />
   </form>
 </div>
+<div></div>

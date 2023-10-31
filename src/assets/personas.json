@@ -1,0 +1,64 @@
+[
+
+
+  {
+    "nombre": "Luis Alejandro",
+    "correo": "lcarretero@gmail.com",
+    "estado": {
+      "id_estado": "1",
+      "descripcion": "Operativo"
+    },
+    "rol": {
+      "id_rol": "1",
+      "nombre_rol": "Administrativo"
+    },
+    "equipo": {
+      "id_equipo": "2",
+      "descripcion": "Grupo de Administrativos",
+      "estado": {
+        "id_estado": "1",
+        "descripcion": "Operativo"
+      }
+    }
+  },
+  {
+    "nombre": "Peralta",
+    "correo": "peralta@gmail.com",
+    "estado": {
+      "id_estado": "1",
+      "descripcion": "Operativo"
+    },
+    "rol": {
+      "id_rol": "1",
+      "nombre_rol": "operario"
+    },
+    "equipo": {
+      "id_equipo": "2",
+      "descripcion": "Grupo que no hace nada",
+      "estado": {
+        "id_estado": "1",
+        "descripcion": "Operativo"
+      }
+    }
+  },
+  {
+    "nombre": "Kadir Quintero",
+    "correo": "kadir@gmail.com",
+    "estado": {
+      "id_estado": "1",
+      "descripcion": "Operativo"
+    },
+    "rol": {
+      "id_rol": "2",
+      "nombre_rol": "Operativo"
+    },
+    "equipo": {
+      "id_equipo": "1",
+      "descripcion": "Grupo de Mecanicos provicionales",
+      "estado": {
+        "id_estado": "1",
+        "descripcion": "Operativo"
+      }
+    }
+  }
+]

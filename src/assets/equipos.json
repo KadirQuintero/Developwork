@@ -1,0 +1,25 @@
+[
+  {
+    "id_equipo": 0,
+    "nombre": "Kadir",
+    "descripcion": "Ocupado pa"
+  },
+
+  {
+    "id_equipo": 1,
+    "nombre": "Luis",
+    "descripcion": "Libre pa"
+  },
+
+  {
+    "id_equipo": 2,
+    "nombre": "Juan",
+    "descripcion": "Libre pa"
+  },
+
+  {
+    "id_equipo": 3,
+    "nombre": "Luis",
+    "descripcion": "Ocupado pa"
+  }
+]
