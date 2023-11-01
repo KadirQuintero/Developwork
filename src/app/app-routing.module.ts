@@ -9,6 +9,7 @@ import { TeamsComponent } from './Equipos/teams/teams.component';
 import { StatsComponent } from './Estadisticas/stats.component';
 import { NotificationComponent } from './Notificaciones/notification.component';
 import { registerComponent } from './RegUsuario/register.component';
+import { CambContraComponent } from './camb-contra/camb-contra.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,7 @@ const routes: Routes = [
           { path: 'notification', component: NotificationComponent },
         ],
       },
+      { path: 'Cambcontraseña', component: CambContraComponent },
     ],
   },
 ];
