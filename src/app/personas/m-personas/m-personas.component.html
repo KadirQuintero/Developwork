@@ -6,19 +6,19 @@
     </div>
   </nav>
   <div>
-    <table>
+    <table >
       <thead>
         <th>Nombre</th>
         <th>Rol</th>
         <th>Equipo</th>
         <th>Estado</th>
       </thead>
-      <tbody>
-        <tr *ngFor="let persona of lstpersonas">
+      <tbody >
+        <tr *ngFor="let persona of lstpersonas" (click)="this.personaSelect=persona" [ngClass]="{'seleccionado':personaSelect == persona}">
           <td>{{ persona.nombre }}</td>
-          <td>{{ persona.rol?.nombre_rol }}</td>
-          <td>{{ persona.equipo?.descripcion }}</td>
-          <td>{{ persona.estado?.descripcion }}</td>
+          <td>{{ persona.rol.nombre_rol }}</td>
+          <td>{{ persona.equipo.descripcion }}</td>
+          <td>{{ persona.estado.descripcion }}</td>
         </tr>
       </tbody>
     </table>
@@ -27,7 +27,7 @@
   <div class="btn">
     <button (click)="register()">Agregar</button>
 
-    <button>Modificar</button>
+    <button [disabled]="personaSelect.nombre==''?true:false " (click)="modPersona()">Modificar</button>
 
     <button>Eliminar</button>
   </div>
