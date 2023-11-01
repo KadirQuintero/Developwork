@@ -10,6 +10,7 @@ import { StatsComponent } from './Estadisticas/stats.component';
 import { NotificationComponent } from './Notificaciones/notification.component';
 import { registerComponent } from './RegUsuario/register.component';
 import { CambContraComponent } from './camb-contra/camb-contra.component';
+import { ModpersonaComponent } from './personas/modpersona/modpersona.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,9 @@ const routes: Routes = [
           },
           { path: 'stats', component: StatsComponent },
           { path: 'notification', component: NotificationComponent },
+          {
+            path:'modPersona',component:ModpersonaComponent
+          }
         ],
       },
       { path: 'Cambcontraseña', component: CambContraComponent },
