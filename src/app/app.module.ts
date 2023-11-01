@@ -14,6 +14,7 @@ import { InformationComponent } from './Informacion/information.component';
 import { TeamservService } from './Equipos/teamserv.service';
 
 import { MPersonasComponent } from './personas/m-personas/m-personas.component';
+import { CambContraComponent } from './camb-contra/camb-contra.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MPersonasComponent } from './personas/m-personas/m-personas.component';
     StatsComponent,
     InformationComponent,
     MPersonasComponent,
+    CambContraComponent,
   ],
   imports: [
     BrowserModule,
