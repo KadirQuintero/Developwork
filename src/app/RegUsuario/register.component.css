@@ -1,33 +1,35 @@
 #container-form {
-  position: relative;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   border: none;
   height: 100vh;
   z-index: 2;
-}
-
-#cabecera {
   width: 100%;
-  text-align: center;
+  align-items: center;
 }
 
-.cab-img {
-  width: 60%;
+
+.cab-img  {
+  width: 20em;
+  height: 100%;
+  margin: 0 auto;
+}
+h1{
+   margin: 0 auto;
 }
 
 #formulario {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  gap: 1em;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  font-size: 1em;
+  padding: 40px;
+  margin: 0 auto;
+  height: 98%;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(9, 1fr); 
   border: none;
   border-radius: 0.625em;
   background-color: rgb(251, 252, 241);
+  gap: 10px;
 }
 
 h1 {
@@ -35,18 +37,17 @@ h1 {
 }
 
 .form-input {
-  font-size: 1.5em;
-  width: 75%;
-  margin-bottom: 0.5em;
   border: none;
   outline: none;
   border-bottom: 1px solid black;
   background-color: rgb(251, 252, 241);
   background-repeat: no-repeat;
   background-position: 98%;
+  background-size: auto 25px; 
 }
 
 .input-text {
+
 background-image: url(src\assets\resources\Usericon2.svg);
 }
 
@@ -63,16 +64,21 @@ background-image: url(src\assets\resources\Emailicon.svg);
   font-size: 1.5em;
   width: 70%;
   border: none;
+  margin: 0 auto;
   border-radius: 0.938em;
   background-color: #1e512c;
   margin-bottom: 2em;
+  grid-column: 2 span ;
 }
 
 .form-label {
   font-size: 1.375em;
 }
-
 img{
-  height: 200px;
-  width: 50px;
+  height: 150px;
+}
+select{
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 10px;
 }
