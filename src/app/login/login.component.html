@@ -1,3 +1,4 @@
+<<<<<<< .merge_file_a04968
 <div class="container" id="container-main">
   <div class="container" id="container-divs">
     <div class="container" id="div-img">
@@ -31,6 +32,29 @@
           value="Ingresar"
         />
       </form>
+=======
+<div class="body">
+  <h1>Cambiando la rama Main</h1>
+  <div class="container" id="container-main">
+    <div class="container" id="container-divs">
+      <div class="container" id="div-img">
+        <img src="../../resources/logo.png" alt="logo" />
+      </div>
+      <div class="container" id="div-login">
+        <H1 class="titulo"> Iniciar Sesión </H1>
+        <form id="formulario">
+          <label>Usuario:</label>
+          <input class="user" type="text" required placeholder="Digitar Usuario" />
+          <label>Contraseña:</label>
+          <input class="password" [type]="ChangeType ? 'password' : 'text'" required placeholder="Digitar Contraseña" />
+          <div>
+            <input (click)="viewpass()" type="checkbox" />
+            <label> Mostrar Contraseña</label>
+          </div>
+          <input (click)="IniciarSesion()" class="btn_ingresar" type="submit" value="Ingresar" />
+        </form>
+      </div>
+>>>>>>> .merge_file_a10212
     </div>
   </div>
 </div>
