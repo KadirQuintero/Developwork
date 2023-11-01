@@ -7,8 +7,13 @@
   padding: 0.625em;
   transition: 1s;
 
-  &:hover{
+  &:hover {
     width: 100%;
+
+    .nav_button {
+      transition: 0.5s ease;
+      background-position: 98%;
+    }
   }
 }
 
@@ -30,7 +35,9 @@
   background-color: #fff;
   background-size: 1.25em;
   background-repeat: no-repeat;
-  background-position: 98%;
+  background-position: center center;
+  /* Centra la imagen horizontal y verticalmente */
+
 }
 
 .Register {
