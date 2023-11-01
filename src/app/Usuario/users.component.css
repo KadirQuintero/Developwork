@@ -1,10 +1,10 @@
 ._container {
   position: relative;
-  background-image: url(src\assets\resources\ImagenFondo.jpeg);
-  background-size: 100%;
+  /*background-image: url(src\assets\resources\ImagenFondo.jpeg);
+  background-size: 100%;*/
   margin: 0;
-
 }
+
 #body {
   position: relative;
   width: 100%;

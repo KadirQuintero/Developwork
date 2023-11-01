@@ -126,8 +126,8 @@ input[type="checkbox"]:checked {
 }
 
 .body {
-  background-image: url(src\assets\resources\ImagenFondo.jpeg);
-  background-size: 100%;
+  /*background-image: url(src\assets\resources\ImagenFondo.jpeg);
+  background-size: 100%;*/
   display: flex;
   justify-content: center;
   align-items: center;
