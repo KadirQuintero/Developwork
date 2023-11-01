@@ -5,16 +5,17 @@
       <button>Buscar</button>
     </div>
   </nav>
-  <div>
-    <table >
+  <div class="con-table">
+    <table>
       <thead>
         <th>Nombre</th>
         <th>Rol</th>
         <th>Equipo</th>
         <th>Estado</th>
       </thead>
-      <tbody >
-        <tr *ngFor="let persona of lstpersonas" (click)="this.personaSelect=persona" [ngClass]="{'seleccionado':personaSelect == persona}">
+      <tbody>
+        <tr *ngFor="let persona of lstpersonas" (click)="this.personaSelect=persona"
+          [ngClass]="{'seleccionado':personaSelect == persona}">
           <td>{{ persona.nombre }}</td>
           <td>{{ persona.rol.nombre_rol }}</td>
           <td>{{ persona.equipo.descripcion }}</td>
@@ -23,7 +24,6 @@
       </tbody>
     </table>
   </div>
-
   <div class="btn">
     <button (click)="register()">Agregar</button>
 
