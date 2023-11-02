@@ -12,6 +12,7 @@ import { registerComponent } from './RegUsuario/register.component';
 import { CambContraComponent } from './camb-contra/camb-contra.component';
 import { ModpersonaComponent } from './personas/modpersona/modpersona.component';
 
+
 const routes: Routes = [
   {
     path: '',

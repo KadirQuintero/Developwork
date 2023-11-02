@@ -30,6 +30,7 @@ import { ModpersonaComponent } from './personas/modpersona/modpersona.component'
     InformationComponent,
     MPersonasComponent,
     CambContraComponent,
+
     ModpersonaComponent,
   ],
   imports: [
