@@ -1,6 +1,6 @@
 #container-main {
   position: relative;
-  top: 200px;
+  top: 12.5em;
   width: 100%;
   padding: 0.938em;
   border: none;
@@ -15,7 +15,7 @@
 }
 
 label {
-  font-size: 24px;
+  font-size: 1.5em;
   margin: 0px 0.625em 0px 0.625em;
 }
 
@@ -36,12 +36,10 @@ input {
   width: 100%;
   height: 100%;
   text-align: center;
-  width: 100%;
-  height: 100%;
   padding: 0.625em;
   border-radius: 0.625em;
   background-color: #fff;
-  max-height: 400px;
+  max-height: 25em;
   overflow-y: auto;
 }
 
@@ -60,10 +58,10 @@ td {
 
 .btn-eliminar{
   position: relative;
-  left: 10px;
-  top: 10px;
+  left: .625em;
+  top: .625em;
   width: 100%;
-  height: 50px;
+  height: 3.125em;
   background-image: url(../../../assets/resources/Icon-trash.svg);
   background-size: 100%;
   background-repeat: no-repeat;
