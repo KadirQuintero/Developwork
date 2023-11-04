@@ -13,7 +13,7 @@
 }
 
 #nav {
-  position: absolute;
+  position: fixed;
   width: 5em;
   transition: 0.5s ease;
   color: white;
