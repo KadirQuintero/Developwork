@@ -15,11 +15,5 @@
     "id_equipo": 2,
     "nombre": "Juan",
     "descripcion": "Libre pa"
-  },
-
-  {
-    "id_equipo": 3,
-    "nombre": "Luis",
-    "descripcion": "Ocupado pa"
   }
 ]

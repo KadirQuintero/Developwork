@@ -11,7 +11,7 @@ import { TeamservService } from '../teamserv.service';
 export class TeamsComponent implements OnInit {
   verequipo: equipo[] = [];
   /*constructor(private router: Router) {}*/
-  ngOnInit(): void {/*
+  ngOnInit(): void {
     fetch('../../assets/equipos.json')
       .then((Response) => Response.json())
       .then((data) => {
@@ -21,7 +21,7 @@ export class TeamsComponent implements OnInit {
         this.verequipo.forEach((Element: equipo) => {
           console.log(Element);
         });
-      });*/
+      });
   }
 
   teams: { idEquipo: string; nombre: string; descripcion: string }[] = [];

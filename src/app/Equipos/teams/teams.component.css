@@ -1,9 +1,34 @@
 #container-main {
+  position: relative;
+  top: 200px;
   width: 100%;
-  padding: .938em;
+  padding: 0.938em;
   border: none;
-  border-radius: .625em;
-  background-color: rgb(251, 252, 241, .8);
+  border-radius: 0.625em;
+  background-color: rgb(251, 252, 241, 0.8);
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  font-size: 24px;
+  margin: 0px 0.625em 0px 0.625em;
+}
+
+input {
+  border-radius: 0.625em;
+  padding: 0.313em;
+  font-size: 1.125em;
+  margin: 0px .0625em .625em .625em;
+}
+
+.form-input{
+  display: flex;
+  flex-direction: column;
 }
 
 #container-teams {
@@ -12,60 +37,56 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: .625em;
-  border-radius: .625em;
+  padding: 0.625em;
+  border-radius: 0.625em;
   background-color: #fff;
   text-align: center;
   font-size: 1.375;
 }
 
-table{
-  margin: .625em;
+table {
+  width: 100%;
+  border-radius: 0.625em;
+  margin: 0.625em 0px 0.625em 0px;
 }
 
-th{
+th,
+td {
   font-size: 1.563em;
-}
-
-tr{
+  padding: 0.7em;
   border-bottom: 1px solid black;
 }
 
-.form{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1.25em;
-}
-
-label{
-  font-size: 1.25em;
-  margin: 0px .625em 0px .625em;
-}
-
-input{
-  border-radius:0.625em;
-  padding: .313em;
-  font-size: 1.125em;
+.btn-eliminar{
+  position: relative;
+  left: 10px;
+  top: 10px;
+  width: 100%;
+  height: 50px;
+  background-image: url(../../../assets/resources/Icon-trash.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  background-color: transparent;
 }
 
 #container-crud {
   height: 100%;
   width: 100%;
-  padding: .625em;
-  margin-top: .625em;
+  padding: 0.625em;
+  margin-top: 0.625em;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .btn-crud {
   font-size: 1.5em;
   color: #fff;
   width: 9.375em;
-  padding: .5em;
+  padding: 0.5em;
   border: none;
-  border-radius: .625;
+  border-radius: .625em;
   background-color: #1e512c;
-  margin: .625;
+  margin: 0px .625em 0px .625em;
 }
