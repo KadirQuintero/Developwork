@@ -32,16 +32,17 @@ input {
 }
 
 #container-teams {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 1.375;
+  width: 100%;
+  height: 100%;
+  text-align: center;
   width: 100%;
   height: 100%;
   padding: 0.625em;
   border-radius: 0.625em;
   background-color: #fff;
-  text-align: center;
-  font-size: 1.375;
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 table {

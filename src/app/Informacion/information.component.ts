@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-information',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./information.component.css']
 })
 export class InformationComponent {
-
+  constructor(private router: Router) {}
+  CambContra(): void {
+    this.router.navigate(['user/cambcontraseña']);
+    console.log("Chupamestepenco")
+  }
 }

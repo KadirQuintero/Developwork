@@ -13,7 +13,6 @@ import { CambContraComponent } from './camb-contra/camb-contra.component';
 import { ModpersonaComponent } from './personas/modpersona/modpersona.component';
 import { InformationComponent } from './Informacion/information.component';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -38,15 +37,19 @@ const routes: Routes = [
             path: 'teams',
             component: TeamsComponent,
           },
-          { path: 'information', component: InformationComponent},
+          {
+            path: 'information',
+            component: InformationComponent,
+          },
+          { path: 'cambcontraseña', component: CambContraComponent },
           { path: 'stats', component: StatsComponent },
           { path: 'notification', component: NotificationComponent },
           {
-            path:'modPersona',component:ModpersonaComponent
-          }
+            path: 'modPersona',
+            component: ModpersonaComponent,
+          },
         ],
       },
-      { path: 'Cambcontraseña', component: CambContraComponent },
     ],
   },
 ];
