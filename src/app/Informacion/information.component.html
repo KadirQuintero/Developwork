@@ -1,5 +1,29 @@
-<div id="container-main">
-  <div>
-    <Button (click)="CambContra()"> Cambiar contraseña </Button>
+<div id="body-information">
+  <div id="container-main">
+    <header class="cabecera">
+      <img class="cab-img" src="../../assets/resources/logo.png" alt="logo" />
+    </header>
+    <div class="container-info">
+      <h1>Informacion Personal</h1>
+      <article class="container-grid">
+        <section class="sec-info">
+          <p>Nombre: Luis</p>
+          <p>Nombre2: Alejandro</p>
+          <p>Apellido: Carretero</p>
+          <p>Apellido2: Ballesteros</p>
+          <p>Correo: Alejo_carretero@gmail.com</p>
+        </section>
+        <section class="sec-info">
+          <p>Rol: Administrativo</p>
+          <p>Equipo: Mantenimento preventivo</p>
+          <p>Estado: Activo</p>
+          <p>Horas_trabajadas: 0</p>
+          <p>Horas_extras: 0</p>
+        </section>
+      </article>
+      <Button (click)="CambContra()" class="btn-cambcontra">
+        Cambiar contraseña
+      </Button>
+    </div>
   </div>
 </div>

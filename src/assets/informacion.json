@@ -1,0 +1,34 @@
+{
+  "nombre":"Luis",
+  "nombre2":"Alejandro",
+  "apellido":"Carretero",
+  "apellido2":"Ballesteros",
+  "correo":"Alejo_carretero@gmail.com",
+  "rol":{
+      "id_rol":"1",
+      "nombre_rol":"Administrativo"
+  },
+  "equipo":{
+      "id_equipo":"1",
+      "nombre_equipo":"Mantenimiento Preventivo",
+      "descripcion":"Mantenimiento preventivo de los equipos electricos",
+      "rol":
+      {
+          "id_rol":"1",
+          "nombre_rol":"Administrativo"},
+      "jornada":{
+          "id_jornada":"1",
+          "nombre_jornada":"Mañana"
+      },
+  "estado":{
+      "id_estado":"1",
+      "nombre_estado":"Activo"
+  }
+  },
+  "estado":{
+      "id_estado":"1",
+      "nombre_estado":"Activo"
+  },
+  "horas_trabajadas": 0,
+  "horas_extras": 0
+}

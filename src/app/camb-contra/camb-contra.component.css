@@ -15,6 +15,7 @@
 header{
   position: relative;
   top: 42px;
+  margin-top: -45px;
 }
 
 img {
