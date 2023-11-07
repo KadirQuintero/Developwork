@@ -5,6 +5,24 @@
     </header>
     <form id="formulario" (ngSubmit)="addPersona()" method="post">
       <h1>Registrar</h1>
+
+      <div class="mariana">
+        <fieldset>
+          <label for=""> Estado </label>
+          <select></select>
+        </fieldset>
+
+        <fieldset>
+          <label for=""> Rol </label>
+          <select></select>
+        </fieldset>
+
+        <fieldset>
+          <label for=""> Jornada </label>
+          <select></select>
+        </fieldset>
+      </div>
+
       <fieldset>
         <legend>Primer nombre</legend>
         <input
@@ -52,23 +70,6 @@
           requiered
         />
       </fieldset>
-
-      <div class="mariana">
-        <fieldset>
-          <label for=""> Estado </label>
-          <select></select>
-        </fieldset>
-
-        <fieldset>
-          <label for=""> Rol </label>
-          <select></select>
-        </fieldset>
-
-        <fieldset>
-          <label for=""> Jornada </label>
-          <select></select>
-        </fieldset>
-      </div>
       <input class="form-btn-registrar" type="submit" value="Registrar" />
     </form>
   </div>
