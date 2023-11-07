@@ -14,7 +14,7 @@
 
 header {
   position: relative;
-  top: 47px;
+  top: 2.938em;
   text-align: center;
 }
 
@@ -25,7 +25,7 @@ header {
   gap: 10px;*/
   text-align: center;
   font-size: 1em;
-  padding: 12px 30px 30px 30px;
+  padding: 0.75em 1.875em 1.875em 1.875em;
   margin: 0 auto;
   height: 98%;
   width: 90%;
@@ -43,15 +43,16 @@ h1 {
 }
 
 .form-input {
-  font-size: 20px;
-  border: none;
+  font-size: 1.25em;
+  width: 25em;
   outline: none;
-  width: 400px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #000;
+  border-radius: 0.438em;
+  padding: 2px;
   background-color: rgb(251, 252, 241);
   background-repeat: no-repeat;
   background-position: 98%;
-  background-size: auto 25px;
+  background-size: auto 1.563em;
 }
 
 .input-text {
@@ -69,33 +70,33 @@ h1 {
 .form-btn-registrar {
   color: #ffffff;
   font-size: 1.5em;
-  width: 50%;
+  width: 65%;
   border: none;
   /*margin: 0 auto;
   grid-column: 2 span;
   margin-bottom: 2em;*/
   border-radius: 0.938em;
   background-color: #1e512c;
-  margin: 10px 0px 10px 0px;
+  margin: 5px 0px 5px 0px;
   padding: 5px;
 }
 
 fieldset{
-  margin-bottom: 18px;
+  margin-bottom: 1.125em;
 }
 
 legend,label {
-  font-size: 30px;
-  margin-bottom: 5px ;
+  font-size: 1.875em;
+  margin-bottom: 0.15em;
 }
 
 img {
-  height: 150px;
+  height: 9.375em;
 }
 
 select {
   background-color: transparent;
-  border-radius: 20px;
+  border-radius: 1.25em;
   padding: 8px;
-  width: 200px;
+  width: 12.5em;
 }
