@@ -7,7 +7,7 @@
 
     <div class="form-input">
       <label for="nombre">Nombre</label>
-      <input [(ngModel)]="nombre" id="nombre" />
+      <input [(ngModel)]="nombre_equipo" id="nombre" />
     </div>
 
     <div class="form-input">
@@ -28,12 +28,12 @@
       <tbody>
         <tr *ngFor="let equipo of verequipo">
           <td>{{ equipo.id_equipo }}</td>
-          <td>{{ equipo.nombre }}</td>
+          <td>{{ equipo.nombre_equipo }}</td>
           <td>{{ equipo.descripcion }}</td>
         </tr>
         <tr *ngFor="let Team of teams; let i = index">
-          <td>{{ Team.idEquipo }}</td>
-          <td>{{ Team.nombre }}</td>
+          <td>{{ Team.id_equipo }}</td>
+          <td>{{ Team.nombre_equipo }}</td>
           <td>{{ Team.descripcion }}</td>
           <button class="btn-eliminar" (click)="removeTeam(i)">
           </button>

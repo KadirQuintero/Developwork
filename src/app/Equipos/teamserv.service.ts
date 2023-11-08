@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-
+import { equipo } from '../models/equipo';
 @Injectable({
   providedIn: 'root',
 })
 export class TeamservService {
-  private Teams: { idEquipo: string; nombre: string; descripcion: string }[] =
+  private Teams: equipo[] =
     [];
 
-  addTeam(team: { idEquipo: string; nombre: string; descripcion: string }) {
+  addTeam(team: equipo) {
     this.Teams.push(team);
   }
 
@@ -15,7 +15,7 @@ export class TeamservService {
     this.Teams.splice(index, 1);
   }
 
-  getTeam(team: { idEquipo: string; nombre: string; descripcion: string }) {
+  getTeam(team: equipo) {
     return this.Teams;
   }
 }
