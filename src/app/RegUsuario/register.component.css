@@ -1,35 +1,41 @@
-#container-form {
-  display: grid;
+#body-form {
+  /*Display: grid;
   border: none;
   height: 100vh;
   z-index: 2;
   width: 100%;
+  align-items: center;*/
+  display: flex;
+  justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 95vh;
 }
 
-
-.cab-img  {
-  width: 20em;
-  height: 100%;
-  margin: 0 auto;
-}
-h1{
-   margin: 0 auto;
+header {
+  position: relative;
+  top: 2.938em;
+  text-align: center;
 }
 
 #formulario {
+  /*display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(9, 1fr);
+  gap: 10px;*/
+  text-align: center;
   font-size: 1em;
-  padding: 40px;
+  padding: 0.75em 1.875em 1.875em 1.875em;
   margin: 0 auto;
   height: 98%;
   width: 90%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(9, 1fr); 
   border: none;
   border-radius: 0.625em;
   background-color: rgb(251, 252, 241);
-  gap: 10px;
+}
+
+.mariana{
+  display: flex;
 }
 
 h1 {
@@ -37,22 +43,24 @@ h1 {
 }
 
 .form-input {
-  border: none;
+  font-size: 1.25em;
+  width: 25em;
   outline: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #000;
+  border-radius: 0.438em;
+  padding: 2px;
   background-color: rgb(251, 252, 241);
   background-repeat: no-repeat;
   background-position: 98%;
-  background-size: auto 25px; 
+  background-size: auto 1.563em;
 }
 
 .input-text {
-
-background-image: url(src\assets\resources\Usericon2.svg);
+  background-image: url(src\assets\resources\Usericon2.svg);
 }
 
 .input-email {
-background-image: url(src\assets\resources\Emailicon.svg);
+  background-image: url(src\assets\resources\Emailicon.svg);
 }
 
 .input-pass {
@@ -62,23 +70,33 @@ background-image: url(src\assets\resources\Emailicon.svg);
 .form-btn-registrar {
   color: #ffffff;
   font-size: 1.5em;
-  width: 70%;
+  width: 65%;
   border: none;
-  margin: 0 auto;
+  /*margin: 0 auto;
+  grid-column: 2 span;
+  margin-bottom: 2em;*/
   border-radius: 0.938em;
   background-color: #1e512c;
-  margin-bottom: 2em;
-  grid-column: 2 span ;
+  margin: 5px 0px 5px 0px;
+  padding: 5px;
 }
 
-.form-label {
-  font-size: 1.375em;
+fieldset{
+  margin-bottom: 1.125em;
 }
-img{
-  height: 150px;
+
+legend,label {
+  font-size: 1.875em;
+  margin-bottom: 0.15em;
 }
-select{
+
+img {
+  height: 9.375em;
+}
+
+select {
   background-color: transparent;
-  border-radius: 20px;
-  padding: 10px;
+  border-radius: 1.25em;
+  padding: 8px;
+  width: 12.5em;
 }

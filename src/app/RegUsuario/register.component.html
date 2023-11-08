@@ -1,31 +1,76 @@
-<div id="container-form">
-    <img
-      class="cab-img"
-      src="../../assets/resources/logo.png"
-      alt="logo"
-    />
-    <h1>Registrar persona</h1>
-    <form id="formulario" (ngSubmit)="addPersona()">
-    
-    <label class="form-label" for=""> First Name </label>
-    <input [(ngModel)]="persona.nombre" name="nombre" class="form-input input-text" type="text" required />
-    <label class="form-label" for=""> Second Name (Optional) </label>
-    <input class="form-input input-text" type="text" />
-    <label class="form-label" for=""> Last Name </label>
-    <input class="form-input input-text" type="text" required  />
-    <label class="form-label" for=""> Second Last Name (Optional) </label>
-    <input class="form-input input-text" type="text" />
-    <label  class="form-label" for=""> Email </label>
-    <input  [(ngModel)]="persona.correo" name="correo"   class="form-input input-email" type="email" required />
-    <label   class="form-label" for=""> Password </label>
-    <input [(ngModel)]="persona.password" name="password" class="form-input input-pass" type="password" requiered />
-    <label  class="form-label" >Estado</label>
-    <select></select>
-    <label  class="form-label" >Rol</label>
-    <select></select>
-    <label  class="form-label" >Jornada</label>
-    <select></select>
-    <input class="form-btn-registrar" type="submit" value="Create Account" />
-  </form>
+<div id="body-form">
+  <div id="container-form">
+    <header>
+      <img class="cab-img" src="../../assets/resources/logo.png" alt="logo" />
+    </header>
+    <form id="formulario" (ngSubmit)="addPersona()" method="post">
+      <h1>Registrar</h1>
+
+      <div class="mariana">
+        <fieldset>
+          <label for=""> Estado </label>
+          <select></select>
+        </fieldset>
+
+        <fieldset>
+          <label for=""> Rol </label>
+          <select></select>
+        </fieldset>
+
+        <fieldset>
+          <label for=""> Jornada </label>
+          <select></select>
+        </fieldset>
+      </div>
+
+      <fieldset>
+        <legend>Primer nombre</legend>
+        <input
+          [(ngModel)]="persona.nombre"
+          name="nombre"
+          class="form-input input-text"
+          type="text"
+          required
+        />
+      </fieldset>
+
+      <fieldset>
+        <legend>Segundo nombre (opcional)</legend>
+        <input class="form-input input-text" type="text" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Primer apellido</legend>
+        <input class="form-input input-text" type="text" required />
+      </fieldset>
+
+      <fieldset>
+        <legend>Segundo apellido (opcional)</legend>
+        <input class="form-input input-text" type="text" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Correo</legend>
+        <input
+          [(ngModel)]="persona.correo"
+          name="correo"
+          class="form-input input-email"
+          type="email"
+          required
+        />
+      </fieldset>
+
+      <fieldset>
+        <legend>Contraseña</legend>
+        <input
+          [(ngModel)]="persona.password"
+          name="password"
+          class="form-input input-pass"
+          type="password"
+          requiered
+        />
+      </fieldset>
+      <input class="form-btn-registrar" type="submit" value="Registrar" />
+    </form>
+  </div>
 </div>
-<div></div>
