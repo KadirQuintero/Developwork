@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, importProvidersFrom } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +12,7 @@ import { TeamsComponent } from './Equipos/teams/teams.component';
 import { StatsComponent } from './Estadisticas/stats.component';
 import { InformationComponent } from './Informacion/information.component';
 import { TeamservService } from './Equipos/teamserv.service';
-
+import { HttpClientModule } from '@angular/common/http';
 import { MPersonasComponent } from './personas/m-personas/m-personas.component';
 import { CambContraComponent } from './camb-contra/camb-contra.component';
 import { ModpersonaComponent } from './personas/modpersona/modpersona.component';
@@ -40,7 +40,7 @@ import { ModpersonaComponent } from './personas/modpersona/modpersona.component'
     ReactiveFormsModule,
     ReactiveFormsModule,
   ],
-  providers: [TeamservService],
+  providers: [TeamservService,importProvidersFrom(HttpClientModule)],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

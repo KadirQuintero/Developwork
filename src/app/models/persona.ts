@@ -4,13 +4,16 @@ import { jornada } from "./jordanas";
 import { rol } from "./rol";
 
 export class persona{
-    id_usuarioo:string='';
+    id_usuario:string='';
     nombre:string='';
+    nombre2:string='';
+    apellido:string='';
+    apellido2:string='';
     horas_trabajadas?:number;
     correo?:string='';
     password?:string='';
     equipo:equipo= new equipo();
     estado:estado= new estado();
     rol:rol= new rol();
-    jornada:jornada= new jornada();
+    //jornada:jornada= new jornada();
 }
