@@ -12,7 +12,7 @@ export class TeamsComponent implements OnInit {
   verequipo: equipo[] = [];
   /*constructor(private router: Router) {}*/
   ngOnInit(): void {
-   /* fetch('../../assets/equipos.json')
+    /* fetch('../../assets/equipos.json')
       .then((Response) => Response.json())
       .then((data) => {
         data.forEach((Element: equipo) => {
@@ -22,20 +22,21 @@ export class TeamsComponent implements OnInit {
           console.log(Element);
         });
       });
-    */}
+    */
+  }
 
   teams: equipo[] = [];
   idEquipo: string = '';
   nombre_equipo: string = '';
   descripcion: string = '';
 
-  private safe(){
+  private safe() {
     this.idEquipo = '';
     this.nombre_equipo = '';
     this.descripcion = '';
   }
 
-  private safe1(){
+  private safe1() {
     /*this.teams = this.teamservice.getTeam({
       id_equipo: this.idEquipo,
       nombre_equipo: this.nombre_equipo,
