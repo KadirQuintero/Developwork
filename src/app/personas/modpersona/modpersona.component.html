@@ -1,22 +1,30 @@
-<body>
-  <form>
-
-    <label>Nombre</label>
-    <input type="text" name="nombre" [(ngModel)]="persona.nombre">
-    <label> Correo</label>
-    <input type="email" nombre="correo" [(ngModel)]="persona.correo">
-    <label>Equipo</label>
-    <select></select>
-    <label>Rol</label>
-    <select></select>
-    <label>Jornada</label>
-    <select></select>
-    <label>Estado</label>
-    <select></select>
-
-    <button (click)="modificar()">Modificar</button>
-
-</form>
-</body>
-
-
+<div id="body-modpersona">
+  <div id="container-main">
+    <header class="cabecera">
+      <img class="cab-img" src="../../assets/resources/logo.png" alt="logo" />
+    </header>
+    <form>
+      <fieldset>
+        <label>Equipo</label>
+        <select></select>
+        <label>Rol</label>
+        <select></select>
+        <label>Jornada</label>
+        <select></select>
+        <label>Estado</label>
+        <select></select>
+      </fieldset>
+      <div class="div-grid">
+        <fieldset class="field-label">
+          <label> Nombre </label>
+          <label> Correo </label>
+        </fieldset>
+        <fieldset class="field-input">
+          <input type="email" nombre="correo" [(ngModel)]="persona.correo" />
+          <input type="text" name="nombre" [(ngModel)]="persona.nombre" />
+        </fieldset>
+      </div>
+      <button (click)="modificar()">Modificar</button>
+    </form>
+  </div>
+</div>
