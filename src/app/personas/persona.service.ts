@@ -1,23 +1,40 @@
 import { Injectable } from '@angular/core';
 import { persona } from '../models/persona';
+import { HttpClient,HttpHeaders  } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PersonaService {
-  private static lstPersonas:persona[]=[];
-  private personaMod: persona= new persona();
-  constructor() { }
+  private static lstPersonas: persona[] = [];
+  private personaMod: persona = new persona();
+  private URL: string = 'http://localhost:8080/Usuarios/';
 
-  getPersonas():persona[]{
+  constructor(private http: HttpClient) {}
+
+getPersonas(): persona[] {
+    this.getData().subscribe((response) => {
+      console.log(response);
+    },
+    (error) => {
+      console.error('Error en la solicitud:', error);
+    });
+
     return PersonaService.lstPersonas;
   }
 
-  setPersona( _persona:persona){
-    this.personaMod=_persona;
+  setPersona(_persona: persona) {
+    this.personaMod = _persona;
   }
-  getPersona():persona{
+  getPersona(): persona {
     return this.personaMod;
   }
 
+  getData(): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    return this.http.get(`${this.URL}`,{headers});
+  }
 }

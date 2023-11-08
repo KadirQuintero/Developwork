@@ -16,16 +16,12 @@ export class MPersonasComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    fetch('../../assets/personas.json')
-      .then((Response) => Response.json())
-      .then((data) => {
-        data.forEach((Element: persona) => {
-          this.lstpersonas.push(Element);
+
+        this.servicepersona.getData().subscribe((Response:persona[])=>{
+          this.lstpersonas=Response;
         });
-        this.lstpersonas.forEach((Element: persona) => {
-          console.log(Element);
-        });
-      });
+
+  
   }
 
   register(): void {

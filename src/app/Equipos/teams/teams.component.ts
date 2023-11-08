@@ -12,7 +12,7 @@ export class TeamsComponent implements OnInit {
   verequipo: equipo[] = [];
   /*constructor(private router: Router) {}*/
   ngOnInit(): void {
-    fetch('../../assets/equipos.json')
+   /* fetch('../../assets/equipos.json')
       .then((Response) => Response.json())
       .then((data) => {
         data.forEach((Element: equipo) => {
@@ -22,25 +22,25 @@ export class TeamsComponent implements OnInit {
           console.log(Element);
         });
       });
-  }
+    */}
 
-  teams: { idEquipo: string; nombre: string; descripcion: string }[] = [];
+  teams: equipo[] = [];
   idEquipo: string = '';
-  nombre: string = '';
+  nombre_equipo: string = '';
   descripcion: string = '';
 
   private safe(){
     this.idEquipo = '';
-    this.nombre = '';
+    this.nombre_equipo = '';
     this.descripcion = '';
   }
 
   private safe1(){
-    this.teams = this.teamservice.getTeam({
-      idEquipo: this.idEquipo,
-      nombre: this.nombre,
-      descripcion: this.descripcion,
-    })
+    /*this.teams = this.teamservice.getTeam({
+      id_equipo: this.idEquipo,
+      nombre_equipo: this.nombre_equipo,
+      descripcion: this.descripcion
+    })*/
   }
 
   constructor(private teamservice: TeamservService) {
@@ -48,19 +48,19 @@ export class TeamsComponent implements OnInit {
   }
 
   addTeam() {
-    if (this.idEquipo && this.nombre && this.descripcion) {
+    /*if (this.idEquipo && this.nombre_equipo && this.descripcion) {
       this.teamservice.addTeam({
-        idEquipo: this.idEquipo,
-        nombre: this.nombre,
+        id_equipo: this.idEquipo,
+        nombre_equipo: this.nombre_equipo,
         descripcion: this.descripcion,
       });
       this.safe();
       this.safe1();
-    }
+    }*/
   }
 
   removeTeam(index: number) {
-    this.teamservice.removeTeam(index);
-    this.safe1();
+    /*this.teamservice.removeTeam(index);
+    this.safe1();*/
   }
 }
