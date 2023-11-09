@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { equipo } from '../models/equipo';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -15,7 +18,16 @@ export class TeamservService {
     this.Teams.splice(index, 1);
   }
 
-  getTeam(team: equipo) {
+  getTeam(/*team: equipo*/) {
     return this.Teams;
+  }
+
+  private URL: string = 'http://localhost:8080/Equipos/';
+  constructor(private http: HttpClient) {}
+  getData(): Observable<any>{
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    return this.http.get(`${this.URL}`,{headers});
   }
 }

@@ -8,6 +8,17 @@
   background-color: rgb(251, 252, 241, 0.8);
 }
 
+/*.cabecera {
+  position: relative;
+  top: 42px;
+  text-align: center;
+  margin-top: -45px;
+}
+
+.cab-img {
+  width: 20%;
+}*/
+
 .form {
   display: flex;
   justify-content: center;
@@ -19,14 +30,22 @@ label {
   margin: 0px 0.625em 0px 0.625em;
 }
 
-input {
+input, select{
   border-radius: 0.625em;
   padding: 0.313em;
   font-size: 1.125em;
-  margin: 0px .0625em .625em .625em;
+  margin: 0px 0.625em 0.625em 0.625em;
 }
 
-.form-input{
+input{
+  width: 13.75em;
+}
+
+select{
+  width: 10em;
+}
+
+.form-input {
   display: flex;
   flex-direction: column;
 }
@@ -56,10 +75,10 @@ td {
   border-bottom: 1px solid black;
 }
 
-.btn-eliminar{
+.btn-eliminar {
   position: relative;
-  left: .625em;
-  top: .625em;
+  left: 0.625em;
+  top: 0.625em;
   width: 100%;
   height: 3.125em;
   background-image: url(../../../assets/resources/Icon-trash.svg);
@@ -85,7 +104,7 @@ td {
   width: 9.375em;
   padding: 0.5em;
   border: none;
-  border-radius: .625em;
+  border-radius: 0.625em;
   background-color: #1e512c;
-  margin: 0px .625em 0px .625em;
+  margin: 0px 0.625em 0px 0.625em;
 }

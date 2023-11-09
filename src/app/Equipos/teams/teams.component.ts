@@ -10,8 +10,15 @@ import { TeamservService } from '../teamserv.service';
 })
 export class TeamsComponent implements OnInit {
   verequipo: equipo[] = [];
-  /*constructor(private router: Router) {}*/
+  constructor(private router: Router, private serviceteam: TeamservService) {
+    this.verequipo = serviceteam.getTeam();
+  }
+
   ngOnInit(): void {
+    this.serviceteam.getData().subscribe((Response: equipo[]) => {
+      this.verequipo = Response;
+    });
+
     /* fetch('../../assets/equipos.json')
       .then((Response) => Response.json())
       .then((data) => {
@@ -44,9 +51,9 @@ export class TeamsComponent implements OnInit {
     })*/
   }
 
-  constructor(private teamservice: TeamservService) {
-    this.safe1();
-  }
+  /*constructor(private teamservice: TeamservService) {
+    /*this.safe1();
+  }*/
 
   addTeam() {
     /*if (this.idEquipo && this.nombre_equipo && this.descripcion) {
