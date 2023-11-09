@@ -4,7 +4,10 @@ import { equipo } from '../../models/equipo';
 import { TeamservService } from '../teamserv.service';
 import { estado } from 'src/app/models/estado';
 import { EstadoserviceService } from 'src/app/Servicios/Estados/estadoservice.service';
-
+import { rol } from 'src/app/models/rol';
+import { RolserviceService } from 'src/app/Servicios/Roles/rolservice.service';
+import { jornada } from 'src/app/models/jordanas';
+import { JornadaserviceService } from 'src/app/Servicios/Jornadas/jornadaservice.service';
 @Component({
   selector: 'app-teams',
   templateUrl: './teams.component.html',
@@ -13,13 +16,18 @@ import { EstadoserviceService } from 'src/app/Servicios/Estados/estadoservice.se
 export class TeamsComponent implements OnInit {
   verequipo: equipo[] = [];
   verestado: estado[] = [];
+  verroles: rol[]=[];
+  verjornada:jornada[]=[];
   constructor(
     private router: Router,
     private serviceteam: TeamservService,
-    private serviceestado: EstadoserviceService
+    private serviceestado: EstadoserviceService,
+    private rolService: RolserviceService,
+    private jornadaService : JornadaserviceService
   ) {
     this.verequipo = serviceteam.getTeam();
     this.verestado = serviceestado.getEstado();
+
   }
 
   ngOnInit(): void {
@@ -29,6 +37,12 @@ export class TeamsComponent implements OnInit {
 
     this.serviceestado.getData().subscribe((Response: estado[]) => {
       this.verestado = Response;
+    })
+    this.rolService.getData().subscribe((Response: rol[]) => {
+      this.verroles= Response;
+    })
+    this.jornadaService.getData().subscribe((Response: jornada[]) => {
+      this.verjornada= Response;
     })
 
     /* fetch('../../assets/equipos.json')
@@ -52,6 +66,9 @@ export class TeamsComponent implements OnInit {
   estados: estado[] = [];
   id_estado: string = '';
   nombre_estado: string='';
+  id_rol:string='';
+  id_jornada='';
+
 
   private safe() {
     this.idEquipo = '';
