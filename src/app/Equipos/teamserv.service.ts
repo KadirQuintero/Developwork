@@ -22,7 +22,7 @@ export class TeamservService {
     return this.Teams;
   }
 
-  private URL: string = 'http://localhost:8080/Equipos/';
+  private URL: string = 'http://191.88.249.172:3000/Equipos/';
   constructor(private http: HttpClient) {}
   getData(): Observable<any>{
     const headers = new HttpHeaders({

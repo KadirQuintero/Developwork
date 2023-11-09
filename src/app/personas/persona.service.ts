@@ -30,7 +30,7 @@ export class PersonaService {
     return this.personaMod;
   }
 
-  private URL: string = 'http://localhost:8080/Usuarios/';
+  private URL: string = 'http://191.88.249.172:3000/Usuarios/';
   constructor(private http: HttpClient) {}
 
   getData(): Observable<any> {

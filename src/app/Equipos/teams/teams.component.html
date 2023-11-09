@@ -12,12 +12,12 @@
 
     <fieldset class="form-input">
       <label for="nombre">Nombre </label>
-      <input [(ngModel)]="nombre_equipo" id="nombre" />
+      <input [(ngModel)]="nombre_equipo" [ngModelOptions]="{standalone: true}" id="nombre" />
     </fieldset>
 
     <fieldset class="form-input">
       <label for="descripcion">Descripción </label>
-      <input [(ngModel)]="descripcion" id="descripcion" />
+      <input [(ngModel)]="descripcion" [ngModelOptions]="{standalone: true}" id="descripcion" />
     </fieldset>
 
     <fieldset class="form-input">
@@ -51,12 +51,12 @@
           <td>{{ equipo.nombre_equipo }}</td>
           <td>{{ equipo.descripcion }}</td>
         </tr>
-        <tr *ngFor="let Team of teams; let i = index">
+        <!--<tr *ngFor="let Team of teams; let i = index">
           <td>{{ Team.id_equipo }}</td>
           <td>{{ Team.nombre_equipo }}</td>
           <td>{{ Team.descripcion }}</td>
           <button class="btn-eliminar" (click)="removeTeam(i)"></button>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
   </div>
