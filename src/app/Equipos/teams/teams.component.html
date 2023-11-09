@@ -5,11 +5,6 @@
   </header>
   -->
   <form class="form">
-    <!-- <fieldset class="form-input">
-      <label for="idEquipo">ID Equipo </label>
-      <input [(ngModel)]="idEquipo" id="idEquipo" />
-    </fieldset> -->
-
     <fieldset class="form-input">
       <label for="nombre">Nombre </label>
       <input
@@ -36,7 +31,7 @@
         </option>
       </select>
     </fieldset>
-    <!--Git no esta detectando mis cambios en este documentos-->
+
     <fieldset class="form-input">
       <label for=""> Jornada </label>
       <select name="id_jornada" id="id_jornada" [(ngModel)]="id_jornada">
@@ -69,7 +64,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let equipo of verequipo">
+        <tr
+          *ngFor="let equipo of verequipo"
+          (click)="this.equipoSelect = equipo"
+          [ngClass]="{ seleccionado: equipoSelect == equipo }"
+        >
           <td>{{ equipo.id_equipo }}</td>
           <td>{{ equipo.nombre_equipo }}</td>
           <td>{{ equipo.descripcion }}</td>
@@ -77,18 +76,18 @@
           <td>{{ equipo.estado.nombre_estado }}</td>
           <td>{{ equipo.rol.nombre_rol }}</td>
         </tr>
-        <!--<tr *ngFor="let Team of teams; let i = index">
-          <td>{{ Team.id_equipo }}</td>
-          <td>{{ Team.nombre_equipo }}</td>
-          <td>{{ Team.descripcion }}</td>
-          <button class="btn-eliminar" (click)="removeTeam(i)"></button>
-        </tr> -->
       </tbody>
     </table>
   </div>
 
   <div id="container-crud">
     <button class="btn-crud crud_crear" (click)="addTeam()">Agregar</button>
-    <button class="btn-crud crud_modificar">Modificar</button>
+    <button
+      class="btn-crud crud_modificar"
+      [disabled]="equipoSelect.nombre_equipo == '' ? true : false"
+      (click)="modEquipo()"
+    >
+      Modificar
+    </button>
   </div>
 </div>

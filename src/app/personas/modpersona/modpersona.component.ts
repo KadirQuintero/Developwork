@@ -6,14 +6,14 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-modpersona',
   templateUrl: './modpersona.component.html',
-  styleUrls: ['./modpersona.component.css']
+  styleUrls: ['./modpersona.component.css'],
 })
 export class ModpersonaComponent {
-  persona:persona=new persona();
-  constructor(private router:Router,private servicePersona:PersonaService){
-    this.persona=servicePersona.getPersona();
+  persona: persona = new persona();
+  constructor(private router: Router, private servicePersona: PersonaService) {
+    this.persona = servicePersona.getPersona();
   }
-  modificar(){
+  modificar() {
     this.servicePersona.setPersona(this.persona);
     this.router.navigate(['/user/personas']);
   }

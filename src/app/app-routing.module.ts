@@ -12,6 +12,7 @@ import { registerComponent } from './RegUsuario/register.component';
 import { CambContraComponent } from './camb-contra/camb-contra.component';
 import { ModpersonaComponent } from './personas/modpersona/modpersona.component';
 import { InformationComponent } from './Informacion/information.component';
+import { ModequipoComponent } from './Equipos/modequipo/modequipo.component';
 
 const routes: Routes = [
   {
@@ -48,6 +49,7 @@ const routes: Routes = [
             path: 'modPersona',
             component: ModpersonaComponent,
           },
+          { path: 'modEquipo', component: ModequipoComponent },
         ],
       },
     ],

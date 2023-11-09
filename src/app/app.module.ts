@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MPersonasComponent } from './personas/m-personas/m-personas.component';
 import { CambContraComponent } from './camb-contra/camb-contra.component';
 import { ModpersonaComponent } from './personas/modpersona/modpersona.component';
+import { ModequipoComponent } from './Equipos/modequipo/modequipo.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ModpersonaComponent } from './personas/modpersona/modpersona.component'
     CambContraComponent,
 
     ModpersonaComponent,
+      ModequipoComponent,
   ],
   imports: [
     BrowserModule,

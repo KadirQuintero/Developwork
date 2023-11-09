@@ -8,18 +8,26 @@ import { estado } from '../models/estado';
   providedIn: 'root',
 })
 export class TeamservService {
-  private Teams: equipo[] = [];
+  private static ltsEquipos: equipo[] = [];
+  private equipoMod: equipo = new equipo();
 
-  getTeam(/*team: equipo*/) {
-    return this.Teams;
+  getEquipos(): equipo[] {
+    this.getData().subscribe(
+      (Response) => {
+        console.log(Response);
+      },
+      (error) => {
+        console.error('Error en la solicitud:', error);
+      }
+    );
+    return TeamservService.ltsEquipos;
   }
 
-  addTeam(team: equipo) {
-    this.Teams.push(team);
+  setEquipo(_equipo: equipo){
+    return this.equipoMod = _equipo;
   }
-
-  removeTeam(index: number) {
-    this.Teams.splice(index, 1);
+  getEquipo(): equipo{
+    return this.equipoMod;
   }
 
   private URL: string = 'http://191.88.249.172:3000/Equipos/';
@@ -29,5 +37,13 @@ export class TeamservService {
       'Content-Type': 'application/json',
     });
     return this.http.get(`${this.URL}`,{headers});
+  }
+
+  addTeam(team: equipo) {
+    /*this.ltsEquipos.push(team);*/
+  }
+
+  removeTeam(index: number) {
+    /*this.ltsEquipos.splice(index, 1);*/
   }
 }

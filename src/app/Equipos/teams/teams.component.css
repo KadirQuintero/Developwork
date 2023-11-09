@@ -75,6 +75,11 @@ td {
   border-bottom: 1px solid black;
 }
 
+.seleccionado{
+  border: 4px solid green;
+  background-color: green;
+}
+
 .btn-eliminar {
   position: relative;
   left: 0.625em;

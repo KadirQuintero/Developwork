@@ -20,8 +20,12 @@
           <label> Correo </label>
         </fieldset>
         <fieldset class="field-input">
-          <input type="email" nombre="correo" [(ngModel)]="persona.correo" />
-          <input type="text" name="nombre" [(ngModel)]="persona.nombre" />
+          <input type="text"
+          name="nombre"
+          [(ngModel)]="persona.nombre" />
+          <input type="email"
+          name="correo"
+          [(ngModel)]="persona.correo" />
         </fieldset>
       </div>
       <button (click)="modificar()">Modificar</button>

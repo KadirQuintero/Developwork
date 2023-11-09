@@ -14,48 +14,40 @@ import { JornadaserviceService } from 'src/app/Servicios/Jornadas/jornadaservice
   styleUrls: ['./teams.component.css'],
 })
 export class TeamsComponent implements OnInit {
+  equipoSelect: equipo = new equipo();
   verequipo: equipo[] = [];
   verestado: estado[] = [];
-  verroles: rol[]=[];
-  verjornada:jornada[]=[];
+  verroles: rol[] = [];
+  verjornada: jornada[] = [];
   constructor(
     private router: Router,
     private serviceteam: TeamservService,
     private serviceestado: EstadoserviceService,
     private rolService: RolserviceService,
-    private jornadaService : JornadaserviceService
+    private jornadaService: JornadaserviceService
   ) {
-    this.verequipo = serviceteam.getTeam();
+    this.verequipo = serviceteam.getEquipos();
     this.verestado = serviceestado.getEstado();
-
   }
 
   ngOnInit(): void {
     this.serviceteam.getData().subscribe((Response: equipo[]) => {
       this.verequipo = Response;
     });
-
     this.serviceestado.getData().subscribe((Response: estado[]) => {
       this.verestado = Response;
-    })
+    });
     this.rolService.getData().subscribe((Response: rol[]) => {
-      this.verroles= Response;
-    })
+      this.verroles = Response;
+    });
     this.jornadaService.getData().subscribe((Response: jornada[]) => {
-      this.verjornada= Response;
-    })
+      this.verjornada = Response;
+    });
+  }
 
-    /* fetch('../../assets/equipos.json')
-      .then((Response) => Response.json())
-      .then((data) => {
-        data.forEach((Element: equipo) => {
-          this.verequipo.push(Element);
-        });
-        this.verequipo.forEach((Element: equipo) => {
-          console.log(Element);
-        });
-      });
-    */
+  modEquipo() {
+    this.serviceteam.setEquipo(this.equipoSelect);
+    this.router.navigate(['user/modEquipo']);
   }
 
   teams: equipo[] = [];
@@ -65,10 +57,9 @@ export class TeamsComponent implements OnInit {
 
   estados: estado[] = [];
   id_estado: string = '';
-  nombre_estado: string='';
-  id_rol:string='';
-  id_jornada='';
-
+  nombre_estado: string = '';
+  id_rol: string = '';
+  id_jornada = '';
 
   private safe() {
     this.idEquipo = '';
