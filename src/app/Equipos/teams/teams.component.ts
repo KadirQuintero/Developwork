@@ -4,6 +4,8 @@ import { equipo } from '../../models/equipo';
 import { TeamservService } from '../teamserv.service';
 import { estado } from 'src/app/models/estado';
 import { EstadoserviceService } from 'src/app/Servicios/Estados/estadoservice.service';
+import { jornada } from 'src/app/models/jordanas';
+import { JornadaserviceService } from 'src/app/Servicios/Jornadas/jornadaservice.service';
 
 @Component({
   selector: 'app-teams',
@@ -13,6 +15,7 @@ import { EstadoserviceService } from 'src/app/Servicios/Estados/estadoservice.se
 export class TeamsComponent implements OnInit {
   verequipo: equipo[] = [];
   verestado: estado[] = [];
+  verjornada: jornada[] = [];
   constructor(
     private router: Router,
     private serviceteam: TeamservService,
