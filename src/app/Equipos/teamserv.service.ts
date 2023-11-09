@@ -2,13 +2,17 @@ import { Injectable } from '@angular/core';
 import { equipo } from '../models/equipo';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { estado } from '../models/estado';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TeamservService {
-  private Teams: equipo[] =
-    [];
+  private Teams: equipo[] = [];
+
+  getTeam(/*team: equipo*/) {
+    return this.Teams;
+  }
 
   addTeam(team: equipo) {
     this.Teams.push(team);
@@ -16,10 +20,6 @@ export class TeamservService {
 
   removeTeam(index: number) {
     this.Teams.splice(index, 1);
-  }
-
-  getTeam(/*team: equipo*/) {
-    return this.Teams;
   }
 
   private URL: string = 'http://191.88.249.172:3000/Equipos/';
