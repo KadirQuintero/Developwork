@@ -13,7 +13,8 @@ export class PersonaService {
   getPersonas(): persona[] {
     this.getData().subscribe(
       (response) => {
-        console.log(response);
+        PersonaService.lstPersonas=response;
+        return PersonaService.lstPersonas;
       },
       (error) => {
         console.error('Error en la solicitud:', error);
@@ -38,5 +39,9 @@ export class PersonaService {
       'Content-Type': 'application/json',
     });
     return this.http.get(`${this.URL}`, { headers });
+  }
+
+  postData(data: persona): Observable<any> {
+    return this.http.post(this.URL, data);
   }
 }

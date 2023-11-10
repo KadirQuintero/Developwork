@@ -1,51 +1,39 @@
-#body-form {
-  /*Display: grid;
-  border: none;
-  height: 100vh;
-  z-index: 2;
-  width: 100%;
-  align-items: center;*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 95vh;
-}
-
 header {
-  position: relative;
   top: 2.938em;
   text-align: center;
 }
 
-#formulario {
-  /*display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(9, 1fr);
-  gap: 10px;*/
-  text-align: center;
-  font-size: 1em;
-  padding: 0.75em 1.875em 1.875em 1.875em;
-  margin: 0 auto;
-  height: 98%;
-  width: 90%;
-  border: none;
-  border-radius: 0.625em;
-  background-color: rgb(251, 252, 241);
+#container-form {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
 }
 
-.mariana{
-  display: flex;
+#formulario {
+  text-align: center;
+  font-size: 1em;
+  margin: 0 auto;
+  border: none;
+  height: 100%;
+  width: 70%;
+  display: grid;
+  grid-template-columns:  1fr 1fr;
+  border-radius: 0px 0px 20px 20px;
+  background-color: rgb(251, 252, 241);
 }
 
 h1 {
   font-size: 4em;
+  margin: 0 auto;
+  background-color: rgb(251, 252, 241);
+  width: 70%;
+  z-index: 3;
+  text-align: center;
+  border-radius: 20px 20px 0px 0px;
 }
 
 .form-input {
   font-size: 1.25em;
-  width: 25em;
-  outline: none;
   border-bottom: 1px solid #000;
   border-radius: 0.438em;
   padding: 2px;
@@ -69,29 +57,21 @@ h1 {
 
 .form-btn-registrar {
   color: #ffffff;
-  font-size: 1.5em;
-  width: 65%;
   border: none;
-  /*margin: 0 auto;
-  grid-column: 2 span;
-  margin-bottom: 2em;*/
   border-radius: 0.938em;
   background-color: #1e512c;
-  margin: 5px 0px 5px 0px;
-  padding: 5px;
+  grid-column: span 3;
+  width: 70%;
+  height: 70%;
+  margin: 0 auto;
 }
 
-fieldset{
+fieldset {
   margin-bottom: 1.125em;
 }
 
-legend,label {
-  font-size: 1.875em;
-  margin-bottom: 0.15em;
-}
-
 img {
-  height: 9.375em;
+  height: 7em;
 }
 
 select {
@@ -99,4 +79,22 @@ select {
   border-radius: 1.25em;
   padding: 8px;
   width: 12.5em;
+}
+
+input {
+  background-size: 100%;
+}
+
+._selects fieldset {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+._selects fieldset label {
+  font-size: 1.5em;
+  font-weight: bolder;
+
 }

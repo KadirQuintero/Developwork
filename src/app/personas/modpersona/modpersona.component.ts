@@ -1,8 +1,13 @@
 import { Component } from '@angular/core';
 import { persona } from 'src/app/models/persona';
 import { PersonaService } from '../persona.service';
+import { estado } from 'src/app/models/estado';
+import { EstadoserviceService } from 'src/app/Servicios/Estados/estadoservice.service';
+import { rol } from 'src/app/models/rol';
+import { RolserviceService } from 'src/app/Servicios/Roles/rolservice.service';
 import { Router } from '@angular/router';
-
+import { TeamservService } from 'src/app/Equipos/teamserv.service';
+import { equipo } from 'src/app/models/equipo';
 @Component({
   selector: 'app-modpersona',
   templateUrl: './modpersona.component.html',
@@ -10,11 +15,35 @@ import { Router } from '@angular/router';
 })
 export class ModpersonaComponent {
   persona: persona = new persona();
-  constructor(private router: Router, private servicePersona: PersonaService) {
-    this.persona = servicePersona.getPersona();
-  }
+  verequipo: equipo[] = [];
+  verestado: estado[] = [];
+  verroles: rol[] = [];
+  constructor(
+    private servicePersona: PersonaService,
+    private router: Router,
+    private serviceteam: TeamservService,
+    private serviceestado: EstadoserviceService,
+    private rolService: RolserviceService
+  ) {}
   modificar() {
     this.servicePersona.setPersona(this.persona);
     this.router.navigate(['/user/personas']);
+  }
+
+  ngOnInit(): void {
+    if (this.servicePersona.getPersona().id_usuario == '') {
+      this.router.navigate(['/user/personas']);
+    }
+    this.persona = this.servicePersona.getPersona();
+    this.serviceteam.getData().subscribe((Response: equipo[]) => {
+      this.verequipo = Response;
+    });
+
+    this.serviceestado.getData().subscribe((Response: estado[]) => {
+      this.verestado = Response;
+    });
+    this.rolService.getData().subscribe((Response: rol[]) => {
+      this.verroles = Response;
+    });
   }
 }

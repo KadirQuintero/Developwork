@@ -11,7 +11,6 @@ export class MPersonasComponent implements OnInit {
   lstpersonas: persona[] = [];
   personaSelect: persona = new persona();
   constructor(private router: Router, private servicepersona: PersonaService) {
-    this.lstpersonas = servicepersona.getPersonas();
   }
 
   ngOnInit(): void {
@@ -19,12 +18,12 @@ export class MPersonasComponent implements OnInit {
       this.lstpersonas = Response;
     });
   }
-
   register(): void {
     console.log('checkout ');
     this.router.navigate(['user/register']);
   }
   modPersona() {
+    console.log(this.personaSelect);
     this.servicepersona.setPersona(this.personaSelect);
     this.router.navigate(['user/modPersona']);
   }
