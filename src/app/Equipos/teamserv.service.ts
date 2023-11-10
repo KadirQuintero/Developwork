@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { equipo } from '../models/equipo';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { estado } from '../models/estado';
+import { of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -23,27 +24,41 @@ export class TeamservService {
     return TeamservService.ltsEquipos;
   }
 
-  setEquipo(_equipo: equipo){
-    return this.equipoMod = _equipo;
+  setEquipo(_equipo: equipo) {
+    return (this.equipoMod = _equipo);
   }
-  getEquipo(): equipo{
+  getEquipo(): equipo {
     return this.equipoMod;
   }
 
   private URL: string = 'http://191.88.249.172:3000/Equipos/';
   constructor(private http: HttpClient) {}
-  getData(): Observable<any>{
+  getData(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
-    return this.http.get(`${this.URL}`,{headers});
+    return this.http.get(`${this.URL}`, { headers });
   }
 
-  addTeam(team: equipo) {
-    /*this.ltsEquipos.push(team);*/
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+
+      return of(result as T);
+    };
+  }
+
+  /** POST: add a new hero to the database */
+  addEquipo(equipo: equipo): Observable<any> {
+    console.log('Agregando equipo:', equipo);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    return this.http
+      .post<equipo>(`${this.URL}`, equipo, { headers })
+      .pipe(catchError(this.handleError('addEquipo', equipo)));
   }
 
   removeTeam(index: number) {
-    /*this.ltsEquipos.splice(index, 1);*/
   }
 }

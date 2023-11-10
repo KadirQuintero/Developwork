@@ -50,49 +50,33 @@ export class TeamsComponent implements OnInit {
     this.router.navigate(['user/modEquipo']);
   }
 
-  teams: equipo[] = [];
-  idEquipo: string = '';
+  id_Equipo: string = '';
   nombre_equipo: string = '';
   descripcion: string = '';
+  nombre_rol: rol = new rol();
+  nombre_estado: estado = new estado();
+  nombre_jornada: jornada = new jornada();
 
-  estados: estado[] = [];
-  id_estado: string = '';
-  nombre_estado: string = '';
-  id_rol: string = '';
-  id_jornada = '';
-
-  private safe() {
-    this.idEquipo = '';
-    this.nombre_equipo = '';
-    this.descripcion = '';
-  }
-
-  private safe1() {
-    /*this.teams = this.teamservice.getTeam({
-      id_equipo: this.idEquipo,
+  AgregarEquipo() {
+    const nuevoEquipo = {
+      id_equipo: this.id_Equipo,
       nombre_equipo: this.nombre_equipo,
-      descripcion: this.descripcion
-    })*/
+      descripcion: this.descripcion,
+      rol: this.nombre_rol,
+      estado: this.nombre_estado,
+      jornada: this.nombre_jornada,
+    };
+
+    this.serviceteam.addEquipo(nuevoEquipo).subscribe(
+      (equipo) => {
+        console.log('Equipo agregado con éxito:', equipo);
+        this.verequipo.push(equipo);
+      },
+      (error) => {
+        console.error('Error al agregar equipo:', error);
+      }
+    );
   }
 
-  /*constructor(private teamservice: TeamservService) {
-    /*this.safe1();
-  }*/
-
-  addTeam() {
-    /*if (this.idEquipo && this.nombre_equipo && this.descripcion) {
-      this.teamservice.addTeam({
-        id_equipo: this.idEquipo,
-        nombre_equipo: this.nombre_equipo,
-        descripcion: this.descripcion,
-      });
-      this.safe();
-      this.safe1();
-    }*/
-  }
-
-  removeTeam(index: number) {
-    /*this.teamservice.removeTeam(index);
-    this.safe1();*/
-  }
+  removeTeam(index: number) {}
 }
