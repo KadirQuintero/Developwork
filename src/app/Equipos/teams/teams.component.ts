@@ -69,7 +69,7 @@ export class TeamsComponent implements OnInit {
 
     this.serviceteam.addEquipo(nuevoEquipo).subscribe(
       (equipo) => {
-        console.log('Equipo agregado con éxito:', nuevoEquipo);
+        console.log('Equipo agregado con éxito:', equipo);
         this.verequipo.push(nuevoEquipo);
       },
       (error) => {
