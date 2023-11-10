@@ -59,6 +59,5 @@ export class TeamservService {
       .pipe(catchError(this.handleError('addEquipo', equipo)));
   }
 
-  removeTeam(index: number) {
-  }
+  removeTeam(index: number) {}
 }

@@ -53,24 +53,24 @@ export class TeamsComponent implements OnInit {
   id_Equipo: string = '';
   nombre_equipo: string = '';
   descripcion: string = '';
-  nombre_rol: rol = new rol();
-  nombre_estado: estado = new estado();
-  nombre_jornada: jornada = new jornada();
+  id_rol: rol = new rol();
+  id_estado: estado = new estado();
+  id_jornada: jornada = new jornada();
 
   AgregarEquipo() {
     const nuevoEquipo = {
       id_equipo: this.id_Equipo,
       nombre_equipo: this.nombre_equipo,
       descripcion: this.descripcion,
-      rol: this.nombre_rol,
-      estado: this.nombre_estado,
-      jornada: this.nombre_jornada,
+      rol: this.id_rol,
+      estado: this.id_estado,
+      jornada: this.id_jornada,
     };
 
     this.serviceteam.addEquipo(nuevoEquipo).subscribe(
       (equipo) => {
-        console.log('Equipo agregado con éxito:', equipo);
-        this.verequipo.push(equipo);
+        console.log('Equipo agregado con éxito:', nuevoEquipo);
+        this.verequipo.push(nuevoEquipo);
       },
       (error) => {
         console.error('Error al agregar equipo:', error);
