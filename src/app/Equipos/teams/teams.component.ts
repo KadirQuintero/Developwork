@@ -19,6 +19,7 @@ export class TeamsComponent implements OnInit {
   verestado: estado[] = [];
   verroles: rol[] = [];
   verjornada: jornada[] = [];
+   nuevoEquipo:equipo =new equipo();
   constructor(
     private router: Router,
     private serviceteam: TeamservService,
@@ -50,27 +51,14 @@ export class TeamsComponent implements OnInit {
     this.router.navigate(['user/modEquipo']);
   }
 
-  id_Equipo: string = '';
-  nombre_equipo: string = '';
-  descripcion: string = '';
-  id_rol: rol = new rol();
-  id_estado: estado = new estado();
-  id_jornada: jornada = new jornada();
 
   AgregarEquipo() {
-    const nuevoEquipo = {
-      id_equipo: this.id_Equipo,
-      nombre_equipo: this.nombre_equipo,
-      descripcion: this.descripcion,
-      rol: this.id_rol,
-      estado: this.id_estado,
-      jornada: this.id_jornada,
-    };
+    
 
-    this.serviceteam.addEquipo(nuevoEquipo).subscribe(
+    this.serviceteam.addEquipo(this.nuevoEquipo).subscribe(
       (equipo) => {
         console.log('Equipo agregado con éxito:', equipo);
-        this.verequipo.push(nuevoEquipo);
+        this.verequipo.push(this.nuevoEquipo);
       },
       (error) => {
         console.error('Error al agregar equipo:', error);

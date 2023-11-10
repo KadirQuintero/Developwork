@@ -8,7 +8,7 @@
     <fieldset class="form-input">
       <label for="nombre">Nombre </label>
       <input
-        [(ngModel)]="nombre_equipo"
+        [(ngModel)]="nuevoEquipo.nombre_equipo"
         [ngModelOptions]="{ standalone: true }"
         id="nombre"
       />
@@ -17,7 +17,7 @@
     <fieldset class="form-input">
       <label for="descripcion">Descripción </label>
       <input
-        [(ngModel)]="descripcion"
+        [(ngModel)]="nuevoEquipo.descripcion"
         [ngModelOptions]="{ standalone: true }"
         id="descripcion"
       />
@@ -26,9 +26,9 @@
     <fieldset class="form-input">
       <label for=""> Estado </label>
 
-      <select name="id_estado" id="id_estado" [(ngModel)]="id_estado">
+      <select name="id_estado" id="id_estado" [(ngModel)]="nuevoEquipo.estado.id_estado">
 
-        <option *ngFor="let estado of verestado" [value]="estado.nombre_estado" [ngValue]="estado" selected="estado === id_estado">
+        <option *ngFor="let estado of verestado" [value]="estado.id_estado" selected="estado === id_estado">
           {{ estado.nombre_estado }}
         </option>
 
@@ -37,9 +37,9 @@
     </fieldset>
     <fieldset class="form-input">
       <label for=""> Jornada </label>
-      <select name="id_jornada" id="id_jornada" [(ngModel)]="id_jornada">
+      <select name="id_jornada" id="id_jornada" [(ngModel)]="nuevoEquipo.jornada.id_jornada">
 
-        <option *ngFor="let jornada of verjornada" [value]="jornada.nombre_jornada" [ngValue]="jornada" selected="jornada === id_jornada">
+        <option *ngFor="let jornada of verjornada" [value]="jornada.id_jornada"  selected="jornada === id_jornada">
           {{ jornada.nombre_jornada }}
         </option>
 
@@ -48,9 +48,9 @@
 
     <fieldset class="form-input">
       <label for=""> Rol </label>
-      <select name="id_rol" id="id_rol" [(ngModel)]="id_rol">
+      <select name="id_rol" id="id_rol" [(ngModel)]="nuevoEquipo.rol.id_rol">
 
-        <option *ngFor="let rol of verroles" [value]="rol.nombre_rol" [ngValue]="rol" selected="rol === id_rol">
+        <option *ngFor="let rol of verroles" [value]="rol.id_rol"  selected="rol === id_rol">
           {{ rol.nombre_rol }}
         </option>
 

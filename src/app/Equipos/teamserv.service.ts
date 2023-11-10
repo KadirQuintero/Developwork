@@ -50,13 +50,7 @@ export class TeamservService {
 
   /** POST: add a new hero to the database */
   addEquipo(equipo: equipo): Observable<any> {
-    console.log('Agregando equipo:', equipo);
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-    });
-    return this.http
-      .post<equipo>(`${this.URL}`, equipo, { headers })
-      .pipe(catchError(this.handleError('addEquipo', equipo)));
+       return this.http.post(this.URL, equipo)
   }
 
   removeTeam(index: number) {}
