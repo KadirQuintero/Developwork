@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { LocalStorageService } from '../Servicios/loalStorage/local-storage.service';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,7 @@ import { catchError } from 'rxjs/operators';
 export class TeamservService {
   private static ltsEquipos: equipo[] = [];
   private equipoMod: equipo = new equipo();
+  private token: string = '';
 
   getEquipos(): equipo[] {
     this.getData().subscribe(
@@ -32,10 +34,17 @@ export class TeamservService {
   }
 
   private URL: string = 'http://191.88.249.172:3000/Equipos/';
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private serviceLocalStorage: LocalStorageService
+  ) {
+    this.token = serviceLocalStorage.getItem('jwt');
+  }
+
   getData(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + this.token,
     });
     return this.http.get(`${this.URL}`, { headers });
   }
@@ -55,3 +64,5 @@ export class TeamservService {
 
   removeTeam(index: number) {}
 }
+
+//CAMBIO NO REFREJADO
