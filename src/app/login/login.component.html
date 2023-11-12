@@ -7,10 +7,10 @@
       <div class="container" id="div-login">
         <H1 class="titulo"> Iniciar Sesión </H1>
         <form id="formulario">
-          <label>Usuario:</label>
-          <input class="user" type="text" required placeholder="Digitar Usuario" />
+          <label>Correo:</label>
+          <input class="user" type="email" [(ngModel)]="usuario.correo" name="correo" required placeholder="Digitar su correo" />
           <label>Contraseña:</label>
-          <input class="password" [type]="ChangeType ? 'password' : 'text'" required placeholder="Digitar Contraseña" />
+          <input class="password" [(ngModel)]="usuario.contrasena" name="Contraseña" [type]="ChangeType ? 'password' : 'text'" required placeholder="Digitar Contraseña" />
           <div>
             <input (click)="viewpass()" type="checkbox" />
             <label> Mostrar Contraseña</label>
