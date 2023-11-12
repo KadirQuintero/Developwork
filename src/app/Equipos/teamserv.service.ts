@@ -11,6 +11,7 @@ import { catchError } from 'rxjs/operators';
 export class TeamservService {
   private static ltsEquipos: equipo[] = [];
   private equipoMod: equipo = new equipo();
+  private token: string = '';
 
   getEquipos(): equipo[] {
     this.getData().subscribe(
@@ -32,10 +33,17 @@ export class TeamservService {
   }
 
   private URL: string = 'http://191.88.249.172:3000/Equipos/';
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private serviceLocalStorage: LocalStorageService
+  ) {
+    this.token = serviceLocalStorage.getItem('jwt');
+  }
+
   getData(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + this.token,
     });
     return this.http.get(`${this.URL}`, { headers });
   }

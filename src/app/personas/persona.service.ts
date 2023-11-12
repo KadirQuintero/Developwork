@@ -32,11 +32,17 @@ export class PersonaService {
   }
 
   private URL: string = 'http://localhost:3000/Usuarios/';
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private serviceLocalStorage: LocalStorageService
+  ) {
+    this.token = serviceLocalStorage.getItem('jwt');
+  }
 
   getData(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + this.token,
     });
     return this.http.get(`${this.URL}`, { headers });
   }

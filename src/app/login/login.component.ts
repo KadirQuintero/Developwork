@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { persona } from '../models/persona';
 import { AuthService } from '../auth.service';
 import { PersonaService } from '../personas/persona.service';
+import { LocalStorageService } from '../Servicios/loalStorage/local-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -11,13 +12,19 @@ import { PersonaService } from '../personas/persona.service';
 })
 export class LoginComponent {
   public usuario: persona = new persona();
-  constructor(private router: Router, private servicePersona: AuthService ,private PersonaService: PersonaService) {}
+  constructor(private router: Router, private serviceLocalStorage: LocalStorageService ,private PersonaService: PersonaService) {}
   IniciarSesion(): void {
-    this.servicePersona.isAutenticathed(this.usuario).subscribe((Response) => {
-      if (Response != null) {
-        this.PersonaService.setPersonaLog(Response);
+    this.PersonaService.login(this.usuario).subscribe( (response: string) => {
+      // response ahora es una cadena que puedes usar como desees
+      console.log('Token JWT:', response);
+      if(response !=null){
+        this.serviceLocalStorage.setItem('jwt',response);
         this.router.navigate(['/user']);
       }
+      // ...haz algo con el token, como almacenarlo en localStorage
+  },
+  error => {
+      // Manejar errores aquí
     });
   }
 

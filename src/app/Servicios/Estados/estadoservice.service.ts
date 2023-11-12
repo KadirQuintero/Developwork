@@ -8,6 +8,7 @@ import { estado } from 'src/app/models/estado';
 })
 export class EstadoserviceService {
   private Estados: estado[] =[];
+  private token: string = '';
 
   getEstado(){
     return this.Estados;
@@ -19,6 +20,7 @@ export class EstadoserviceService {
   getData(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + this.token,
     });
     return this.http.get(`${this.URL}`, { headers });
   }

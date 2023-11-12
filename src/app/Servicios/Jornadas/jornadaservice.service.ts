@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { jornada } from 'src/app/models/jordanas';
+import { LocalStorageService } from '../loalStorage/local-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,7 @@ export class JornadaserviceService {
   getData(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + this.token,
     });
     return this.http.get(`${this.URL}`, { headers });
   }

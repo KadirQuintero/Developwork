@@ -4,18 +4,19 @@ import { AuthService } from './auth.service';
 import { Observable } from 'rxjs';
 import { persona } from './models/persona';
 import { PersonaService } from './personas/persona.service';
+import { LocalStorageService } from './Servicios/loalStorage/local-storage.service';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private authService: AuthService, private router: Router, private personaService:PersonaService) {}
+  constructor(private serviceLocalStorage:LocalStorageService , private router: Router, private personaService:PersonaService) {}
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     
-    if (this.personaService.getPersonalog().id_usuario!='') {
+    if (this.serviceLocalStorage.getItem('jwt')!=null) {
       // Usuario autenticado, permite el acceso a la ruta
       return true;
     } else {
