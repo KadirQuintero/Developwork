@@ -13,7 +13,7 @@ import { CambContraComponent } from './camb-contra/camb-contra.component';
 import { ModpersonaComponent } from './personas/modpersona/modpersona.component';
 import { InformationComponent } from './Informacion/information.component';
 import { ModequipoComponent } from './Equipos/modequipo/modequipo.component';
-
+import { AuthGuard } from './auth.guard';
 const routes: Routes = [
   {
     path: '',
@@ -51,6 +51,7 @@ const routes: Routes = [
           },
           { path: 'modEquipo', component: ModequipoComponent },
         ],
+        canActivate: [AuthGuard]
       },
     ],
   },

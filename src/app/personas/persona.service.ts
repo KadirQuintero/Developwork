@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class PersonaService {
   private static lstPersonas: persona[] = [];
   private personaMod: persona = new persona();
-
+  private personaLog:persona = new persona();
   getPersonas(): persona[] {
     this.getData().subscribe(
       (response) => {
@@ -31,7 +31,7 @@ export class PersonaService {
     return this.personaMod;
   }
 
-  private URL: string = 'http://191.88.249.172:3000/Usuarios/';
+  private URL: string = 'http://localhost:3000/Usuarios/';
   constructor(private http: HttpClient) {}
 
   getData(): Observable<any> {
@@ -43,5 +43,14 @@ export class PersonaService {
 
   postData(data: persona): Observable<any> {
     return this.http.post(this.URL, data);
+  }
+  login(data:persona):Observable<any>{
+    return this.http.post(this.URL+'login',data)
+  }
+  setPersonaLog(persona:persona):void{
+    this.personaLog=persona;
+  }
+  getPersonalog():persona{
+    return this.personaLog;
   }
 }
