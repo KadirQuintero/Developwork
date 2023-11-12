@@ -5,17 +5,23 @@ import { jornada } from 'src/app/models/jordanas';
 import { LocalStorageService } from '../loalStorage/local-storage.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class JornadaserviceService {
-  private Jornadas: jornada[] =[];
+  private Jornadas: jornada[] = [];
+  private token: string = '';
 
-  getEstado(){
+  getEstado() {
     return this.Jornadas;
   }
 
   private URL: string = 'http://localhost:3000/Jornadas/';
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private serviceLocalStorage: LocalStorageService
+  ) {
+    this.token = serviceLocalStorage.getItem('jwt');
+  }
 
   getData(): Observable<any> {
     const headers = new HttpHeaders({

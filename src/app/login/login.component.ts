@@ -20,15 +20,14 @@ export class LoginComponent {
       if(response !=null){
         this.serviceLocalStorage.setItem('jwt',response);
         this.router.navigate(['/user']);
-      }
+            }
       // ...haz algo con el token, como almacenarlo en localStorage
   },
   error => {
       // Manejar errores aquí
-    });
+  });
   }
 
-  //Muestra la contraseña con el checkbox
   ChangeType: boolean = true;
   viewpass() {
     this.ChangeType = !this.ChangeType;
