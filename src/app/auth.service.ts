@@ -12,6 +12,6 @@ export class AuthService {
   constructor(private personaService: PersonaService) {}
 
   isAutenticathed(Usuario: persona): Observable<persona> {
-   return this.personaService.login(Usuario);
+    return this.personaService.login(Usuario);
   }
 }
