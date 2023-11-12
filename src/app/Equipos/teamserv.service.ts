@@ -50,7 +50,7 @@ export class TeamservService {
 
   /** POST: add a new hero to the database */
   addEquipo(equipo: equipo): Observable<any> {
-       return this.http.post(this.URL, equipo)
+    return this.http.post(this.URL, equipo);
   }
 
   removeTeam(index: number) {}
