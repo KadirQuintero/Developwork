@@ -44,6 +44,6 @@ export class ModequipoComponent {
 
   modificar() {
     this.serviceequipo.setEquipo(this.equipo);
-    this.router.navigate(['user/teams']);
+    this.router.navigate(['usuario/equipos']);
   }
 }

@@ -24,7 +24,7 @@ export class LoginComponent {
         console.log('Token JWT:', response);
         if (response != null) {
           this.serviceLocalStorage.setItem('jwt', response);
-          this.router.navigate(['/user']);
+          this.router.navigate(['/usuario']);
         }
         // ...haz algo con el token, como almacenarlo en localStorage
       },

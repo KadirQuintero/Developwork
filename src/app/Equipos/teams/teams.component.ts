@@ -49,7 +49,7 @@ export class TeamsComponent implements OnInit {
 
   modEquipo() {
     this.serviceteam.setEquipo(this.equipoSelect);
-    this.router.navigate(['user/modEquipo']);
+    this.router.navigate(['usuario/modEquipo']);
   }
 
   AgregarEquipo() {
