@@ -15,7 +15,7 @@ export class AuthGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    
+
     if (this.serviceLocalStorage.getItem('jwt')!=null) {
       // Usuario autenticado, permite el acceso a la ruta
       return true;

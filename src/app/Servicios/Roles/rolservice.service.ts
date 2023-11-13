@@ -8,7 +8,7 @@ import { LocalStorageService } from '../loalStorage/local-storage.service';
 export class RolserviceService {
   private token: string = '';
 
-  private URL: string = 'http://localhost:3000/Roles/';
+  private URL: string = 'http://191.88.249.172:3000/Roles/';
   constructor(
     private http: HttpClient,
     private serviceLocalStorage: LocalStorageService

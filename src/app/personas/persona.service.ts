@@ -34,7 +34,7 @@ export class PersonaService {
     return this.personaMod;
   }
 
-  private URL: string = 'http://localhost:3000/Usuarios/';
+  private URL: string = 'http://191.88.249.172:3000/Usuarios/';
   constructor(
     private http: HttpClient,
     private serviceLocalStorage: LocalStorageService

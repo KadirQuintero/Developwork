@@ -51,7 +51,7 @@ const routes: Routes = [
           },
           { path: 'modEquipo', component: ModequipoComponent },
         ],
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
       },
     ],
   },
