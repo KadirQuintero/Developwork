@@ -9,23 +9,23 @@ import { Router } from '@angular/router';
 export class NavComponent {
   constructor(private router: Router) {}
   RegisterUser(): void {
-    this.router.navigate(['usuario/personas']);
+    this.router.navigate(['user/personas']);
   }
 
   Teams(): void {
-    this.router.navigate(['usuario/equipos']);
+    this.router.navigate(['user/teams']);
   }
 
   Stats(): void {
-    this.router.navigate(['usuario/estadisticas']);
+    this.router.navigate(['user/stats']);
   }
 
   Notifications(): void {
-    this.router.navigate(['usuario/notificaciones']);
+    this.router.navigate(['user/notification']);
   }
 
   Information(): void {
-    this.router.navigate(['usuario/informacion']);
+    this.router.navigate(['user/information']);
   }
 
   LogOut(): void {

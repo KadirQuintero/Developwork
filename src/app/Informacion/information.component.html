@@ -7,20 +7,18 @@
       <h1>Informacion Personal</h1>
       <article class="container-grid">
         <section class="sec-info">
-          <p><strong>Nombre:</strong> {{ personalog.nombre }}</p>
-          <p>{{ personalog.nombre2 }}</p>
-          <p><strong>Apellido:</strong>{{ personalog.apellido }}</p>
-          <p>{{ personalog.apellido2 }}</p>
-          <p><strong>Correo:</strong> {{ personalog.correo }}</p>
+          <p><strong>Nombre:</strong> {{personalog.nombre}}</p>
+          <p>{{personalog.nombre2}}</p>
+          <p><strong>Apellido:</strong>{{personalog.apellido}}</p>
+          <p>{{personalog.apellido2}}</p>
+          <p><strong>Correo:</strong> {{personalog.correo}}</p>
         </section>
         <section class="sec-info">
-          <p><strong>Rol:</strong> {{ personalog.rol.nombre_rol }}</p>
-          <p><strong>Equipo:</strong> {{ personalog.equipo.nombre_equipo }}</p>
-          <p><strong>Estado:</strong> {{ personalog.estado.nombre_estado }}</p>
-          <p>
-            <strong>Horas trabajadas:</strong> {{ personalog.horas_trabajadas }}
-          </p>
-          <p><strong>Horas extras:</strong> {{ personalog.horas_extras }}</p>
+          <p> <strong>Rol:</strong> {{personalog.rol.nombre_rol}}</p>
+          <p><strong>Equipo:</strong> {{personalog.equipo.nombre_equipo}}</p>
+          <p><strong>Estado:</strong> {{personalog.estado.nombre_estado}}</p>
+          <p><strong>Horas trabajadas:</strong> {{personalog.horas_trabajadas}}</p>
+          <p><strong>Horas extras:</strong> {{personalog.horas_extras}}</p>
         </section>
       </article>
       <Button (click)="CambContra()" class="btn-cambcontra">

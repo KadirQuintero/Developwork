@@ -14,6 +14,6 @@ export class InformationComponent {
     this.personalog = this.personaService.getPersonalog();
   }
   CambContra(): void {
-    this.router.navigate(['usuario/cambContraseña']);
+    this.router.navigate(['user/cambcontraseña']);
   }
 }

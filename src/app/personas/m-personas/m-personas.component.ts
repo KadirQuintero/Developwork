@@ -20,11 +20,11 @@ export class MPersonasComponent implements OnInit {
   }
   register(): void {
     console.log('checkout ');
-    this.router.navigate(['usuario/registrar']);
+    this.router.navigate(['user/register']);
   }
   modPersona() {
     console.log(this.personaSelect);
     this.servicepersona.setPersona(this.personaSelect);
-    this.router.navigate(['usuario/modPersona']);
+    this.router.navigate(['user/modPersona']);
   }
 }

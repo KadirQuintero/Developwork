@@ -17,7 +17,7 @@ header {
   height: 100%;
   width: 70%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:  1fr 1fr;
   border-radius: 0px 0px 20px 20px;
   background-color: rgb(251, 252, 241);
 }
@@ -96,4 +96,5 @@ input {
 ._selects fieldset label {
   font-size: 1.5em;
   font-weight: bolder;
+
 }

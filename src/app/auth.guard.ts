@@ -1,10 +1,4 @@
-import {
-  CanActivate,
-  ActivatedRouteSnapshot,
-  RouterStateSnapshot,
-  UrlTree,
-  Router,
-} from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { AuthService } from './auth.service';
 import { Observable } from 'rxjs';
@@ -15,21 +9,14 @@ import { LocalStorageService } from './Servicios/loalStorage/local-storage.servi
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(
-    private serviceLocalStorage: LocalStorageService,
-    private router: Router,
-    private personaService: PersonaService
-  ) {}
+
+  constructor(private serviceLocalStorage:LocalStorageService , private router: Router, private personaService:PersonaService) {}
 
   canActivate(
     next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ):
-    | Observable<boolean | UrlTree>
-    | Promise<boolean | UrlTree>
-    | boolean
-    | UrlTree {
-    if (this.serviceLocalStorage.getItem('jwt') != null) {
+    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    
+    if (this.serviceLocalStorage.getItem('jwt')!=null) {
       // Usuario autenticado, permite el acceso a la ruta
       return true;
     } else {
@@ -38,4 +25,5 @@ export class AuthGuard implements CanActivate {
       return false;
     }
   }
+
 }

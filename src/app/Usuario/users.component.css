@@ -1,5 +1,7 @@
 ._container {
   position: relative;
+  /*background-image: url(src\assets\resources\ImagenFondo.jpeg);
+  background-size: 100%;*/
   margin: 0;
 }
 

@@ -140,7 +140,7 @@ input[type="checkbox"]:checked {
     display: flex;
   }
 }
-.body {
+.body{
   padding: 2em;
   display: flex;
   justify-content: center;
@@ -148,6 +148,6 @@ input[type="checkbox"]:checked {
   margin: 0;
   height: 100vh;
   background-size: 100%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   width: 100%;
 }

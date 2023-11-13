@@ -33,18 +33,18 @@ h1 {
   border-radius: 0px 0px 10px 10px;
 }
 
-.container-grid {
+.container-grid{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
-.sec-info {
+.sec-info{
   font-size: 22px;
   padding: 10px;
   text-align: start;
 }
 
-.btn-cambcontra {
+.btn-cambcontra{
   font-size: 22px;
   padding: 5px;
   margin-bottom: 5px;

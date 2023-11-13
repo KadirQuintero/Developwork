@@ -8,7 +8,7 @@ describe('CambContraComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CambContraComponent],
+      declarations: [CambContraComponent]
     });
     fixture = TestBed.createComponent(CambContraComponent);
     component = fixture.componentInstance;

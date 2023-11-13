@@ -15,7 +15,7 @@ export class JornadaserviceService {
     return this.Jornadas;
   }
 
-  private URL: string = 'http://localhost:3000/Jornadas/';
+  private URL: string = 'http://191.88.249.172:3000/Jornadas/';
   constructor(
     private http: HttpClient,
     private serviceLocalStorage: LocalStorageService

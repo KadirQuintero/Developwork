@@ -12,7 +12,7 @@ import { JornadaserviceService } from 'src/app/Servicios/Jornadas/jornadaservice
 @Component({
   selector: 'app-modequipo',
   templateUrl: './modequipo.component.html',
-  styleUrls: ['./modequipo.component.css'],
+  styleUrls: ['./modequipo.component.css']
 })
 export class ModequipoComponent {
   equipo: equipo = new equipo();
@@ -20,13 +20,12 @@ export class ModequipoComponent {
   verroles: rol[] = [];
   verjornada: jornada[] = [];
 
-  constructor(
-    private router: Router,
+  constructor(private router: Router,
     private serviceequipo: TeamservService,
     private serviceestado: EstadoserviceService,
     private rolService: RolserviceService,
     private jornadaService: JornadaserviceService
-  ) {
+    ){
     this.equipo = serviceequipo.getEquipo();
   }
 
@@ -42,8 +41,8 @@ export class ModequipoComponent {
     });
   }
 
-  modificar() {
+  modificar(){
     this.serviceequipo.setEquipo(this.equipo);
-    this.router.navigate(['usuario/equipos']);
+    this.router.navigate(['user/teams']);
   }
 }

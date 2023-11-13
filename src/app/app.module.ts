@@ -31,8 +31,9 @@ import { ModequipoComponent } from './Equipos/modequipo/modequipo.component';
     InformationComponent,
     MPersonasComponent,
     CambContraComponent,
+
     ModpersonaComponent,
-    ModequipoComponent,
+      ModequipoComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +42,7 @@ import { ModequipoComponent } from './Equipos/modequipo/modequipo.component';
     ReactiveFormsModule,
     ReactiveFormsModule,
   ],
-  providers: [TeamservService, importProvidersFrom(HttpClientModule)],
+  providers: [TeamservService,importProvidersFrom(HttpClientModule)],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

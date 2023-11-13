@@ -22,7 +22,7 @@ const routes: Routes = [
       { path: '', component: LoginComponent },
       { path: 'login', component: LoginComponent },
       {
-        path: 'usuario',
+        path: 'user',
         component: usersComponent,
         children: [
           {
@@ -30,28 +30,28 @@ const routes: Routes = [
             component: MPersonasComponent,
           },
           {
-            path: 'registrar',
+            path: 'register',
             component: registerComponent,
           },
           { path: 'nav', component: NavComponent },
           {
-            path: 'equipos',
+            path: 'teams',
             component: TeamsComponent,
           },
           {
-            path: 'informacion',
+            path: 'information',
             component: InformationComponent,
           },
-          { path: 'cambContraseña', component: CambContraComponent },
-          { path: 'estadisticas', component: StatsComponent },
-          { path: 'notificaciones', component: NotificationComponent },
+          { path: 'cambcontraseña', component: CambContraComponent },
+          { path: 'stats', component: StatsComponent },
+          { path: 'notification', component: NotificationComponent },
           {
             path: 'modPersona',
             component: ModpersonaComponent,
           },
           { path: 'modEquipo', component: ModequipoComponent },
         ],
-        canActivate: [AuthGuard],
+        canActivate: [AuthGuard]
       },
     ],
   },
