@@ -8,7 +8,7 @@ describe('NavComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [NavComponent]
+      declarations: [NavComponent],
     });
     fixture = TestBed.createComponent(NavComponent);
     component = fixture.componentInstance;

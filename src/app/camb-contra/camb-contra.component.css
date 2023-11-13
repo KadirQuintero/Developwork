@@ -7,12 +7,12 @@
   text-align: center;
 }
 
-#container-main{
-  background-color: rgb(251, 252, 241, .5);
+#container-main {
+  background-color: rgb(251, 252, 241, 0.5);
   border-radius: 10px;
 }
 
-header{
+header {
   position: relative;
   top: 42px;
   margin-top: -45px;
@@ -22,26 +22,26 @@ img {
   width: 40%;
 }
 
-form{
+form {
   padding: 14px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  grid-gap: .8em;
+  grid-gap: 0.8em;
   background-color: rgb(251, 252, 241);
   border-radius: 10px;
 }
 
-h1{
+h1 {
   font-size: 60px;
 }
 
-label{
+label {
   font-size: 28px;
   color: #000;
 }
 
-input{
+input {
   font-size: 20px;
   width: 65%;
   padding: 6px;
@@ -50,7 +50,7 @@ input{
   background-color: #fff;
 }
 
-button{
+button {
   margin: 10px 0px 5px 0px;
   font-size: 24px;
   padding: 5px;

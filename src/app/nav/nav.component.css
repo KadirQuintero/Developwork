@@ -27,7 +27,7 @@
 }
 
 .nav_button {
-  padding: .313;
+  padding: 0.313;
   border: none;
   border-radius: 0.625em;
   width: 100%;
@@ -37,7 +37,6 @@
   background-repeat: no-repeat;
   background-position: center center;
   /* Centra la imagen horizontal y verticalmente */
-
 }
 
 .Register {

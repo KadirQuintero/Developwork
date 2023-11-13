@@ -7,20 +7,32 @@
       <fieldset>
         <Label for="">Estado</Label>
         <select name="id_estado" id="id_estado">
-          <option [(ngModel)]="equipo.estado.nombre_estado" [value]="equipo.estado.nombre_estado">
-            {{equipo.estado.nombre_estado}}
+          <option
+            [(ngModel)]="equipo.estado.nombre_estado"
+            [value]="equipo.estado.nombre_estado"
+          >
+            {{ equipo.estado.nombre_estado }}
           </option>
-          <option *ngFor="let estado of verestado" [value]="equipo.estado.id_estado">
+          <option
+            *ngFor="let estado of verestado"
+            [value]="equipo.estado.id_estado"
+          >
             {{ estado.nombre_estado }}
           </option>
         </select>
 
         <label for="">Jornada</label>
         <select name="id_jornada" id="id_jornada">
-          <option [(ngModel)]="equipo.jornada.nombre_jornada" [value]="equipo.jornada.nombre_jornada">
-            {{equipo.jornada.nombre_jornada}}
+          <option
+            [(ngModel)]="equipo.jornada.nombre_jornada"
+            [value]="equipo.jornada.nombre_jornada"
+          >
+            {{ equipo.jornada.nombre_jornada }}
           </option>
-          <option *ngFor="let jornada of verjornada" [value]="equipo.jornada.id_jornada">
+          <option
+            *ngFor="let jornada of verjornada"
+            [value]="equipo.jornada.id_jornada"
+          >
             {{ jornada.nombre_jornada }}
           </option>
         </select>
@@ -28,9 +40,10 @@
         <label for="">Rol</label
         ><select name="id_jornada" id="id_jornada">
           <option
-          [(ngModel)]="equipo.rol.nombre_rol"
-          [value]="equipo.rol.nombre_rol">
-            {{equipo.rol.nombre_rol}}
+            [(ngModel)]="equipo.rol.nombre_rol"
+            [value]="equipo.rol.nombre_rol"
+          >
+            {{ equipo.rol.nombre_rol }}
           </option>
           <option *ngFor="let rol of verroles" [value]="equipo.rol.id_rol">
             {{ rol.nombre_rol }}
@@ -40,9 +53,11 @@
 
       <fieldset>
         <label for="">Nombre</label>
-        <input type="text"
-        name="nombre_equipo"
-        [(ngModel)]="equipo.nombre_equipo" />
+        <input
+          type="text"
+          name="nombre_equipo"
+          [(ngModel)]="equipo.nombre_equipo"
+        />
       </fieldset>
       <fieldset>
         <label for="">Descripcion</label>
