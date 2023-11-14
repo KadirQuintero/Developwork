@@ -1,62 +1,109 @@
-  <div id="container-form">
-    <header>
-      <img class="cab-img" src="../../assets/resources/logo.png" alt="logo" />
-    </header>
-    <h1>Registrar</h1>
-
-    <form id="formulario" (ngSubmit)="addPersona()" method="post">
-
-      <div class="_selects">
-        <fieldset>
-          <label for=""> equipo </label>
-          <select name="id_equipo" id="id_estado" [(ngModel)]="persona.equipo.id_equipo">
-            <option *ngFor="let equipo of  verequipo" [value]="equipo.id_equipo"> {{equipo.nombre_equipo}} </option>
-          </select>
-        </fieldset>
-        <fieldset>
-          <label for=""> Estado </label>
-          <select name="id_estado" id="id_estado" name="id_estado" [(ngModel)]="persona.estado.id_estado">
-            <option *ngFor="let estado of verestado" [value]="estado.id_estado"> {{estado.nombre_estado}} </option>
-          </select>
-        </fieldset>
-
-        <fieldset>
-          <label for=""> Rol </label>
-          <select name="id_rol" id="id_rol" name="id_rol" [(ngModel)]="persona.rol.id_rol">
-            <option *ngFor="let rol of verroles" [value]="rol.id_rol"> {{rol.nombre_rol}} </option>
-          </select>
-        </fieldset>
-      </div>
-
-      <fieldset>
-        <legend>Primer nombre</legend>
-        <input [(ngModel)]="persona.nombre" name="nombre" class="form-input input-text" type="text" required />
+<div id="container-form">
+  <header>
+    <img class="cab-img" src="../../assets/resources/logo.png" alt="logo" />
+  </header>
+  <h1>Registrar</h1>
+  <form id="formulario" (ngSubmit)="addPersona()" method="post">
+    <div class="_selects">
+      <fieldset class="field-label">
+        <label for=""> Equipo </label>
+        <label for=""> Estado </label>
+        <label for=""> Rol </label>
       </fieldset>
 
-      <fieldset>
-        <legend>Segundo nombre (opcional)</legend>
-        <input [(ngModel)]="persona.nombre2" name="nombre2" class="form-input input-text" type="text" />
+      <fieldset class="field-select">
+        <select
+          name="id_estado"
+          id="id_estado"
+          name="id_estado"
+          [(ngModel)]="persona.estado.id_estado"
+        >
+          <option *ngFor="let estado of verestado" [value]="estado.id_estado">
+            {{ estado.nombre_estado }}
+          </option>
+        </select>
+
+        <select
+          name="id_equipo"
+          id="id_equipo"
+          [(ngModel)]="persona.equipo.id_equipo"
+        >
+          <option *ngFor="let equipo of verequipo" [value]="equipo.id_equipo">
+            {{ equipo.nombre_equipo }}
+          </option>
+        </select>
+
+        <select
+          name="id_rol"
+          id="id_rol"
+          name="id_rol"
+          [(ngModel)]="persona.rol.id_rol"
+        >
+          <option *ngFor="let rol of verroles" [value]="rol.id_rol">
+            {{ rol.nombre_rol }}
+          </option>
+        </select>
+      </fieldset>
+    </div>
+
+    <div class="_inputs">
+      <fieldset class="field-label">
+        <label>Primer nombre</label>
+        <label>Segundo nombre</label>
+        <label>Primer apellido</label>
+        <label>Segundo apellido</label>
+        <label>Correo</label>
+        <label>Contraseña</label>
       </fieldset>
 
-      <fieldset>
-        <legend>Primer apellido</legend>
-        <input [(ngModel)]="persona.apellido" name="apellido" class="form-input input-text" type="text" required />
-      </fieldset>
+      <fieldset class="field-input">
+        <input
+          [(ngModel)]="persona.nombre"
+          name="nombre"
+          class="form-input input-text"
+          type="text"
+          required
+        />
 
-      <fieldset>
-        <legend>Segundo apellido (opcional)</legend>
-        <input [(ngModel)]="persona.apellido2" name="apellido2" class="form-input input-text" type="text" />
-      </fieldset>
+        <input
+          [(ngModel)]="persona.nombre2"
+          name="nombre2"
+          class="form-input input-text"
+          type="text"
+        />
 
-      <fieldset>
-        <legend>Correo</legend>
-        <input [(ngModel)]="persona.correo" name="correo" class="form-input input-email" type="email" required />
-      </fieldset>
+        <input
+          [(ngModel)]="persona.apellido"
+          name="apellido"
+          class="form-input input-text"
+          type="text"
+          required
+        />
 
-      <fieldset>
-        <legend>Contraseña</legend>
-        <input [(ngModel)]="persona.contrasena" name="password" class="form-input input-pass" type="password" requiered />
+        <input
+          [(ngModel)]="persona.apellido2"
+          name="apellido2"
+          class="form-input input-text"
+          type="text"
+        />
+
+        <input
+          [(ngModel)]="persona.correo"
+          name="correo"
+          class="form-input input-email"
+          type="email"
+          required
+        />
+
+        <input
+          [(ngModel)]="persona.contrasena"
+          name="password"
+          class="form-input input-pass"
+          type="password"
+          requiered
+        />
       </fieldset>
-      <input class="form-btn-registrar" type="submit" value="Registrar" />
-    </form>
-  </div>
+    </div>
+    <input class="form-btn-registrar" type="submit" value="Registrar" />
+  </form>
+</div>

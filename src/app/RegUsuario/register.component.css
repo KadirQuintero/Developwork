@@ -17,13 +17,13 @@ header {
   height: 100%;
   width: 70%;
   display: grid;
-  grid-template-columns:  1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   border-radius: 0px 0px 20px 20px;
   background-color: rgb(251, 252, 241);
 }
 
 h1 {
-  font-size: 4em;
+  font-size: 40;
   margin: 0 auto;
   background-color: rgb(251, 252, 241);
   width: 70%;
@@ -41,6 +41,7 @@ h1 {
   background-repeat: no-repeat;
   background-position: 98%;
   background-size: auto 1.563em;
+  width: 200px;
 }
 
 .input-text {
@@ -78,23 +79,42 @@ select {
   background-color: transparent;
   border-radius: 1.25em;
   padding: 8px;
-  width: 12.5em;
+  width: 150px;
 }
 
 input {
   background-size: 100%;
 }
 
-._selects fieldset {
+._selects, ._inputs {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   padding: 10px;
-  width: 100%;
 }
 
-._selects fieldset label {
-  font-size: 1.5em;
-  font-weight: bolder;
+._inputs{
+  grid-template-columns:1fr 1fr;
+}
 
+.field-label,
+.field-select,
+.field-input {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field-input{
+  gap: 29px;
+}
+
+.field-label{
+  text-align: end;
+  gap: 40px;
+}
+
+._selects fieldset label,
+._inputs fieldset label {
+  font-size: 18px;
 }
