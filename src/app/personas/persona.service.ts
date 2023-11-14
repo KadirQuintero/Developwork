@@ -68,7 +68,15 @@ export class PersonaService {
       );
   }
   setPersonaLog(persona: persona): void {
-    this.personaLog = persona;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + this.token,
+    });
+    this.http
+      .post(this.URL + 'usuario', persona, { headers })
+      .subscribe((Response: any) => {
+        this.personaLog = Response;
+      });
   }
   getPersonalog(): persona {
     return this.personaLog;
