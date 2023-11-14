@@ -1,17 +1,22 @@
 <div id="main-div">
-  <nav>
-    <div>
+  <header class="cabecera">
+    <img class="cab-img" src="../../assets/resources/logo.png" alt="logo" />
+  </header>
+    <div class="camp-buscar">
       <input type="text" placeholder="Buscar persona" />
-      <button>Buscar</button>
+      <button class="btn-buscar"></button>
     </div>
-  </nav>
   <div class="con-table">
     <table>
       <thead>
         <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Correo</th>
+        <th>Estado</th>
         <th>Rol</th>
         <th>Equipo</th>
-        <th>Estado</th>
+        <th>H°Trabajadas</th>
+        <th>H°Extras</th>
       </thead>
       <tbody>
         <tr
@@ -20,23 +25,24 @@
           [ngClass]="{ seleccionado: personaSelect == persona }"
         >
           <td>{{ persona.nombre }}</td>
+          <td>{{ persona.apellido }}</td>
+          <td>{{ persona.correo }}</td>
+          <td>{{ persona.estado.nombre_estado }}</td>
           <td>{{ persona.rol.nombre_rol }}</td>
           <td>{{ persona.equipo.nombre_equipo }}</td>
-          <td>{{ persona.estado.nombre_estado }}</td>
+          <td>{{ persona.horas_trabajadas }}</td>
+          <td>{{ persona.horas_extras }}</td>
         </tr>
       </tbody>
     </table>
   </div>
   <div class="btn">
     <button (click)="register()">Agregar</button>
-
     <button
       [disabled]="personaSelect.nombre == '' ? true : false"
       (click)="modPersona()"
     >
       Modificar
     </button>
-
-    <button>Eliminar</button>
   </div>
 </div>

@@ -3,9 +3,32 @@
   height: 100%;
   display: grid;
   padding: 2.5em;
-  grid-template-rows: 1fr 10fr 1fr;
+  background-color: rgb(251, 252, 241, 0.6);
+  grid-template-rows: 1fr 1fr 10fr 1fr;
 }
 
+.cabecera {
+  display: flex;
+  justify-content: center;
+}
+
+.cab-img {
+  position: absolute;
+  top: 50px;
+  text-align: center;
+  margin-top: -50px;
+  width: 12%;
+}
+
+/*Div que almacena el input y boton buscar*/
+.camp-buscar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/*Input buscar*/
 input {
   background-color: #fff;
   color: #000;
@@ -14,51 +37,69 @@ input {
   border-radius: 0.625em;
   padding: 0.313em;
   font-size: 1.25em;
+  margin-right: 10px;
 }
 
-nav {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 0.625em;
+/*Boton buscar*/
+.btn-buscar{
+  background-image: url(../../../assets/resources/icon-buscar.svg);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: 100%;
+  background-position: center;
+  border: none;
   height: 100%;
+  width: 40px;
 }
+
+/*Div que almacena todo el table*/
 .con-table {
   width: 100%;
   height: 100%;
-  /* Establece la altura máxima en la que deseas que aparezca la barra de desplazamiento */
-  overflow-y: auto; /* Permite la barra de desplazamiento vertical cuando se supera la altura máxima */
+  overflow-y: auto;
+  padding: 0px 0.625em 0px 0.625em;
+  text-align: center;
+  overflow-y: auto;
 }
+
+/*Tabla que contiene el contenido*/
 table {
   width: 100%;
   height: 1em;
-  background-color: bisque;
   font-size: 1.5em;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 0.625em 0px 0.625em 0px;
+  overflow: hidden;
 }
 
+/*Contenido + cabecera de tabla*/
 td,
 th {
+  font-size: 18px;
   height: 1em;
-  border: 1px solid #000; /* Agrega un borde para resaltar las celdas (opcional) */
-  padding: 0.313em; /* Espacio alrededor del contenido de la celda */
+  border-bottom: 1px solid #000; /* Agrega un borde para resaltar las celdas (opcional) */
+  padding: 0.7em 0.7em 0.7em 0.7em; /* Espacio alrededor del contenido de la celda */
 }
+
+/*Cabecera de la tabla*/
 th {
-  font-weight: bold;
-  background-color: rgb(250, 207, 154);
+  text-align: center;
 }
+
 button {
   font-size: 1.125em;
   color: #fff;
   background-color: #1e512c;
+  width: 200px;
 }
 
 .btn {
   margin-top: 0.625em;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.25em;
   align-items: center;
-  font-size: 1.5em;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .seleccionado {
@@ -77,6 +118,7 @@ button {
 .btn button:hover {
   opacity: 0.8;
 }
+
 nav button {
   margin: 0.625em;
   padding: 0.625em;

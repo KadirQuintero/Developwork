@@ -8,6 +8,26 @@ import { Router } from '@angular/router';
 })
 export class NavComponent {
   constructor(private router: Router) {}
+  /*imageUrl: string | ArrayBuffer | null = null;
+  onFileSelected(event: any): void {
+    const file = event.target.files[0];
+    if (file) {
+      this.readImage(file);
+    }
+  }
+
+  private readImage(file: File): void {
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      if (e.target && e.target.result) {
+        this.imageUrl = e.target.result;
+      }
+    };
+
+    reader.readAsDataURL(file);
+  }*/
+
   RegisterUser(): void {
     this.router.navigate(['user/personas']);
   }

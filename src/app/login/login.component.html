@@ -8,14 +8,33 @@
         <H1 class="titulo"> Iniciar Sesión </H1>
         <form id="formulario">
           <label>Correo:</label>
-          <input class="user" type="email" [(ngModel)]="usuario.correo" name="correo" required placeholder="Digitar su correo" />
+          <input
+            class="user"
+            type="email"
+            [(ngModel)]="usuario.correo"
+            name="correo"
+            required
+            placeholder="Digitar su correo"
+          />
           <label>Contraseña:</label>
-          <input class="password" [(ngModel)]="usuario.contrasena" name="Contraseña" [type]="ChangeType ? 'password' : 'text'" required placeholder="Digitar Contraseña" />
+          <input
+            class="password"
+            [(ngModel)]="usuario.contrasena"
+            name="Contraseña"
+            [type]="ChangeType ? 'password' : 'text'"
+            required
+            placeholder="Digitar Contraseña"
+          />
           <div>
-            <input (click)="viewpass()" type="checkbox" />
+            <input (click)="viewpass()" type="checkbox"/>
             <label> Mostrar Contraseña</label>
           </div>
-          <input (click)="IniciarSesion()" class="btn_ingresar" type="submit" value="Ingresar" />
+          <input
+            (click)="IniciarSesion()"
+            class="btn_ingresar"
+            type="submit"
+            value="Ingresar"
+          />
         </form>
       </div>
     </div>

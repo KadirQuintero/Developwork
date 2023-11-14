@@ -19,7 +19,7 @@ export class TeamsComponent implements OnInit {
   verestado: estado[] = [];
   verroles: rol[] = [];
   verjornada: jornada[] = [];
-   nuevoEquipo:equipo =new equipo();
+  nuevoEquipo: equipo = new equipo();
   constructor(
     private router: Router,
     private serviceteam: TeamservService,
@@ -51,10 +51,7 @@ export class TeamsComponent implements OnInit {
     this.router.navigate(['user/modEquipo']);
   }
 
-
   AgregarEquipo() {
-    
-
     this.serviceteam.addEquipo(this.nuevoEquipo).subscribe(
       (equipo) => {
         console.log('Equipo agregado con éxito:', equipo);

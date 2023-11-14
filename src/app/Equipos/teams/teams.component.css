@@ -1,23 +1,24 @@
 #container-main {
-  position: relative;
-  top: 12.5em;
   width: 100%;
-  padding: 0.938em;
-  border: none;
-  border-radius: 0.625em;
-  background-color: rgb(251, 252, 241, 0.8);
+  height: 100%;
+  display: grid;
+  padding: 2.5em;
+  background-color: rgb(251, 252, 241, 0.6);
+  grid-template-rows: 1fr 1fr 10fr 1fr;
 }
 
-/*.cabecera {
-  position: relative;
-  top: 42px;
-  text-align: center;
-  margin-top: -45px;
+.cabecera {
+  display: flex;
+  justify-content: center;
 }
 
 .cab-img {
-  width: 20%;
-}*/
+  position: absolute;
+  top: 65px;
+  text-align: center;
+  margin-top: -50px;
+  width: 12%;
+}
 
 .form {
   display: flex;
@@ -26,14 +27,14 @@
 }
 
 label {
-  font-size: 1.5em;
+  font-size: 18px;
   margin: 0px 0.625em 0px 0.625em;
 }
 
 input, select{
   border-radius: 0.625em;
   padding: 0.313em;
-  font-size: 1.125em;
+  font-size: 16px;
   margin: 0px 0.625em 0.625em 0.625em;
 }
 
@@ -51,11 +52,10 @@ select{
 }
 
 #container-teams {
-  font-size: 1.375;
   width: 100%;
   height: 100%;
   text-align: center;
-  padding: 0.625em;
+  padding: 0px 0.625em 0px 0.625em;
   border-radius: 0.625em;
   background-color: #fff;
   max-height: 25em;
@@ -70,28 +70,18 @@ table {
 
 th,
 td {
-  font-size: 1.563em;
-  padding: 0.7em;
+  font-size: 18px;
+  padding: 0px 0.7em 0.7em 0.7em;
   border-bottom: 1px solid black;
+}
+
+td{
+  padding: 0.7em 0.7em 0.7em 0.7em;
 }
 
 .seleccionado{
   border: 4px solid green;
   background-color: green;
-}
-
-.btn-eliminar {
-  position: relative;
-  left: 0.625em;
-  top: 0.625em;
-  width: 100%;
-  height: 3.125em;
-  background-image: url(../../../assets/resources/Icon-trash.svg);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: none;
-  background-color: transparent;
 }
 
 #container-crud {
@@ -104,12 +94,12 @@ td {
 }
 
 .btn-crud {
-  font-size: 1.5em;
+  font-size: 16px;
   color: #fff;
   width: 9.375em;
   padding: 0.5em;
   border: none;
-  border-radius: 0.625em;
+  border-radius: 1.25em;
   background-color: #1e512c;
-  margin: 0px 0.625em 0px 0.625em;
+  margin: 0px 50px 0px 50px;
 }
