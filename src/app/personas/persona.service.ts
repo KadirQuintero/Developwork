@@ -67,18 +67,14 @@ export class PersonaService {
         })
       );
   }
-  setPersonaLog(persona: persona): void {
+  setPersonaLog():  Observable<any> {
+    this.token = this.serviceLocalStorage.getItem('jwt');
+    console.log(this.token);
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
-    this.http
-      .post(this.URL + 'usuario', persona, { headers })
-      .subscribe((Response: any) => {
-        this.personaLog = Response;
-      });
-  }
-  getPersonalog(): persona {
-    return this.personaLog;
+
+    return this.http.get(this.URL + 'usuario', { headers });
   }
 }

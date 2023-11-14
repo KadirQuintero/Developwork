@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { LocalStorageService } from '../Servicios/loalStorage/local-storage.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.css'],
 })
 export class NavComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private serviceLocalStorage:LocalStorageService) {}
   /*imageUrl: string | ArrayBuffer | null = null;
   onFileSelected(event: any): void {
     const file = event.target.files[0];
@@ -49,6 +50,7 @@ export class NavComponent {
   }
 
   LogOut(): void {
+    this.serviceLocalStorage.removeAll();
     this.router.navigate(['/login']);
   }
 

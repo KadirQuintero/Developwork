@@ -11,7 +11,9 @@ import { persona } from '../models/persona';
 export class InformationComponent {
   personalog: persona = new persona();
   constructor(private router: Router, private personaService: PersonaService) {
-    this.personalog = this.personaService.getPersonalog();
+    this.personaService.setPersonaLog().subscribe((Response :persona)=>{
+      this.personalog=Response;
+    });
   }
   CambContra(): void {
     this.router.navigate(['user/cambcontraseña']);
