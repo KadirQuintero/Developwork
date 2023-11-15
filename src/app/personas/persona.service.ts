@@ -12,12 +12,15 @@ export class PersonaService {
   private personaMod: persona = new persona();
   private personaLog: persona = new persona();
   private token: string = '';
-  validToken() :Observable<any>{
+  validToken(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
-    return this.http.get(this.URL+"checkSafe", { headers,responseType: 'text' });
+    return this.http.get(this.URL + 'checkSafe', {
+      headers,
+      responseType: 'text',
+    });
   }
   getPersonas(): persona[] {
     this.getData().subscribe(
@@ -89,5 +92,15 @@ export class PersonaService {
       Authorization: 'Bearer ' + this.token,
     });
     return this.http.put(this.URL, persona, { headers });
+  }
+  chPass(user: any): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + this.token,
+    });
+    return this.http.put(this.URL + 'chpass', user, {
+      headers,
+      responseType: 'text',
+    });
   }
 }
