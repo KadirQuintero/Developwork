@@ -32,6 +32,18 @@ export class AuthGuard implements CanActivate {
       this.serviceLocalStorage.getItem('jwt') != null &&
       this.serviceLocalStorage.getItem('jwt').length != 0
     ) {
+      //VALIDACION DEL TOKEN
+      this.personaService.validToken().subscribe(
+        (RESPONSE) => {
+          console.log('estado:' + RESPONSE);
+        },
+        (error) => {
+          //SI no estas autorizado te saco
+          if (error.status == 403) {
+            this.router.navigate(['/login']);
+          }
+        }
+      );
       // Usuario autenticado, permite el acceso a la ruta
       return true;
     } else {

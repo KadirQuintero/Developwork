@@ -11,6 +11,14 @@ export class MPersonasComponent implements OnInit {
   lstpersonas: persona[] = [];
   personaSelect: persona = new persona();
   constructor(private router: Router, private servicepersona: PersonaService) {
+    this.servicepersona.getData().subscribe((Response: persona[]) => {
+      this.lstpersonas = Response;
+    });
+    if (this.personaSelect.id_usuario == '') {
+      this.servicepersona.getData().subscribe((Response: persona[]) => {
+        this.lstpersonas = Response;
+      });
+    }
   }
 
   ngOnInit(): void {

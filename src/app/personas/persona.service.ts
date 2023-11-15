@@ -12,7 +12,13 @@ export class PersonaService {
   private personaMod: persona = new persona();
   private personaLog: persona = new persona();
   private token: string = '';
-
+  validToken() :Observable<any>{
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + this.token,
+    });
+    return this.http.get(this.URL+"checkSafe", { headers,responseType: 'text' });
+  }
   getPersonas(): persona[] {
     this.getData().subscribe(
       (response) => {
@@ -67,9 +73,8 @@ export class PersonaService {
         })
       );
   }
-  setPersonaLog():  Observable<any> {
+  setPersonaLog(): Observable<any> {
     this.token = this.serviceLocalStorage.getItem('jwt');
-    console.log(this.token);
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
@@ -77,14 +82,12 @@ export class PersonaService {
 
     return this.http.get(this.URL + 'usuario', { headers });
   }
-  modPersona(persona:persona):Observable<any>{
+  modPersona(persona: persona): Observable<any> {
     this.token = this.serviceLocalStorage.getItem('jwt');
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
-
     });
-    console.log(persona);
-    return this.http.put(this.URL , persona,{ headers});
+    return this.http.put(this.URL, persona, { headers });
   }
 }

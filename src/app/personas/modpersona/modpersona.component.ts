@@ -27,15 +27,16 @@ export class ModpersonaComponent {
   ) {}
   modificar() {
     console.log(this.persona);
-    this.servicePersona.modPersona(this.persona).subscribe((Response: any) => {
-      console.log(Response);
-    });
+
+    this.servicePersona.modPersona(this.persona).subscribe();
+
+    this.servicePersona.setPersona(new persona());
     this.router.navigate(['/user/personas']);
   }
 
   ngOnInit(): void {
     if (this.servicePersona.getPersona().id_usuario == '') {
-      this.router.navigate(['/user/personas']);
+      this.router.navigate(['/']);
     } else {
       this.persona = this.servicePersona.getPersona();
       this.serviceteam.getData().subscribe((Response: equipo[]) => {
