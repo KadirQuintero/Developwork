@@ -77,4 +77,14 @@ export class PersonaService {
 
     return this.http.get(this.URL + 'usuario', { headers });
   }
+  modPersona(persona:persona):Observable<any>{
+    this.token = this.serviceLocalStorage.getItem('jwt');
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + this.token,
+
+    });
+    console.log(persona);
+    return this.http.put(this.URL , persona,{ headers});
+  }
 }
