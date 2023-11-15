@@ -14,7 +14,7 @@ import { equipo } from 'src/app/models/equipo';
   styleUrls: ['./modpersona.component.css'],
 })
 export class ModpersonaComponent {
-  persona: persona = new persona();
+  public persona: persona = new persona();
   verequipo: equipo[] = [];
   verestado: estado[] = [];
   verroles: rol[] = [];
@@ -26,27 +26,28 @@ export class ModpersonaComponent {
     private rolService: RolserviceService
   ) {}
   modificar() {
-    this.servicePersona.setPersona(this.persona);
-    this.servicePersona.modPersona(this.persona).subscribe((Response: any)=>{
+    console.log(this.persona);
+    this.servicePersona.modPersona(this.persona).subscribe((Response: any) => {
       console.log(Response);
-    })
+    });
     this.router.navigate(['/user/personas']);
   }
 
   ngOnInit(): void {
     if (this.servicePersona.getPersona().id_usuario == '') {
       this.router.navigate(['/user/personas']);
-    }
-    this.persona = this.servicePersona.getPersona();
-    this.serviceteam.getData().subscribe((Response: equipo[]) => {
-      this.verequipo = Response;
-    });
+    } else {
+      this.persona = this.servicePersona.getPersona();
+      this.serviceteam.getData().subscribe((Response: equipo[]) => {
+        this.verequipo = Response;
+      });
 
-    this.serviceestado.getData().subscribe((Response: estado[]) => {
-      this.verestado = Response;
-    });
-    this.rolService.getData().subscribe((Response: rol[]) => {
-      this.verroles = Response;
-    });
+      this.serviceestado.getData().subscribe((Response: estado[]) => {
+        this.verestado = Response;
+      });
+      this.rolService.getData().subscribe((Response: rol[]) => {
+        this.verroles = Response;
+      });
+    }
   }
 }
