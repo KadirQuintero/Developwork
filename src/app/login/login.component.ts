@@ -9,6 +9,7 @@ import { LocalStorageService } from '../Servicios/loalStorage/local-storage.serv
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
+
 export class LoginComponent {
   public usuario: persona = new persona();
   constructor(
@@ -16,6 +17,7 @@ export class LoginComponent {
     private serviceLocalStorage: LocalStorageService,
     private PersonaService: PersonaService
   ) {}
+
   IniciarSesion(): void {
     this.PersonaService.login(this.usuario).subscribe(
       (response: string) => {
@@ -29,7 +31,8 @@ export class LoginComponent {
         // ...haz algo con el token, como almacenarlo en localStorage
       },
       (error) => {
-        // Manejar errores aquí
+        console.error('Error durante el inicio de sesión:', error);
+        // Mostrar un mensaje de error en la interfaz de usuario
       }
     );
   }

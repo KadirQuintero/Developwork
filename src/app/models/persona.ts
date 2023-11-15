@@ -11,11 +11,11 @@ export class persona{
     apellido2:string='';
     horas_trabajadas?:number;
     horas_extras?:number;
-    correo?:string='';
+    correo:string='';
     contrasena?:string='';
     equipo:equipo= new equipo();
     estado:estado= new estado();
     rol:rol= new rol();
 
-    
+
 }
