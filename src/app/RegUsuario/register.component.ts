@@ -39,15 +39,40 @@ export class registerComponent {
       this.verroles = Response;
     });
   }
+  ValidarLenght(value: string): boolean {
+    return value.length <= 10;
+  }
+
+  ValidarCamp(value: string): boolean {
+    return value.trim() !== '';
+  }
+
+  validarEmail(email: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
   async addPersona() {
-    const postData = { key: 'value' }; // Reemplaza con tus datos
-    this.personaSerive.postData(this.persona).subscribe(
-      (response) => {
-        console.log('Respuesta del servidor:', response);
+    const { nombre, nombre2, apellido, apellido2, correo } = this.persona;
+    if (!this.ValidarCamp(nombre) || !this.ValidarCamp(apellido)) {
+      alert(`El campo ${!nombre ? 'Nombre' : 'Apellido'} no puede estar vacio.`); return;
+    } else if (
+      !this.ValidarLenght(nombre) || !this.ValidarLenght(nombre2) ||
+      !this.ValidarLenght(apellido) || !this.ValidarLenght(apellido2)
+    ) {
+      alert(`Los campos de Nombre y Apellido no pueden pasarse de 10 caracteres.`); return;
+    }
+    if (correo !== undefined &&  !this.validarEmail(correo)) {
+      alert('Por favor, ingresa un correo electrónico válido.'); return;
+    } else {
+      const postData = { key: 'value' }; // Reemplaza con tus datos
+      this.personaSerive.postData(this.persona).subscribe(
+        (response) => {console.log('Respuesta del servidor:', response);
+        alert(`El usuario ${nombre} ${apellido} fue registrado con exito.`)
       },
-      (error) => {
-        console.error('Error en la solicitud:', error);
-      }
-    );
+        (error) => {console.error('Error en la solicitud:', error);
+        }
+      );
+    }
   }
 }
