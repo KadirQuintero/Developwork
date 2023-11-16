@@ -55,7 +55,6 @@ export class registerComponent {
 
   async addPersona() {
     const { nombre, nombre2, apellido, apellido2, correo } = this.persona;
-
     if (!this.ValidarCamp(nombre) || !this.ValidarCamp(apellido)) {
       alert(`El campo ${!nombre ? 'Nombre' : 'Apellido'} no puede estar vacio.`); return;
     } else if (
