@@ -18,12 +18,17 @@
           </select>
         </fieldset>
         <fieldset class="field-input">
-          <input type="text"
-          name="nombre"
-          [(ngModel)]="persona.nombre" />
-          <input type="email"
-          name="correo"
-          [(ngModel)]="persona.correo" />
+          
+          <label for=""> Primer Nombre: </label>
+          <input type="text" name="nombre" [(ngModel)]="persona.nombre" />
+          <label for=""> Segundo Nombre: </label>
+          <input type="text" name="nombre2" [(ngModel)]="persona.nombre2" />
+          <label for=""> Primer Apellido: </label>
+          <input type="text" name="apellido" [(ngModel)]="persona.apellido" />
+          <label for=""> Segundo Apellido: </label>
+          <input type="text" name="apellido2" [(ngModel)]="persona.apellido2" />
+          <label for=""> Correo: </label>
+          <input type="text" name="correo" [(ngModel)]="persona.correo" />
         </fieldset>
       </fieldset>
       <button (click)="modificar()">Modificar</button>
