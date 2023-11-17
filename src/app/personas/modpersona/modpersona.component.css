@@ -10,7 +10,8 @@
   background-color: rgb(251, 252, 241, 0.5);
   border-radius: 0.625em;
   width: 80%;
-  height: 100vh;
+  height: 100%;
+  overflow: hidden;
 }
 
 .cabecera {
@@ -28,29 +29,19 @@ form {
   padding: 2em;
   background-color: rgb(251, 252, 241);
   text-align: center;
+  height: 100%;
 }
 
-fieldset {
-  display: flex;
-  gap: .5em;
-  font-size: 1em;
-  flex-direction: column;
-}
-.fieldset input{
- font-size: 1em;
- width: 100%;
-}
-.fieldset *{
-  width: 100%;
-  align-items: start;
-  margin:0;
+label {
+  font-size: 20px;
 }
 
+.fieldSelect select{
+  width: 330px;
+}
 
-.form-input {
-  display: grid;
-  grid-template-columns: 20% 80%;
-  justify-content: center;
+.fieldSelect label{
+  margin: 0px 5px 0px 5px;
 }
 
 select {
@@ -61,9 +52,11 @@ select {
   border-radius: 0.625em;
 }
 
-label {
-  font-size: 1.563em;
-  margin: 0 auto;
+.fieldInput{
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 input {
@@ -75,11 +68,11 @@ input {
 
 button {
   color: #fff;
-  font-size: 1.5em;
+  font-size: 20px;
   border: none;
   border-radius: 0.625em;
   background-color: #1e512c;
   padding: 0.313em;
   width: 20%;
-  margin: 2em;
+  margin-top: 14px;
 }
