@@ -69,6 +69,7 @@ export class PersonaService {
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
+    console.log(headers);
     return this.http.post(this.URL, data, { headers });
   }
 
@@ -95,7 +96,6 @@ export class PersonaService {
 
     //Se usa en ModpersonaComponent
   modPersona(persona: persona): Observable<any> {
-    console.log("Entrando a ModPersona")
     this.token = this.serviceLocalStorage.getItem('jwt');
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',

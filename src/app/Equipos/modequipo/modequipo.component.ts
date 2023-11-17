@@ -12,50 +12,47 @@ import { JornadaserviceService } from 'src/app/Servicios/Jornadas/jornadaservice
 @Component({
   selector: 'app-modequipo',
   templateUrl: './modequipo.component.html',
-  styleUrls: ['./modequipo.component.css']
+  styleUrls: ['./modequipo.component.css'],
 })
-
 export class ModequipoComponent {
-  public equipo: equipo = new equipo();
+  equipo: equipo = new equipo();
   verestado: estado[] = [];
   verroles: rol[] = [];
   verequipo: equipo[] = [];
   verjornada: jornada[] = [];
 
-  constructor(private router: Router,
+  constructor(
+    private router: Router,
     private serviceequipo: TeamservService,
     private serviceestado: EstadoserviceService,
     private rolService: RolserviceService,
     private jornadaService: JornadaserviceService
-    ){}
+  ) {}
 
-  modificarequipo(){
-    console.log("Modequipo, Modificarequipo, entro")
-    console.log(this.equipo);
-
+  modificarequipo() {
+    console.log('Modequipo, Modificarequipo, entro');
     this.serviceequipo.modEquipo(this.equipo).subscribe();
-    console.log("paso el modEquipo.subscribe")
+    console.log('paso el modEquipo.subscribe');
 
     this.serviceequipo.setEquipo(new equipo());
-    console.log("paso el setequipo new equipo")
+    console.log('paso el setequipo new equipo');
 
     this.router.navigate(['user/teams']);
   }
 
   ngOnInit(): void {
     if (this.serviceequipo.getEquipo().id_equipo == '') {
-      this.router.navigate(['/']);
+      this.router.navigate(['/user/teams']);
     } else {
       this.equipo = this.serviceequipo.getEquipo();
-      this.serviceequipo.getData().subscribe((Response: equipo[]) => {
-        this.verequipo = Response;
-      });
-
       this.serviceestado.getData().subscribe((Response: estado[]) => {
         this.verestado = Response;
       });
       this.rolService.getData().subscribe((Response: rol[]) => {
         this.verroles = Response;
+      });
+      this.jornadaService.getData().subscribe((Response: jornada[]) => {
+        this.verjornada = Response;
       });
     }
   }

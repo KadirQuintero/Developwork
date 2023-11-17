@@ -41,11 +41,15 @@ export class TeamservService {
     private http: HttpClient,
     private serviceLocalStorage: LocalStorageService
   ) {
-    this.token = serviceLocalStorage.getItem('jwt');
+    this.token = this.serviceLocalStorage.getItem('jwt');
   }
 
   addEquipo(equipo: equipo): Observable<any> {
-    return this.http.post(this.URL, equipo);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + this.token,
+    });
+    return this.http.post(`${this.URL}`, equipo, { headers });
   }
 
   postData(data: equipo): Observable<any> {
@@ -57,13 +61,13 @@ export class TeamservService {
   }
 
   modEquipo(equipo: equipo): Observable<any> {
-    console.log("Entrando a Equipo")
     this.token = this.serviceLocalStorage.getItem('jwt');
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
-    return this.http.put(this.URL, equipo, { headers });
+    console.log(headers);
+    return this.http.put(this.URL, equipo, { headers, responseType: 'text' });
   }
 
   getData(): Observable<any> {

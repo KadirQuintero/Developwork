@@ -38,7 +38,7 @@ export class ModpersonaComponent {
 
   ngOnInit(): void {
     if (this.servicePersona.getPersona().id_usuario == '') {
-      this.router.navigate(['/']);
+      this.router.navigate(['/user/personas']);
     } else {
       this.persona = this.servicePersona.getPersona();
       this.serviceteam.getData().subscribe((Response: equipo[]) => {

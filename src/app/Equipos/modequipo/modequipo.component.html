@@ -6,40 +6,21 @@
     <form>
       <fieldset>
         <label for="estado">Estado</label>
-        <select name="id_estado" id="id_estado" [(ngModel)]="equipo.estado.nombre_estado">
-          <option
-            [value]="equipo.estado.nombre_estado"
-          >
-            {{ equipo.estado.nombre_estado }} </option>
-          <option
-            *ngFor="let estado of verestado"
-            [value]="equipo.estado.id_estado"
-          >
+        <select name="id_estado"  [(ngModel)]="equipo.estado.id_estado">
+          <option *ngFor="let estado of verestado" [value]="equipo.estado.id_estado">
             {{ estado.nombre_estado }} </option>
         </select>
 
         <label for="jornada">Jornada</label>
-        <select name="id_fornada" id="id_jornada" [(ngModel)]="equipo.jornada.nombre_jornada">
-          <option
-            [value]="equipo.jornada.nombre_jornada"
-          >
-            {{ equipo.jornada.nombre_jornada }}
-          </option>
-          <option
-            *ngFor="let jornada of verjornada"
-            [value]="equipo.jornada.id_jornada"
-          >
+        <select name="id_jornada"  [(ngModel)]="equipo.jornada.id_jornada">
+
+          <option *ngFor="let jornada of verjornada" [value]="equipo.jornada.id_jornada">
             {{ jornada.nombre_jornada }}
           </option>
         </select>
 
-        <label for="rol">Rol</label
-        ><select name="id_fol" id="id_rol" [(ngModel)]="equipo.rol.nombre_rol">
-          <option
-            [value]="equipo.rol.nombre_rol"
-          >
-            {{ equipo.rol.nombre_rol }}
-          </option>
+        <label for="rol">Rol</label>
+        <select name="id_rol"  [(ngModel)]="equipo.rol.id_rol">
           <option *ngFor="let rol of verroles" [value]="equipo.rol.id_rol">
             {{ rol.nombre_rol }}
           </option>
@@ -48,19 +29,11 @@
 
       <fieldset>
         <label for="nombre_equipo">Nombre</label>
-        <input
-          type="text"
-          name="nombre_equipo"
-          [(ngModel)]="equipo.nombre_equipo"
-        />
+        <input type="text" name="nombre_equipo" [(ngModel)]="equipo.nombre_equipo" />
       </fieldset>
       <fieldset>
         <label for="descripcion">Descripcion</label>
-        <input
-          type="text"
-          name="descripcion"
-          [(ngModel)]="equipo.descripcion"
-        />
+        <input type="text" name="descripcion" [(ngModel)]="equipo.descripcion" />
       </fieldset>
       <button (click)="modificarequipo()">Modificar</button>
     </form>
