@@ -1,0 +1,29 @@
+<div id="body">
+  <div>
+    <h2>Ordenes Pendientes</h2>
+    <ul class="carrusel">
+        <li *ngFor="let orden of ordenesP">
+            <app-orden class=".carousel-item" [orden]="orden"></app-orden>
+        </li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Ordenes Revision</h2>
+    <ul class="carrusel">
+        <li *ngFor="let orden of ordenesR">
+            <app-orden class=".carousel-item" [orden]="orden"></app-orden>
+        </li>
+    </ul>
+  </div>
+
+
+  <div>
+    <h2>Historico</h2>
+    <ul class="carrusel">
+        <li *ngFor="let orden of ordenesH">
+            <app-orden class=".carousel-item" [orden]="orden"></app-orden>
+        </li>
+    </ul>
+  </div>
+</div>

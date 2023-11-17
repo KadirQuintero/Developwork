@@ -1,0 +1,31 @@
+#body {
+  height: 100vh;
+  width: 90%;
+  padding: 2.5em;
+  background-color: rgb(251, 252, 241, 0.6);
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.carrusel {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  width: 100vw;
+  gap: 2em;
+}
+
+.carousel-item {
+  scroll-snap-align: start;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

@@ -1,16 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { persona } from '../models/persona';
-import { PersonaService } from '../personas/persona.service';
+import { OrdenesService } from '../ordenes/ordenes.service';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  styleUrls: ['./users.component.css'],
 })
-export class usersComponent implements OnInit{
-  ngOnInit() {
-  }
-  constructor(private servipersona: PersonaService){
-
-  }
+export class usersComponent {
+  constructor(public ordenesService: OrdenesService) {}
 }

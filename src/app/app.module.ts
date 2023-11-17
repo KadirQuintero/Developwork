@@ -17,6 +17,8 @@ import { MPersonasComponent } from './personas/m-personas/m-personas.component';
 import { CambContraComponent } from './camb-contra/camb-contra.component';
 import { ModpersonaComponent } from './personas/modpersona/modpersona.component';
 import { ModequipoComponent } from './Equipos/modequipo/modequipo.component';
+import { OrdenesMComponent } from './ordenes/ordenes-m/ordenes-m.component';
+import { OrdenComponent } from './ordenes/orden/orden.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { ModequipoComponent } from './Equipos/modequipo/modequipo.component';
 
     ModpersonaComponent,
       ModequipoComponent,
+      OrdenesMComponent,
+      OrdenComponent,
   ],
   imports: [
     BrowserModule,

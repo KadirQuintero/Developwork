@@ -1,6 +1,9 @@
   <div class="_container">
     <app-nav id="nav"></app-nav>
+   
     <div id="body">
+      <app-ordenes-m *ngIf="ordenesService.view()"></app-ordenes-m>
       <router-outlet></router-outlet>
     </div>
+
   </div>

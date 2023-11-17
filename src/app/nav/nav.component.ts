@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LocalStorageService } from '../Servicios/loalStorage/local-storage.service';
+import { OrdenesService } from '../ordenes/ordenes.service';
 
 @Component({
   selector: 'app-nav',
@@ -8,45 +9,38 @@ import { LocalStorageService } from '../Servicios/loalStorage/local-storage.serv
   styleUrls: ['./nav.component.css'],
 })
 export class NavComponent {
-  constructor(private router: Router, private serviceLocalStorage:LocalStorageService) {}
-  /*imageUrl: string | ArrayBuffer | null = null;
-  onFileSelected(event: any): void {
-    const file = event.target.files[0];
-    if (file) {
-      this.readImage(file);
-    }
+  constructor(
+    private router: Router,
+    private serviceLocalStorage: LocalStorageService,
+    private serviceO: OrdenesService
+  ) {}
+  Principal(): void {
+    this.router.navigate(['user']);
+    this.serviceO.SetView(true);
   }
-
-  private readImage(file: File): void {
-    const reader = new FileReader();
-
-    reader.onload = (e) => {
-      if (e.target && e.target.result) {
-        this.imageUrl = e.target.result;
-      }
-    };
-
-    reader.readAsDataURL(file);
-  }*/
-
   RegisterUser(): void {
     this.router.navigate(['user/personas']);
+    this.serviceO.SetView(false);
   }
 
   Teams(): void {
     this.router.navigate(['user/teams']);
+    this.serviceO.SetView(false);
   }
 
   Stats(): void {
     this.router.navigate(['user/stats']);
+    this.serviceO.SetView(false);
   }
 
   Notifications(): void {
     this.router.navigate(['user/notification']);
+    this.serviceO.SetView(false);
   }
 
   Information(): void {
     this.router.navigate(['user/information']);
+    this.serviceO.SetView(false);
   }
 
   LogOut(): void {

@@ -30,7 +30,6 @@ export class ModpersonaComponent {
   ) {}
 
   modificar() {
-    console.log(this.persona);
     this.servicePersona.modPersona(this.persona).subscribe();
     this.servicePersona.setPersona(new persona());
     this.router.navigate(['/user/personas']);

@@ -1,9 +1,8 @@
 <div id="container-main" (mouseenter)="VerBoton()" (mouseleave)="VerBoton()">
   <nav id="navi-admin">
-<!-- <div class="img">
-  <img *ngIf="imageUrl" [src]="imageUrl" alt="Selected Image">
-  <input type="file" (change)="onFileSelected($event)" accept="image/*">
-</div> -->
+    <button class="nav_button principal" (click)="Principal()">
+      <span *ngIf="MostrarBoton"> Principal </span>
+    </button>
     <Button class="nav_button Register" (click)="RegisterUser()">
       <span *ngIf="MostrarBoton"> Usuarios </span>
     </Button>
