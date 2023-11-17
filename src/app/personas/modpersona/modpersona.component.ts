@@ -8,16 +8,19 @@ import { RolserviceService } from 'src/app/Servicios/Roles/rolservice.service';
 import { Router } from '@angular/router';
 import { TeamservService } from 'src/app/Equipos/teamserv.service';
 import { equipo } from 'src/app/models/equipo';
+
 @Component({
   selector: 'app-modpersona',
   templateUrl: './modpersona.component.html',
   styleUrls: ['./modpersona.component.css'],
 })
+
 export class ModpersonaComponent {
-  persona: persona = new persona();
+  public persona: persona = new persona();
   verequipo: equipo[] = [];
   verestado: estado[] = [];
   verroles: rol[] = [];
+
   constructor(
     private servicePersona: PersonaService,
     private router: Router,
@@ -25,25 +28,29 @@ export class ModpersonaComponent {
     private serviceestado: EstadoserviceService,
     private rolService: RolserviceService
   ) {}
+
   modificar() {
-    this.servicePersona.setPersona(this.persona);
+    console.log(this.persona);
+    this.servicePersona.modPersona(this.persona).subscribe();
+    this.servicePersona.setPersona(new persona());
     this.router.navigate(['/user/personas']);
   }
 
   ngOnInit(): void {
     if (this.servicePersona.getPersona().id_usuario == '') {
-      this.router.navigate(['/user/personas']);
-    }
-    this.persona = this.servicePersona.getPersona();
-    this.serviceteam.getData().subscribe((Response: equipo[]) => {
-      this.verequipo = Response;
-    });
+      this.router.navigate(['/']);
+    } else {
+      this.persona = this.servicePersona.getPersona();
+      this.serviceteam.getData().subscribe((Response: equipo[]) => {
+        this.verequipo = Response;
+      });
 
-    this.serviceestado.getData().subscribe((Response: estado[]) => {
-      this.verestado = Response;
-    });
-    this.rolService.getData().subscribe((Response: rol[]) => {
-      this.verroles = Response;
-    });
+      this.serviceestado.getData().subscribe((Response: estado[]) => {
+        this.verestado = Response;
+      });
+      this.rolService.getData().subscribe((Response: rol[]) => {
+        this.verroles = Response;
+      });
+    }
   }
 }

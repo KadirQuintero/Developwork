@@ -1,11 +1,22 @@
-/*  */
+.body{
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  background-size: 100%;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  width: 100%;
+}
+
 #container-main {
   height: 100%;
   width: 100%;
 }
 
 .titulo {
-  font-size: 4em;
+  font-size: 50 px;
   margin-top: 1em;
 }
 
@@ -70,7 +81,7 @@ img {
   color: #fff;
   width: 100%;
   padding: 0.3em;
-  font-size: 1.2em;
+  font-size: 20px;
   margin-bottom: 1em;
 }
 
@@ -140,14 +151,4 @@ input[type="checkbox"]:checked {
     display: flex;
   }
 }
-.body{
-  padding: 2em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  height: 100vh;
-  background-size: 100%;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-  width: 100%;
-}
+

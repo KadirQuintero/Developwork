@@ -8,18 +8,21 @@ import { rol } from 'src/app/models/rol';
 import { RolserviceService } from 'src/app/Servicios/Roles/rolservice.service';
 import { jornada } from 'src/app/models/jordanas';
 import { JornadaserviceService } from 'src/app/Servicios/Jornadas/jornadaservice.service';
+
 @Component({
   selector: 'app-teams',
   templateUrl: './teams.component.html',
   styleUrls: ['./teams.component.css'],
 })
+
 export class TeamsComponent implements OnInit {
+  nuevoEquipo: equipo = new equipo();
   equipoSelect: equipo = new equipo();
   verequipo: equipo[] = [];
   verestado: estado[] = [];
   verroles: rol[] = [];
   verjornada: jornada[] = [];
-  nuevoEquipo: equipo = new equipo();
+
   constructor(
     private router: Router,
     private serviceteam: TeamservService,
@@ -27,8 +30,16 @@ export class TeamsComponent implements OnInit {
     private rolService: RolserviceService,
     private jornadaService: JornadaserviceService
   ) {
-    this.verequipo = serviceteam.getEquipos();
+    /*this.verequipo = serviceteam.getEquipos();
     this.verestado = serviceestado.getEstado();
+    this.serviceteam.getData().subscribe((Response: equipo[]) => {
+      this.verequipo = Response;
+    });
+    if (this.equipoSelect.id_equipo == '') {
+      this.serviceteam.getData().subscribe((Response: equipo[]) => {
+        this.verequipo = Response;
+      });
+    }*/
   }
 
   ngOnInit(): void {
@@ -46,11 +57,6 @@ export class TeamsComponent implements OnInit {
     });
   }
 
-  modEquipo() {
-    this.serviceteam.setEquipo(this.equipoSelect);
-    this.router.navigate(['user/modEquipo']);
-  }
-
   AgregarEquipo() {
     this.serviceteam.addEquipo(this.nuevoEquipo).subscribe(
       (equipo) => {
@@ -63,5 +69,9 @@ export class TeamsComponent implements OnInit {
     );
   }
 
-  removeTeam(index: number) {}
+  modEquipo() {
+    console.log(this.equipoSelect);
+    this.serviceteam.setEquipo(this.equipoSelect);
+    this.router.navigate(['user/modEquipo']);
+  }
 }

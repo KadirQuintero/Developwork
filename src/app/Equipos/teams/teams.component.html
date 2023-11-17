@@ -7,7 +7,8 @@
       <label for="nombre">Nombre </label>
       <input
         [(ngModel)]="nuevoEquipo.nombre_equipo"
-        [ngModelOptions]="{ standalone: true }"
+        [ngModelOptions]="{standalone: true}"
+        name="nombre"
         id="nombre"
       />
     </fieldset>
@@ -16,27 +17,24 @@
       <label for="descripcion">Descripción </label>
       <input
         [(ngModel)]="nuevoEquipo.descripcion"
-        [ngModelOptions]="{ standalone: true }"
+        [ngModelOptions]="{standalone: true}"
+        name="descripcion"
         id="descripcion"
       />
     </fieldset>
 
     <fieldset class="form-input">
       <label for=""> Estado </label>
-
-      <select name="id_estado" id="id_estado" [(ngModel)]="nuevoEquipo.estado.id_estado">
-
+      <select name="id_estado" id="id_estado" [(ngModel)]="nuevoEquipo.estado.id_estado" [ngModelOptions]="{standalone: true}">
         <option *ngFor="let estado of verestado" [value]="estado.id_estado" selected="estado === id_estado">
           {{ estado.nombre_estado }}
         </option>
-
       </select>
 
     </fieldset>
     <fieldset class="form-input">
       <label for=""> Jornada </label>
-      <select name="id_jornada" id="id_jornada" [(ngModel)]="nuevoEquipo.jornada.id_jornada">
-
+      <select name="id_jornada" id="id_jornada" [(ngModel)]="nuevoEquipo.jornada.id_jornada" [ngModelOptions]="{standalone: true}">
         <option *ngFor="let jornada of verjornada" [value]="jornada.id_jornada"  selected="jornada === id_jornada">
           {{ jornada.nombre_jornada }}
         </option>
@@ -46,12 +44,10 @@
 
     <fieldset class="form-input">
       <label for=""> Rol </label>
-      <select name="id_rol" id="id_rol" [(ngModel)]="nuevoEquipo.rol.id_rol">
-
+      <select name="id_rol" id="id_rol" [(ngModel)]="nuevoEquipo.rol.id_rol" [ngModelOptions]="{standalone: true}">
         <option *ngFor="let rol of verroles" [value]="rol.id_rol"  selected="rol === id_rol">
           {{ rol.nombre_rol }}
         </option>
-
       </select>
     </fieldset>
   </form>
