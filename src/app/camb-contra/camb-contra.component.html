@@ -8,26 +8,14 @@
       <fieldset>
         <label for=""> Antigua contraseña</label>
         <input type="password" name="contrasena" [(ngModel)]="contrasena" />
-        <i
-          class="fa-regular fa-eye"
-          style="color: #000000"
-        ></i>
       </fieldset>
       <fieldset>
         <label for=""> Nueva contraseña</label>
         <input type="password" name="newCon" [type]="ChangeType ? 'password' : 'text'" [(ngModel)]="newCon" />
-        <i
-          class="fa-regular fa-eye"
-          style="color: #000000"
-        ></i>
       </fieldset>
       <fieldset>
         <label for=""> Confirmar contraseña</label>
         <input type="password" [type]="ChangeType ? 'password' : 'text'" />
-        <i
-          class="fa-regular fa-eye"
-          style="color: #000000"
-        ></i>
       </fieldset>
       <div class="div-check">
         <label for=""> Mostrar contraseña</label> <input class="check" type="checkbox" (click)="viewpass()"/>

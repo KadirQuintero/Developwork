@@ -8,11 +8,11 @@
   transition: 1s;
 
   &:hover {
-    width: 65%;
-        .nav_button {
+    width: 100%;
+      .nav_button {
       transition: 0.5s ease;
       background-position: 98%;
-      width: 60%;
+      width: 95%;
     }
   }
 }
@@ -23,16 +23,16 @@
   font-size: 20px;
   display: flex;
   flex-direction: column;
-  grid-gap: 0.5em;
+  gap: 0.5em;
 }
 
 .nav_button {
   padding: .313;
   border: none;
   border-radius: 0.625em;
-  position: absolute;
-  width: 75%;
+  width: 73%;
   height: 2em;
+  position: absolute;
   background-color: #fff;
   background-size: 1.25em;
   background-repeat: no-repeat;

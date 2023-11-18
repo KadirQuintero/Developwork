@@ -43,28 +43,30 @@ export class registerComponent {
   ValidarLenght(value: string): boolean {
     return value.length <= 10;
   }
+  msgValidarLenght: boolean = false;
 
   ValidarCamp(value: string): boolean {
     return value.trim() !== '';
   }
+  msgValidarCamp: boolean = false;
 
   validarEmail(email: string): boolean {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
+  msgValidarEmail: boolean = false;
 
   async addPersona() {
-    const { nombre, nombre2, apellido, apellido2, correo } = this.persona;
+    const { nombre, nombre2, apellido, apellido2, correo} = this.persona;
     if (!this.ValidarCamp(nombre) || !this.ValidarCamp(apellido)) {
-      alert(`El campo ${!nombre ? 'Nombre' : 'Apellido'} no puede estar vacio.`); return;
+      this.msgValidarCamp = true; return;
     } else if (
       !this.ValidarLenght(nombre) || !this.ValidarLenght(nombre2) ||
       !this.ValidarLenght(apellido) || !this.ValidarLenght(apellido2)
     ) {
-      alert(`Los campos de Nombre y Apellido no pueden pasarse de 10 caracteres.`); return;
-    }
+      this.msgValidarLenght = true; return;}
     if (correo !== undefined &&  !this.validarEmail(correo)) {
-      alert('Por favor, ingresa un correo electrónico válido.'); return;
+      this.msgValidarEmail = true; return;
     } else {
       const postData = { key: 'value' }; // Reemplaza con tus datos
       this.personaSerive.postData(this.persona).subscribe(

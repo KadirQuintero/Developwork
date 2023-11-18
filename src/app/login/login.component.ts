@@ -18,23 +18,40 @@ export class LoginComponent {
     private PersonaService: PersonaService
   ) {}
 
+  validarEmail(email: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+  msgValidarEmail: boolean = false;
+
+  ValidarCamp(value: string): boolean {
+    return value.trim() !== '';
+  }
+
+  msgValidarCamp: boolean = false;
+
   IniciarSesion(): void {
-    this.PersonaService.login(this.usuario).subscribe(
-      (response: string) => {
-        // response ahora es una cadena que puedes usar como desees
-        console.log('Token JWT:', response);
-        if (response != null) {
-          this.serviceLocalStorage.setItem('jwt', response);
-          this.PersonaService.setPersonaLog();
-          this.router.navigate(['/user']);
+    const { correo, contrasena } = this.usuario;
+    if (correo !== undefined && !this.ValidarCamp(correo)
+    || contrasena !== undefined && !this.ValidarCamp(contrasena)){
+      this.msgValidarCamp = true; return;
+    }
+    else if (correo !== undefined &&  !this.validarEmail(correo)) {
+      this.msgValidarEmail = true; return;
+    } else {
+      this.PersonaService.login(this.usuario).subscribe(
+        (response: string) => {
+          console.log('Token JWT:', response);
+          if (response != null) {
+            this.serviceLocalStorage.setItem('jwt', response);
+            this.PersonaService.setPersonaLog();
+            this.router.navigate(['/user']);
+          }},
+        (error) => {console.error('Error durante el inicio de sesión:', error);
         }
-        // ...haz algo con el token, como almacenarlo en localStorage
-      },
-      (error) => {
-        console.error('Error durante el inicio de sesión:', error);
-        // Mostrar un mensaje de error en la interfaz de usuario
-      }
-    );
+      );
+    }
   }
 
   ChangeType: boolean = true;

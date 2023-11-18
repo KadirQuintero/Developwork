@@ -56,7 +56,6 @@
     <table>
       <thead>
         <tr>
-          <th>ID Equipo</th>
           <th>Nombre</th>
           <th>Descripcion</th>
           <th>Jornada</th>
@@ -70,7 +69,6 @@
           (click)="this.equipoSelect = equipo"
           [ngClass]="{ seleccionado: equipoSelect == equipo }"
         >
-          <td>{{ equipo.id_equipo }}</td>
           <td>{{ equipo.nombre_equipo }}</td>
           <td>{{ equipo.descripcion }}</td>
           <td>{{ equipo.jornada.nombre_jornada }}</td>

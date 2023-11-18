@@ -1,47 +1,45 @@
-header {
-  top: 2.938em;
-  text-align: center;
+#body-register{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #container-form {
-  display: flex;
-  height: 100vh;
-  flex-direction: column;
+  background-color: rgb(251, 252, 241, 0.5);
+  border-radius: 0.625em;
+}
+
+.cabecera {
+  margin-top: -20px;
+  text-align: center;
+}
+
+.cab-img {
+  position: relative;
+  top: 22px;
+  width: 20%;
 }
 
 #formulario {
   text-align: center;
   font-size: 1em;
   margin: 0 auto;
+  padding: 0px 8px 0px 8px;
   border: none;
   height: 100%;
-  width: 70%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-radius: 0px 0px 20px 20px;
+  width: 100%;
+  border-radius: 0px 0px 0.625em 0.625em;
   background-color: rgb(251, 252, 241);
 }
 
 h1 {
-  font-size: 40;
   margin: 0 auto;
-  background-color: rgb(251, 252, 241);
-  width: 70%;
+  width: 80%;
   z-index: 3;
   text-align: center;
   border-radius: 20px 20px 0px 0px;
-}
-
-.form-input {
-  font-size: 1.25em;
-  border-bottom: 1px solid #000;
-  border-radius: 0.438em;
-  padding: 2px;
-  background-color: rgb(251, 252, 241);
-  background-repeat: no-repeat;
-  background-position: 98%;
-  background-size: auto 1.563em;
-  width: 200px;
 }
 
 .input-text {
@@ -56,65 +54,62 @@ h1 {
   background-image: url(src\assets\resources\Eyeicon.svg);
 }
 
+.field-select{
+  margin-top: 10px;
+}
+
+.field-select select {
+  border: 1px solid #000;
+  background-color: transparent;
+  border-radius: 1.25em;
+  width: 200px;
+  margin-left: 5px;
+  padding: 3px;
+}
+
+.field-select label{
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.field-input{
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+fieldset label{
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.field-input input{
+  margin-left: 5px;
+}
+
+.form-input {
+  font-size: 18px;
+  width: 300px;
+  border: 1px solid #000;
+  border-radius: 0.438em;
+  padding: 2px;
+  background-color: rgb(251, 252, 241);
+  background-repeat: no-repeat;
+  background-position: 98%;
+  background-size: auto 1.563em;
+}
+
 .form-btn-registrar {
+  font-size: 20px;
+  padding: 3px;
+  width: 200px;
   color: #ffffff;
   border: none;
   border-radius: 0.938em;
   background-color: #1e512c;
   grid-column: span 3;
-  width: 70%;
-  height: 70%;
-  margin: 0 auto;
-}
-
-fieldset {
-  margin-bottom: 1.125em;
-}
-
-img {
-  height: 7em;
-}
-
-select {
-  background-color: transparent;
-  border-radius: 1.25em;
-  padding: 8px;
-  width: 150px;
-}
-
-input {
-  background-size: 100%;
-}
-
-._selects, ._inputs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  padding: 10px;
-}
-
-._inputs{
-  grid-template-columns:1fr 1fr;
-}
-
-.field-label,
-.field-select,
-.field-input {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.field-input{
-  gap: 29px;
-}
-
-.field-label{
-  text-align: end;
-  gap: 40px;
-}
-
-._selects fieldset label,
-._inputs fieldset label {
-  font-size: 18px;
+  margin: 10px 0px 10px 0px;
 }
