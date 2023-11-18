@@ -5,7 +5,7 @@
   background-color: rgb(251, 252, 241, 0.6);
   margin: 0 auto;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr ;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -15,6 +15,7 @@
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   width: 100vw;
+  height: 100%;
   gap: 2em;
 }
 

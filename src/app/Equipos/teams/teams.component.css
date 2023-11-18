@@ -58,12 +58,12 @@ select{
   padding: 0px 0.625em 0px 0.625em;
   border-radius: 0.625em;
   background-color: #fff;
-  max-height: 25em;
   overflow-y: auto;
 }
 
 table {
   width: 100%;
+  height: 100%;
   border-radius: 0.625em;
   margin: 0.625em 0px 0.625em 0px;
 }

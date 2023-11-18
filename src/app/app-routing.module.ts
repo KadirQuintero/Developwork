@@ -14,6 +14,7 @@ import { ModpersonaComponent } from './personas/modpersona/modpersona.component'
 import { InformationComponent } from './Informacion/information.component';
 import { ModequipoComponent } from './Equipos/modequipo/modequipo.component';
 import { AuthGuard } from './Servicios/auth.guard';
+import { OrdenesMComponent } from './ordenes/ordenes-m/ordenes-m.component';
 const routes: Routes = [
   {
     path: '',
@@ -25,6 +26,10 @@ const routes: Routes = [
         path: 'user',
         component: usersComponent,
         children: [
+          {
+            path: '',
+            component: OrdenesMComponent,
+          },
           {
             path: 'personas',
             component: MPersonasComponent,
@@ -51,7 +56,7 @@ const routes: Routes = [
           },
           { path: 'modEquipo', component: ModequipoComponent },
         ],
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
       },
     ],
   },
