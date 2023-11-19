@@ -1,9 +1,13 @@
-div{
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    display: grid;
-    background-color: aquamarine;
-    padding: 5px;
-    font-size: 1em;
+div {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  display: grid;
+  padding: 1em;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  background-color: greenyellow;
+  font-size: 1em;
 }

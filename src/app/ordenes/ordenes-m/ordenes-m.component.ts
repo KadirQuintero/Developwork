@@ -1,24 +1,53 @@
 import { Component, OnInit } from '@angular/core';
+import { TeamservService } from 'src/app/Equipos/teamserv.service';
+import { SordenesService } from 'src/app/Servicios/ordenes/sordenes.service';
 import { ordenes_matenimiento } from 'src/app/models/ordenes_mantenimiento';
-import { OrdenesService } from '../ordenes.service';
 
 @Component({
   selector: 'app-ordenes-m',
   templateUrl: './ordenes-m.component.html',
-  styleUrls: ['./ordenes-m.component.css']
+  styleUrls: ['./ordenes-m.component.css'],
 })
 export class OrdenesMComponent implements OnInit {
   ngOnInit(): void {
-    this.ordenesP=this.ordenesS.ordenes();
-    this.ordenesR=this.ordenesS.ordenes();
-    this.ordenesH=this.ordenesS.ordenes();
-
+    this.ordenesP = this.sordenes.ordenes();
   }
-  constructor(
-    private ordenesS: OrdenesService
-  ){}
-  ordenesP:ordenes_matenimiento[]=[];
-  ordenesR:ordenes_matenimiento[]=[];
-  ordenesH:ordenes_matenimiento[]=[];
+  modorden: ordenes_matenimiento = new ordenes_matenimiento();
 
+  constructor(private sordenes: SordenesService,
+    ) {
+    this.modorden = this.sordenes.getOrden();
+  }
+  ordenesP: ordenes_matenimiento[] = [];
+  ordenesR: ordenes_matenimiento[] = [];
+
+  modOrden(ordenM: ordenes_matenimiento) {
+    this.modorden = ordenM;
+  }
+  newOrden() {
+    var fechaHoraActual = new Date();
+
+    // Extrae los componentes de la fecha y hora
+    var año = fechaHoraActual.getFullYear();
+    var mes = fechaHoraActual.getMonth() + 1; // Los meses comienzan desde cero, por lo que se suma 1
+    var dia = fechaHoraActual.getDate();
+    var horas = fechaHoraActual.getHours();
+    var minutos = fechaHoraActual.getMinutes();
+    var segundos = fechaHoraActual.getSeconds();
+
+    // Formatea la fecha y hora
+    var fechaHoraFormateada =
+      año +
+      this.pad(mes) +
+      this.pad(dia) +
+      this.pad(horas) +
+      this.pad(minutos) +
+      this.pad(segundos);
+    console.log(fechaHoraFormateada);
+    this.modorden = new ordenes_matenimiento();
+    this.modorden.id_orden = 'O' + fechaHoraFormateada;
+  }
+  pad(numero: number): string {
+    return numero < 10 ? '0' + numero.toString() : numero.toString();
+  }
 }

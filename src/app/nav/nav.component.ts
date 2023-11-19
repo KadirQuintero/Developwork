@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LocalStorageService } from '../Servicios/loalStorage/local-storage.service';
-import { OrdenesService } from '../ordenes/ordenes.service';
-import { persona } from '../models/persona';
 
 @Component({
   selector: 'app-nav',
@@ -12,10 +10,8 @@ import { persona } from '../models/persona';
 export class NavComponent {
   constructor(
     private router: Router,
-    private serviceLocalStorage: LocalStorageService,
-  ) {
- 
-  }
+    private serviceLocalStorage: LocalStorageService
+  ) {}
   Principal(): void {
     this.router.navigate(['user']);
   }

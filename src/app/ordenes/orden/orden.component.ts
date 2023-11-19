@@ -9,6 +9,5 @@ import { ordenes_matenimiento } from 'src/app/models/ordenes_mantenimiento';
 export class OrdenComponent {
   @Input() orden :ordenes_matenimiento= new ordenes_matenimiento();
   constructor(){
-    console.log(this.orden);
   }
 }

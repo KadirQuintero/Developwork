@@ -5,9 +5,24 @@
   background-color: rgb(251, 252, 241, 0.6);
   margin: 0 auto;
   display: grid;
-  grid-template-rows: 1fr 1fr ;
+  grid-template-rows: 1fr 1fr;
   border-radius: 10px;
   overflow: hidden;
+}
+
+.agregar {
+  position: fixed;
+  background-color: green;
+  border: none;
+  z-index: 7;
+  right: 0;
+  bottom: 0;
+  border-radius: 100%;
+  height: 8rem;
+  width: 8rem;
+  color: white;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .carrusel {
@@ -15,7 +30,7 @@
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   width: 100vw;
-  height: 100%;
+  padding: 2em;
   gap: 2em;
 }
 
@@ -25,7 +40,8 @@
   text-align: center;
 }
 
-ul, li {
+ul,
+li {
   margin: 0;
   padding: 0;
   list-style: none;

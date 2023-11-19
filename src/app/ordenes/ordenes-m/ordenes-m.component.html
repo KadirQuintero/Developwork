@@ -1,14 +1,15 @@
 <div id="body">
+  <app-forden [modorden]="modorden" (mensajeCambiado)="modOrden($event)" *ngIf="modorden.id_orden"></app-forden>
   <div>
     <h2>Ordenes Pendientes</h2>
     <ul class="carrusel">
         <li *ngFor="let orden of ordenesP">
-            <app-orden class=".carousel-item" [orden]="orden"></app-orden>
+            <app-orden class=".carousel-item" (click)="modOrden(orden)" [orden]="orden"></app-orden>
         </li>
     </ul>
   </div>
 
-  <div>
+  <div >
     <h2>Ordenes Revision</h2>
     <ul class="carrusel">
         <li *ngFor="let orden of ordenesR">
@@ -16,14 +17,7 @@
         </li>
     </ul>
   </div>
-
-
-  <!--div>
-    <h2>Historico</h2>
-    <ul class="carrusel">
-        <li *ngFor="let orden of ordenesH">
-            <app-orden class=".carousel-item" [orden]="orden"></app-orden>
-        </li>
-    </ul>
-  </div-->
 </div>
+<button class="agregar" (click)="newOrden()">
+  Agregar 
+</button>

@@ -13,7 +13,7 @@ export class RolserviceService {
     private http: HttpClient,
     private serviceLocalStorage: LocalStorageService
   ) {
-    this.token = serviceLocalStorage.getItem('jwt');
+    this.token = this.serviceLocalStorage.getItem('jwt');
   }
   getData(): Observable<any> {
     const headers = new HttpHeaders({

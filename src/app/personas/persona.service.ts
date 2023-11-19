@@ -10,7 +10,7 @@ import { LocalStorageService } from '../Servicios/loalStorage/local-storage.serv
 export class PersonaService {
   private static lstPersonas: persona[] = [];
   private personaMod: persona = new persona();
-  private personaLog: persona = new persona();
+  private static personaLog: persona = new persona();
   private token: string = '';
 
   validToken(): Observable<any> {

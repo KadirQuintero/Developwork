@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { OrdenesService } from '../ordenes/ordenes.service';
 
 @Component({
   selector: 'app-admin',
@@ -7,5 +6,5 @@ import { OrdenesService } from '../ordenes/ordenes.service';
   styleUrls: ['./users.component.css'],
 })
 export class usersComponent {
-  constructor(public ordenesService: OrdenesService) {}
+  constructor() {}
 }

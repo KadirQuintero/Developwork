@@ -19,6 +19,7 @@ import { ModpersonaComponent } from './personas/modpersona/modpersona.component'
 import { ModequipoComponent } from './Equipos/modequipo/modequipo.component';
 import { OrdenesMComponent } from './ordenes/ordenes-m/ordenes-m.component';
 import { OrdenComponent } from './ordenes/orden/orden.component';
+import { FordenComponent } from './ordenes/forden/forden.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { OrdenComponent } from './ordenes/orden/orden.component';
       ModequipoComponent,
       OrdenesMComponent,
       OrdenComponent,
+      FordenComponent,
   ],
   imports: [
     BrowserModule,
