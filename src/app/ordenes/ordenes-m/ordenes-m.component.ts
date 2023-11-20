@@ -10,8 +10,11 @@ import { ordenes_matenimiento } from 'src/app/models/ordenes_mantenimiento';
 })
 export class OrdenesMComponent implements OnInit {
   ngOnInit(): void {
-    this.sordenes.ordenes().subscribe(Response=>{
-      this.ordenesP=Response;
+    this.sordenes.ordenes().subscribe((Response) => {
+      this.ordenesP = Response;
+    });
+    this.sordenes.ordenesP().subscribe((Response) => {
+      this.ordenesR = Response;
     });
   }
   modorden: ordenes_matenimiento = new ordenes_matenimiento();

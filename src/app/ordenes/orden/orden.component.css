@@ -8,6 +8,17 @@ div {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  background-color: greenyellow;
   font-size: 1em;
+}
+
+.Bajo{
+
+  background-color: green;
+}
+
+.Medio{
+  background-color: yellowgreen;
+}
+.Urgente{
+  background-color: red;
 }

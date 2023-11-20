@@ -40,6 +40,9 @@ export class SordenesService {
   ordenes(): Observable<any> {
     return this.http.get(this.URL, { headers: this.headers });
   }
+  ordenesP(): Observable<any> {
+    return this.http.get(this.URL+"/pendientes", { headers: this.headers });
+  }
   createOrden(orden: ordenes_matenimiento): Observable<any> {
     return this.http.post(this.URL, orden, { headers: this.headers });
   }

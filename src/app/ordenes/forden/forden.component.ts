@@ -50,32 +50,60 @@ export class FordenComponent {
     });
 
     this.sestados.getData().subscribe((Response) => {
-      this.estados = Response;
+      this.estados = [
+        {
+          id_estado: '1',
+          nombre_estado: 'no iniciado',
+        },
+        {
+          id_estado: '2',
+          nombre_estado: 'en curso',
+        },
+        {
+          id_estado: '3',
+          nombre_estado: 'revision',
+        },
+        {
+          id_estado: '4',
+          nombre_estado: 'finalizado',
+        },
+      ];
     });
     this.spersonas.setPersonaLog().subscribe((Response) => {
       this.administrativo = Response;
       if (this.modorden.administrativo.id_usuario == '') {
         this.modorden.administrativo = this.administrativo;
-        console.log(this.administrativo);
         this.nuevo = true;
       }
     });
   }
   agregar(): void {
-    this.modorden.equipo = this.equipos.find(
-      (x) => x.id_equipo == this.modorden.equipo.id_equipo
-    ) || new equipo();
-
-    this.sordenes.createOrden(this.modorden).subscribe((response) => {
-      console.log(response);
-    });
+    this.nuevo = !this.nuevo;
+    this.modorden.equipo =
+      this.equipos.find((x) => x.id_equipo == this.modorden.equipo.id_equipo) ||
+      new equipo();
+    this.modorden.estado =
+      this.estados.find((x) => x.id_estado == this.modorden.estado.id_estado) ||
+      new estado();
+    this.modorden.prioridad =
+      this.prioridades.find(
+        (x) => x.id_prioridad == this.modorden.prioridad.id_prioridad
+      ) || new prioridad();
+    this.sordenes.createOrden(this.modorden).subscribe((response) => {});
+    this.cerrar();
   }
   actualizar() {
-    console.log(
-      this.equipos.find((x) => x.id_equipo == this.modorden.equipo.id_equipo)
-    );
-    this.sordenes.putOrden(this.modorden).subscribe((Response) => {
-      console.log(Response);
-    });
+    this.modorden.equipo =
+      this.equipos.find((x) => x.id_equipo == this.modorden.equipo.id_equipo) ||
+      new equipo();
+    this.modorden.estado =
+      this.estados.find((x) => x.id_estado == this.modorden.estado.id_estado) ||
+      new estado();
+    this.modorden.prioridad =
+      this.prioridades.find(
+        (x) => x.id_prioridad == this.modorden.prioridad.id_prioridad
+      ) || new prioridad();
+    this.sordenes.putOrden(this.modorden).subscribe((Response) => {});
+    this.cerrar();
   }
 }

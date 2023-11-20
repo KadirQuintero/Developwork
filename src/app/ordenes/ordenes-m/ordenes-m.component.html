@@ -13,7 +13,7 @@
     <h2>Ordenes Revision</h2>
     <ul class="carrusel">
         <li *ngFor="let orden of ordenesR">
-            <app-orden class=".carousel-item" [orden]="orden"></app-orden>
+            <app-orden class=".carousel-item" (click)="modOrden(orden)" [orden]="orden"></app-orden>
         </li>
     </ul>
   </div>

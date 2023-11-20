@@ -20,7 +20,10 @@ import { ModequipoComponent } from './Equipos/modequipo/modequipo.component';
 import { OrdenesMComponent } from './ordenes/ordenes-m/ordenes-m.component';
 import { OrdenComponent } from './ordenes/orden/orden.component';
 import { FordenComponent } from './ordenes/forden/forden.component';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { SocketService } from './Servicios/socket.service';
 
+const config: SocketIoConfig = { url: 'http://191.88.249.172:3002', options: {} };
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +37,6 @@ import { FordenComponent } from './ordenes/forden/forden.component';
     InformationComponent,
     MPersonasComponent,
     CambContraComponent,
-
     ModpersonaComponent,
       ModequipoComponent,
       OrdenesMComponent,
@@ -47,8 +49,9 @@ import { FordenComponent } from './ordenes/forden/forden.component';
     FormsModule,
     ReactiveFormsModule,
     ReactiveFormsModule,
+    SocketIoModule.forRoot(config), // Corregido aquí
   ],
-  providers: [TeamservService,importProvidersFrom(HttpClientModule)],
+  providers: [TeamservService,importProvidersFrom(HttpClientModule),SocketService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
