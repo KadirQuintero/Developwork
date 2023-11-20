@@ -10,12 +10,13 @@ import { ordenes_matenimiento } from 'src/app/models/ordenes_mantenimiento';
 })
 export class OrdenesMComponent implements OnInit {
   ngOnInit(): void {
-    this.ordenesP = this.sordenes.ordenes();
+    this.sordenes.ordenes().subscribe(Response=>{
+      this.ordenesP=Response;
+    });
   }
   modorden: ordenes_matenimiento = new ordenes_matenimiento();
 
-  constructor(private sordenes: SordenesService,
-    ) {
+  constructor(private sordenes: SordenesService) {
     this.modorden = this.sordenes.getOrden();
   }
   ordenesP: ordenes_matenimiento[] = [];
@@ -26,8 +27,6 @@ export class OrdenesMComponent implements OnInit {
   }
   newOrden() {
     var fechaHoraActual = new Date();
-
-    // Extrae los componentes de la fecha y hora
     var año = fechaHoraActual.getFullYear();
     var mes = fechaHoraActual.getMonth() + 1; // Los meses comienzan desde cero, por lo que se suma 1
     var dia = fechaHoraActual.getDate();
@@ -35,7 +34,6 @@ export class OrdenesMComponent implements OnInit {
     var minutos = fechaHoraActual.getMinutes();
     var segundos = fechaHoraActual.getSeconds();
 
-    // Formatea la fecha y hora
     var fechaHoraFormateada =
       año +
       this.pad(mes) +

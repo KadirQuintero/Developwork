@@ -20,13 +20,21 @@
         <label>Equipo:</label>
         <select name="id_equipo" [(ngModel)]="modorden.equipo.id_equipo">
           <option *ngFor="let equipo of equipos" [value]="equipo.id_equipo">
-            {{ equipo.nombre_equipo }}
+            {{equipo.nombre_equipo}}
+          </option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <label>Prioridad:</label>
+        <select name="id_prioridad" [(ngModel)]="modorden.prioridad.id_prioridad">
+          <option *ngFor="let prioridad of prioridades" [value]="prioridad.id_prioridad">
+            {{prioridad.nombre_prioridad}}
           </option>
         </select>
       </fieldset>
       <fieldset>
         <label>Administrativo adscrito</label>
-        <input name="id_usuario" [(ngModel)]="modorden.administrativo.id_usuario" type="text">
+        <input name="id_usuario" [(ngModel)]="modorden.administrativo.nombre" type="text">
       </fieldset>
       <fieldset>
         <label>Comentarios</label>
@@ -34,6 +42,7 @@
       </fieldset>
     </form>
     <button class="btn btn-success" (click)="cerrar()">Cerrar</button>
-    {{modorden.descripcion}}
+    <button *ngIf="nuevo" (click)="agregar()"> Agregar Orden </button>
+    <button (click)="actualizar()">Actualizar Orden</button>
   </div>
 </div>

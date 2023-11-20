@@ -17,62 +17,7 @@ export class SordenesService {
   private token: string = '';
   private headers = new HttpHeaders();
 
-  private _ordenes: ordenes_matenimiento[] = [
-    {
-      id_orden: '1',
-      descripcion: 'Manteniemiento Preventivo pozo 71',
-      equipo: {
-        id_equipo: '1',
-        nombre_equipo: 'Mantenimiento Mecanico',
-        rol: new rol(),
-        jornada: new jornada(),
-        estado: {
-          id_estado: '1',
-          nombre_estado: 'Operativo',
-        },
-      },
-      personas: [],
-      administrativo: new persona(),
-      comentarios: 'Esto es un nuevo comentario',
-      estado: new estado(),
-    },
-    {
-      estado: new estado(),
-      id_orden: '1',
-      descripcion: 'Manteniemiento Preventivo pozo 71',
-      equipo: {
-        id_equipo: '1',
-        nombre_equipo: 'Mantenimiento Mecanico',
-        rol: new rol(),
-        jornada: new jornada(),
-        estado: {
-          id_estado: '1',
-          nombre_estado: 'Operativo',
-        },
-      },
-      personas: [],
-      administrativo: new persona(),
-      comentarios: '',
-    },
-    {
-      estado: new estado(),
-      id_orden: '1',
-      descripcion: 'Manteniemiento Preventivo pozo 71',
-      equipo: {
-        id_equipo: '1',
-        nombre_equipo: 'Mantenimiento Mecanico',
-        rol: new rol(),
-        jornada: new jornada(),
-        estado: {
-          id_estado: '1',
-          nombre_estado: 'Operativo',
-        },
-      },
-      personas: [],
-      administrativo: new persona(),
-      comentarios: '',
-    },
-  ];
+  private _ordenes: ordenes_matenimiento[] = [];
   constructor(
     private http: HttpClient,
     private serviceLocalStorage: LocalStorageService
@@ -92,20 +37,13 @@ export class SordenesService {
     console.log('setOrden:', _orden);
     this.forden = _orden;
   }
-  ordenes(): ordenes_matenimiento[] {
-    this.http.get(this.URL, { headers: this.headers }).subscribe(
-      (Response: any) => {
-        Response.forEach((element: any) => {
-          this._ordenes.push(element);
-        });
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-    return this._ordenes;
+  ordenes(): Observable<any> {
+    return this.http.get(this.URL, { headers: this.headers });
   }
   createOrden(orden: ordenes_matenimiento): Observable<any> {
     return this.http.post(this.URL, orden, { headers: this.headers });
+  }
+  putOrden(orden: ordenes_matenimiento): Observable<any> {
+    return this.http.put(this.URL, orden, { headers: this.headers });
   }
 }
