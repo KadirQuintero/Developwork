@@ -1,8 +1,8 @@
 <div>
   <h2>Notificaciones en tiempo real</h2>
   <ul>
-    <li *ngFor="let notificacion of notificaciones">{{ notificacion.mensaje }}</li>
+    <li *ngFor="let notificacion of notificaciones">{{ notificacion.mensaje }}
+      <button (click)="eliminar(notificacion)">Eliminar</button>
+    </li>
   </ul>
-  <input [(ngModel)]="nuevaNotificacion.mensaje" name="mensaje" placeholder="Nueva notificación" />
-  <button (click)="enviarNotificacion()">Enviar Notificación</button>
 </div>

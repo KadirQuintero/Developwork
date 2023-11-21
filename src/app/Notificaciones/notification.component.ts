@@ -17,30 +17,27 @@ export class NotificationComponent {
     private Ssoket: SocketService,
     private spersona: PersonaService
   ) {
+    
   }
 
   ngOnInit(): void {
-    // Escuchar nuevas notificaciones desde el servidor
-    this.spersona.setPersonaLog().subscribe((Response:persona) => {
-      this.nuevaNotificacion.idAdmin=Response.id_usuario.trim();
-      this.nuevaNotificacion.id_equipo=Response.equipo.id_equipo;
+    this.spersona.setPersonaLog().subscribe((Response: persona) => {
+      this.nuevaNotificacion.idAdmin = Response.id_usuario.trim();
+      this.nuevaNotificacion.id_equipo = Response.equipo.id_equipo;
       this.Ssoket.conectarConIdUsuario(Response);
-      console.log(Response);
     });
     this.Ssoket.escucharNuevaNotificacion().subscribe((notificacion) => {
       this.notificaciones.push(notificacion);
     });
 
-    // Obtener notificaciones existentes desde el servidor
     this.Ssoket.obtenerNotificaciones().subscribe((notificaciones: any) => {
       this.notificaciones = notificaciones;
     });
-  }
 
-  enviarNotificacion(): void {
-    if (this.nuevaNotificacion.mensaje.trim() !== '') {
-      this.Ssoket.enviarNuevaNotificacion(this.nuevaNotificacion);
-      this.nuevaNotificacion.mensaje = '';
-    }
+  }
+  eliminar(__notificacion:notificacion){
+    this.Ssoket.eliminar(__notificacion).subscribe(Response=>{
+      console.log(Response);
+    })
   }
 }
