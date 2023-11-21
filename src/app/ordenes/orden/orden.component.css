@@ -13,6 +13,7 @@ div {
 
 .Bajo{
   background-color: #008f39;
+  color: #fff;
 }
 
 .Medio{
@@ -21,4 +22,5 @@ div {
 
 .Urgente{
   background-color: #fe0000;
+  color: #fff;
 }

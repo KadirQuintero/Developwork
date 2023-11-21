@@ -10,8 +10,8 @@
           <label>Correo:</label>
           <input
             class="user" type="email" name="correo" [(ngModel)]="usuario.correo" required
-            placeholder="Digitar su correo"/>
-            <p *ngIf="msgValidarEmail" style="color: red; font-size: 16px;"> Correo invalido </p>
+            placeholder="Digitar su correo" />
+            <p class="msgEmail" *ngIf="msgValidarEmail"> Correo invalido </p>
 
           <label>Contraseña:</label>
           <input
@@ -22,7 +22,7 @@
             <input (click)="viewpass()" type="checkbox"/>
             <label> Mostrar Contraseña</label>
           </div>
-          <p *ngIf="msgValidarCamp" style="color: red; font-size: 16px;"> Ningun campo puede estar vacio </p>
+          <p class="msgCamp" *ngIf="msgValidarCamp"> No pueden haber campos vacios </p>
           <input
             (click)="IniciarSesion()" class="btn_ingresar" type="submit" value="Ingresar"/>
         </form>
