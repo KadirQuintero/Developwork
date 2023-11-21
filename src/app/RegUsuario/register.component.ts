@@ -57,25 +57,37 @@ export class registerComponent {
   msgValidarEmail: boolean = false;
 
   async addPersona() {
-    const { nombre, nombre2, apellido, apellido2, correo} = this.persona;
-    if (!this.ValidarCamp(nombre) || !this.ValidarCamp(apellido)) {
-      this.msgValidarCamp = true; return;
-    } else if (
-      !this.ValidarLenght(nombre) || !this.ValidarLenght(nombre2) ||
-      !this.ValidarLenght(apellido) || !this.ValidarLenght(apellido2)
-    ) {
-      this.msgValidarLenght = true; return;}
-    if (correo !== undefined &&  !this.validarEmail(correo)) {
-      this.msgValidarEmail = true; return;
-    } else {
-      const postData = { key: 'value' }; // Reemplaza con tus datos
-      this.personaSerive.postData(this.persona).subscribe(
-        (response) => {console.log('Respuesta del servidor:', response);
-        alert(`El usuario ${nombre} ${apellido} fue registrado con exito.`)
-      },
-        (error) => {console.error('Error en la solicitud:', error);
-        }
-      );
+    const { nombre, nombre2, apellido, apellido2, correo } = this.persona;
+
+    switch (true) {
+      case !(this.ValidarCamp(nombre) && this.ValidarCamp(apellido)):
+        this.msgValidarCamp = true;
+        break;
+
+      case !(
+        this.ValidarLenght(nombre) &&
+        this.ValidarLenght(nombre2) &&
+        this.ValidarLenght(apellido) &&
+        this.ValidarLenght(apellido2)
+      ):
+        this.msgValidarLenght = true;
+        break;
+
+      case correo !== undefined && !this.validarEmail(correo):
+        this.msgValidarEmail = true;
+        break;
+
+      default:
+        const postData = { key: 'value' }; // Reemplaza con tus datos
+        this.personaSerive.postData(this.persona).subscribe(
+          (response) => {
+            console.log('Respuesta del servidor:', response);
+            alert(`El usuario ${nombre} ${apellido} fue registrado con éxito.`);
+          },
+          (error) => {
+            console.error('Error en la solicitud:', error);
+          }
+        );
     }
-  } //addPersona
+  }
 }

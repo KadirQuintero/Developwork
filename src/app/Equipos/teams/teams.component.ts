@@ -29,18 +29,7 @@ export class TeamsComponent implements OnInit {
     private serviceestado: EstadoserviceService,
     private rolService: RolserviceService,
     private jornadaService: JornadaserviceService
-  ) {
-    /*this.verequipo = serviceteam.getEquipos();
-    this.verestado = serviceestado.getEstado();
-    this.serviceteam.getData().subscribe((Response: equipo[]) => {
-      this.verequipo = Response;
-    });
-    if (this.equipoSelect.id_equipo == '') {
-      this.serviceteam.getData().subscribe((Response: equipo[]) => {
-        this.verequipo = Response;
-      });
-    }*/
-  }
+  ) {}
 
   ngOnInit(): void {
     this.serviceteam.getData().subscribe((Response: equipo[]) => {
@@ -57,16 +46,32 @@ export class TeamsComponent implements OnInit {
     });
   }
 
-  AgregarEquipo() {
-    this.serviceteam.addEquipo(this.nuevoEquipo).subscribe(
-      (equipo) => {
-        console.log('Equipo agregado con éxito:', equipo);
-        this.verequipo.push(this.nuevoEquipo);
-      },
-      (error) => {
-        console.error('Error al agregar equipo:', error);
-      }
-    );
+    ValidarCamp(value: string): boolean {
+    return value.trim() !== '';
+  }
+  msgValidarCamp: boolean = false;
+
+  async AgregarEquipo() {
+    const { nombre_equipo, descripcion } = this.nuevoEquipo;
+
+    switch (true) {
+      case !this.ValidarCamp(nombre_equipo):
+      this.msgValidarCamp = true;
+      break;
+
+      case descripcion !== undefined && !this.ValidarCamp(descripcion):
+      this.msgValidarCamp = true;
+      break;
+
+      default:
+        this.serviceteam.addEquipo(this.nuevoEquipo).subscribe(
+          (response) => { console.log('Equipo agregado con éxito:', response);
+            this.verequipo.push(this.nuevoEquipo);
+          },
+          (error) => {console.error('Error al agregar equipo:', error);
+          }
+        );
+    }
   }
 
   modEquipo() {

@@ -7,7 +7,6 @@
       <label for="nombre">Nombre </label>
       <input
         [(ngModel)]="nuevoEquipo.nombre_equipo"
-        [ngModelOptions]="{standalone: true}"
         name="nombre"
         id="nombre"
       />
@@ -17,7 +16,6 @@
       <label for="descripcion">Descripción </label>
       <input
         [(ngModel)]="nuevoEquipo.descripcion"
-        [ngModelOptions]="{standalone: true}"
         name="descripcion"
         id="descripcion"
       />
@@ -78,7 +76,7 @@
       </tbody>
     </table>
   </div>
-
+<p *ngIf="msgValidarCamp"> No puedes papalindo</p>
   <div id="container-crud">
     <button class="btn-crud crud_crear" (click)="AgregarEquipo()">Agregar</button>
     <button
