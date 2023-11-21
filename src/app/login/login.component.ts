@@ -42,10 +42,10 @@ export class LoginComponent {
     } else {
       this.PersonaService.login(this.usuario).subscribe(
         (response: string) => {
-          //console.log('Token JWT:', response);
+          console.log('Token JWT:', response);
           if (response != null) {
             this.serviceLocalStorage.setItem('jwt', response);
-            this.PersonaService.setPersonaLog()/*.subscribe((response) => {console.log(response)})*/;
+            this.PersonaService.setPersonaLog();
             this.router.navigate(['/user']);
           }},
         (error) => {console.error('Error durante el inicio de sesión:', error);

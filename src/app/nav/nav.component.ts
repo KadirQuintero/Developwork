@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LocalStorageService } from '../Servicios/loalStorage/local-storage.service';
-import { PersonaService } from '../personas/persona.service'; //prueba
+import { PersonaService } from '../personas/persona.service';
 
 @Component({
   selector: 'app-nav',
@@ -9,7 +9,6 @@ import { PersonaService } from '../personas/persona.service'; //prueba
   styleUrls: ['./nav.component.css'],
 })
 export class NavComponent implements OnInit {
-
   constructor(
     private router: Router,
     private serviceLocalStorage: LocalStorageService,
@@ -22,21 +21,15 @@ export class NavComponent implements OnInit {
   private validarSegunIdRol(): void {
     const id_rol_sub = this.PersonaS.setPersonaLog().subscribe((response) => {
       console.log('La Id_Rol que trae es : ' + id_rol_sub);
-      // Accede al valor de id_rol
       const id_rol = response.rol.id_rol;
-
-      // Ahora puedes usar id_rol en una estructura condicional
-      if (id_rol === "8") {
-          // Haz algo si id_rol es igual a "8"
-          this.validarAdmin = true;
-          console.log("El rol es Administrativo");
-      } else if (id_rol === '9'){
-          // Haz algo diferente si id_rol no es igual a "8"
-          console.log("El rol es operativo");
-          this.validarOpera = true;
+      if (id_rol === '8') {
+        this.validarAdmin = true;
+        console.log('El rol es Administrativo');
+      } else if (id_rol === '9') {
+        console.log('El rol es operativo');
+        this.validarOpera = true;
       }
-  });
-
+    });
   }
 
   ngOnInit() {
