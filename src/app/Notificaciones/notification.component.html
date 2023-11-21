@@ -3,6 +3,6 @@
   <ul>
     <li *ngFor="let notificacion of notificaciones">{{ notificacion.mensaje }}</li>
   </ul>
-  <input [(ngModel)]="nuevaNotificacion" placeholder="Nueva notificación" />
+  <input [(ngModel)]="nuevaNotificacion.mensaje" name="mensaje" placeholder="Nueva notificación" />
   <button (click)="enviarNotificacion()">Enviar Notificación</button>
 </div>

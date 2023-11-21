@@ -47,6 +47,7 @@ export class SordenesService {
     return this.http.post(this.URL, orden, { headers: this.headers });
   }
   putOrden(orden: ordenes_matenimiento): Observable<any> {
+    orden.administrativo.id_usuario= orden.administrativo.id_usuario.trim();
     return this.http.put(this.URL, orden, { headers: this.headers });
   }
 }
