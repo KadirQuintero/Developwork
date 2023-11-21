@@ -30,7 +30,7 @@ form {
 }
 
 .fieldSelect {
-  font-size: 18px;
+  font-size: 1.125em;
 }
 
 .fieldSelect label {
@@ -38,13 +38,13 @@ form {
 }
 
 label {
-  font-size: 20px;
+  font-size: 1.25em;
 }
 
 select {
   border: 1px solid #000;
-  border-radius: 10px;
-  width: 200px;
+  border-radius: 0.625em;
+  width: 12.5em;
   margin-left: 5px;
 }
 
@@ -52,13 +52,14 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 0.625em;
+  gap: 5px;
 }
 
 .fieldInput input {
   border: 1px solid #000;
-  border-radius: 10px;
-  width: 500px;
+  border-radius: 4px;
+  width: 31.25em;
 }
 
 button {
@@ -66,8 +67,8 @@ button {
   border-radius: 0.625rem;
   border: none;
   color: #fff;
-  width: 150px;
+  width: 9.375em;
   padding: 0.3em;
-  font-size: 20px;
+  font-size: 1.25em;
   margin-top: 1em;
 }

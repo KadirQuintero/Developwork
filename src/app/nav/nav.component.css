@@ -12,6 +12,10 @@
       .nav_button {
       transition: 0.5s ease;
       background-position: 98%;
+      width: 100%;
+    }
+
+    .LogOut{
       width: 95%;
     }
   }
@@ -23,48 +27,48 @@
   font-size: 20px;
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: 45px;
 }
 
 .nav_button {
   padding: .313;
   border: none;
   border-radius: 0.625em;
-  width: 73%;
+  width: 100%;
   height: 2em;
-  position: absolute;
   background-color: #fff;
   background-size: 1.25em;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
+.principal{
+  background-image: url(../../assets/resources/home-icon.svg);
+}
+
 .Register {
   background-image: url(../../assets/resources/Register_Icon_Op1.svg);
-  bottom: 500px;
 }
 
 .Team {
   background-image: url(../../assets/resources/Teams_Icon.svg);
-  bottom: 420px;
 }
 
 .Stats {
   background-image: url(../../assets/resources/Stats_Icon.svg);
-  bottom: 340px;
 }
 
 .Notifi {
   background-image: url(../../assets/resources/Notificacion_Icon.svg);
-  bottom: 260px;
 }
 
 .Info {
   background-image: url(../../assets/resources/Info_Icon.svg);
-  bottom: 180px;
 }
 
 .LogOut {
   background-image: url(../../assets/resources/LogOut_Icon.svg);
-  bottom: 10px;
+  position: absolute;
+  bottom: 0.625em;
+  width: 73%;
 }

@@ -8,14 +8,14 @@
 
 #container-main {
   background-color: rgb(251, 252, 241, 0.5);
-  border-radius: 10px;
+  border-radius: 0.625em;
 }
 
 .cabecera {
   position: relative;
-  top: 42px;
+  top: 2.625em;
   text-align: center;
-  margin-top: -45px;
+  margin-top: -2.813em;
 }
 
 .cab-img {
@@ -27,7 +27,7 @@ h1 {
 }
 
 .container-info {
-  padding: 10px;
+  padding: 0.625em;
   background-color: rgb(251, 252, 241);
   text-align: center;
   border-radius: 0px 0px 10px 10px;
@@ -39,18 +39,18 @@ h1 {
 }
 
 .sec-info{
-  font-size: 22px;
-  padding: 10px;
+  font-size: 1.375em;
+  padding: 0.625em;
   text-align: start;
 }
 
 .btn-cambcontra{
-  font-size: 22px;
-  padding: 5px;
-  margin-bottom: 5px;
+  font-size: 1.375em;
+  padding: 0.313em;
+  margin-bottom: 0.313em;
   width: 35%;
   color: #fff;
   border: none;
-  border-radius: 10px;
+  border-radius: 0.625em;
   background-color: #1e512c;
 }

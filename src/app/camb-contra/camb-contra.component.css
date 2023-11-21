@@ -9,13 +9,13 @@
 
 #container-main {
   background-color: rgb(251, 252, 241, 0.5);
-  border-radius: 10px;
+  border-radius: 0.625em;
 }
 
 header {
   position: relative;
-  top: 42px;
-  margin-top: -45px;
+  top: 2.625em;
+  margin-top: -2.813em;
 }
 
 img {
@@ -23,21 +23,21 @@ img {
 }
 
 form {
-  padding: 14px;
+  padding: 0.875em;
   display: flex;
   align-items: center;
   flex-direction: column;
   grid-gap: 0.8em;
   background-color: rgb(251, 252, 241);
-  border-radius: 10px;
+  border-radius: 0.625em;
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 3.125em;
 }
 
 label {
-  font-size: 20px;
+  font-size: 1.25em;
   color: #000;
 }
 
@@ -49,40 +49,32 @@ fieldset {
 }
 
 input {
-  font-size: 16px;
-  width: 250px;
+  font-size: 1em;
+  width: 15.625em;
   padding: 6px;
   border: 1px solid #000;
-  border-radius: 10px;
+  border-radius: 0.625em;
   background-color: #fff;
-}
-
-i {
-  position: relative;
-  bottom: 28px;
-  left: 115px;
 }
 
 button {
   margin: 10px 0px 5px 0px;
-  font-size: 18px;
+  font-size: 1.125em;
   padding: 5px;
   width: 25%;
   color: #fff;
   border: none;
-  border-radius: 10px;
+  border-radius: 0.625em;
   background-color: #1e512c;
   margin-top: 0;
 }
 
-.div-check{
+.div-check {
   display: flex;
   align-items: center;
 }
 
-.check{
-  width: 30px;
-  height: 18px;
+.check {
+  width: 1.875em;
+  height: 1.125em;
 }
-
-

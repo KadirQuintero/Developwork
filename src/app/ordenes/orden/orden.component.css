@@ -12,13 +12,13 @@ div {
 }
 
 .Bajo{
-
-  background-color: green;
+  background-color: #008f39;
 }
 
 .Medio{
-  background-color: yellowgreen;
+  background-color:  #ffff00;
 }
+
 .Urgente{
-  background-color: red;
+  background-color: #fe0000;
 }

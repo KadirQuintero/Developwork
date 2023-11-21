@@ -12,13 +12,13 @@
 }
 
 .cabecera {
-  margin-top: -20px;
+  margin-top: -1.25em;
   text-align: center;
 }
 
 .cab-img {
   position: relative;
-  top: 22px;
+  top: 1.375em;
   width: 20%;
 }
 
@@ -55,21 +55,21 @@ h1 {
 }
 
 .field-select{
-  margin-top: 10px;
+  margin-top: 0.625em;
 }
 
 .field-select select {
   border: 1px solid #000;
   background-color: transparent;
   border-radius: 1.25em;
-  width: 200px;
+  width: 12.5em;
   margin-left: 5px;
   padding: 3px;
 }
 
 .field-select label{
-  font-size: 20px;
-  margin-left: 5px;
+  font-size: 1.25em;
+  margin-left: 0.313em;
 }
 
 .field-input{

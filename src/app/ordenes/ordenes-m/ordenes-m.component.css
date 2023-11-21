@@ -6,7 +6,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-rows: 1fr 1fr;
-  border-radius: 10px;
+  border-radius: 0.625em;
   overflow: auto;
 }
 
@@ -31,9 +31,9 @@
 }
 
 .agregar:hover {
-  width: 100px;
+  width: 6.25em;
   border-radius: 10%;
-  padding: 10px;
+  padding: 0.625em;
   color: #fff;
   background-image: none;
   background-color: rgb(30, 81, 44);

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { persona } from '../models/persona';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, catchError } from 'rxjs';
+import { Observable, catchError, tap } from 'rxjs';
 import { LocalStorageService } from '../Servicios/loalStorage/local-storage.service';
 
 @Injectable({
@@ -80,7 +80,7 @@ export class PersonaService {
         catchError((error) => {
           console.error('Error en la solicitud:', error);
           throw error; // Puedes manejar el error según tus necesidades
-        })
+        }),
       );
   }
 
@@ -90,7 +90,6 @@ export class PersonaService {
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
-
     return this.http.get(this.URL + 'usuario', { headers });
   }
 
