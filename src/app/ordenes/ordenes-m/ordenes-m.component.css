@@ -12,17 +12,31 @@
 
 .agregar {
   position: fixed;
-  background-color: green;
-  border: none;
-  z-index: 7;
   right: 0;
   bottom: 0;
-  border-radius: 100%;
-  height: 8rem;
-  width: 8rem;
-  color: white;
+  width: 4%;
+  height: 9%;
   margin-right: 0.5em;
   margin-bottom: 0.5em;
+  border: none;
+  border-radius: 100%;
+  color: transparent;
+  z-index: 7;
+  transition: 0.5s;
+  background-color: transparent;
+  background-image: url(../../../assets/resources/plus-icon.svg);
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.agregar:hover {
+  width: 100px;
+  border-radius: 10%;
+  padding: 10px;
+  color: #fff;
+  background-image: none;
+  background-color: rgb(30, 81, 44);
 }
 
 .carrusel {
