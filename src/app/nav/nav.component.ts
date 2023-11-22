@@ -22,7 +22,7 @@ export class NavComponent implements OnInit {
     const id_rol_sub = this.PersonaS.setPersonaLog().subscribe((response) => {
       console.log('La Id_Rol que trae es : ' + id_rol_sub);
       const id_rol = response.rol.id_rol;
-      if (id_rol === '8') {
+      if (id_rol === '5') {
         this.validarAdmin = true;
         console.log('El rol es Administrativo');
       } else if (id_rol === '9') {
