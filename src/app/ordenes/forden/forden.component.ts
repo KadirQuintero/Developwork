@@ -89,7 +89,11 @@ export class FordenComponent {
       this.prioridades.find(
         (x) => x.id_prioridad == this.modorden.prioridad.id_prioridad
       ) || new prioridad();
-    this.sordenes.createOrden(this.modorden).subscribe((response) => {});
+    this.sordenes.createOrden(this.modorden).subscribe((response) => {
+      console.log(response);
+    },(error)=>{
+      console.log(error);
+    });
     this.cerrar();
   }
   actualizar() {

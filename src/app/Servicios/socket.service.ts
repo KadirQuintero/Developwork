@@ -23,13 +23,10 @@ export class SocketService {
   conectarConIdUsuario(persona: persona) {
     this.socket.ioSocket.io.opts.query = { usuario: JSON.stringify(persona) };
     this.socket.connect();
+    return this.socket.fromEvent('notificaciones');
   }
   escucharNuevaNotificacion() {
     return this.socket.fromEvent('nuevaNotificacion');
-  }
-
-  obtenerNotificaciones() {
-    return this.socket.fromEvent('notificaciones');
   }
 
   enviarNuevaNotificacion(mensaje: notificacion) {
@@ -42,5 +39,8 @@ export class SocketService {
     });
     console.log(__notificacion);
     return this.http.delete(`${this.URL}`, { headers, body: __notificacion });
+  }
+  disconet(){
+    return this.socket.emit('disconect');
   }
 }
