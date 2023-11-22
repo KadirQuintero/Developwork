@@ -1,1 +1,11 @@
-<h1> NOTIFICATION aun en proceso de construccion... </h1>
+<div class="body-notifi">
+  <div class="container-notifi">
+    <h2>Notificaciones en tiempo real</h2>
+    <ul>
+      <li *ngFor="let notificacion of notificaciones">
+        {{ notificacion.mensaje }}
+        <button (click)="eliminar(notificacion)"></button>
+      </li>
+    </ul>
+  </div>
+</div>

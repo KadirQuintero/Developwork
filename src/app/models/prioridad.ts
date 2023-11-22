@@ -1,4 +1,4 @@
-class prioridad{
+export class prioridad{
     id_prioridad:string='';
     nombre_prioridad:string='';
 }

@@ -10,10 +10,10 @@ export class persona{
     apellido:string='';
     apellido2:string='';
     horas_trabajadas?:number;
+    horas_extras?:number;
     correo?:string='';
-    password?:string='';
+    contrasena?:string='';
     equipo:equipo= new equipo();
     estado:estado= new estado();
     rol:rol= new rol();
-    //jornada:jornada= new jornada();
 }

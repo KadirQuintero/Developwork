@@ -1,0 +1,61 @@
+<div class="_modal">
+  <div class="_content">
+    <form action="post">
+      <h1>Orden de mantenimiento: {{ modorden.id_orden }}</h1>
+
+      <fieldset class="group_1">
+        <label>Administrativo adscrito:
+          <input
+          name="id_usuario"
+          [(ngModel)]="modorden.administrativo.nombre"
+          type="text"
+          disabled="id_usuario"
+          />
+        </label>
+
+        <label>Prioridad:
+          <select
+          name="id_prioridad"
+          [(ngModel)]="modorden.prioridad.id_prioridad">
+          <option
+            *ngFor="let prioridad of prioridades"
+            [value]="prioridad.id_prioridad">
+            {{ prioridad.nombre_prioridad }}
+          </option>
+        </select>
+        </label>
+
+        <label>Estado de la orden:
+          <select name="id_estado" [(ngModel)]="modorden.estado.id_estado">
+            <option *ngFor="let estado of estados" [value]="estado.id_estado">
+              {{ estado.nombre_estado }}
+            </option>
+          </select>
+        </label>
+      </fieldset>
+
+      <fieldset class="group_2">
+        <label>Equipo: </label>
+        <select name="id_equipo" [(ngModel)]="modorden.equipo.id_equipo">
+          <option *ngFor="let equipo of equipos" [value]="equipo.id_equipo">
+            {{ equipo.nombre_equipo }}
+          </option>
+        </select>
+
+        <label>Descripcion de la orden: </label>
+        <textarea name="descripcion" id="descripcion" [(ngModel)]="modorden.descripcion"
+        cols="30" rows="3"></textarea>
+
+        <label>Comentarios: </label>
+        <textarea name="comentarios" id="comentarios" [(ngModel)]="modorden.comentarios"
+        cols="30" rows="3"></textarea>
+        </fieldset>
+    </form>
+    <button class="btn btn-success" (click)="cerrar()"></button>
+
+    <div class="div-crud">
+      <button class="btn-crud" *ngIf="nuevo" (click)="agregar()">Agregar Orden</button>
+      <button class="btn-crud" (click)="actualizar()">Actualizar Orden</button>
+    </div>
+  </div>
+</div>

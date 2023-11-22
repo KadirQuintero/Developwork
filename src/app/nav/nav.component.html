@@ -1,22 +1,25 @@
 <div id="container-main" (mouseenter)="VerBoton()" (mouseleave)="VerBoton()">
   <nav id="navi-admin">
-    <Button class="nav_button Register" (click)="RegisterUser()">
-      <span *ngIf="MostrarBoton"> Register user </span>
+    <button class="nav_button principal" (click)="Principal()" *ngIf="validarOpera || validarAdmin">
+      <span *ngIf="MostrarBoton"> Principal </span>
+    </button>
+    <Button class="nav_button Register" (click)="RegisterUser()" *ngIf="validarAdmin">
+      <span *ngIf="MostrarBoton"> Usuarios </span>
     </Button>
-    <Button class="nav_button Team" (click)="Teams()">
-      <span *ngIf="MostrarBoton"> Teams </span>
+    <Button class="nav_button Team" (click)="Teams()" *ngIf="validarAdmin">
+      <span *ngIf="MostrarBoton"> Equipos </span>
     </Button>
-    <Button class="nav_button Stats" (click)="Stats()">
-      <span *ngIf="MostrarBoton"> Stats </span>
+    <Button class="nav_button Stats" (click)="Stats()" *ngIf="validarAdmin">
+      <span *ngIf="MostrarBoton"> Estadisticas </span>
     </Button>
-    <Button class="nav_button Notifi" (click)="Notifications()">
-      <span *ngIf="MostrarBoton">Notifications</span>
+    <Button class="nav_button Notifi" (click)="Notifications()" *ngIf="validarOpera || validarAdmin">
+      <span *ngIf="MostrarBoton">Notificaciones</span>
     </Button>
-    <Button class="nav_button Info" (click)="Information()">
-      <span *ngIf="MostrarBoton">Information</span>
+    <Button class="nav_button Info" (click)="Information()" *ngIf="validarOpera || validarAdmin">
+      <span *ngIf="MostrarBoton">Informacion</span>
     </Button>
-    <Button class="nav_button LogOut" (click)="LogOut()">
-      <span *ngIf="MostrarBoton">Log Out</span>
+    <Button class="nav_button LogOut" (click)="LogOut()" *ngIf="validarOpera || validarAdmin">
+      <span *ngIf="MostrarBoton">Cerrar sesion</span>
     </Button>
   </nav>
 </div>

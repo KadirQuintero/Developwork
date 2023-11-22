@@ -19,3 +19,4 @@ describe('InformationComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

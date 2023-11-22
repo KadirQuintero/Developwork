@@ -9,10 +9,14 @@
 
   &:hover {
     width: 100%;
-
-    .nav_button {
+      .nav_button {
       transition: 0.5s ease;
       background-position: 98%;
+      width: 100%;
+    }
+
+    .LogOut{
+      width: 95%;
     }
   }
 }
@@ -20,10 +24,10 @@
 #navi-admin {
   width: 100%;
   height: 100%;
-  font-size: 1.625em;
+  font-size: 20px;
   display: flex;
   flex-direction: column;
-  grid-gap: 0.5em;
+  gap: 45px;
 }
 
 .nav_button {
@@ -36,8 +40,10 @@
   background-size: 1.25em;
   background-repeat: no-repeat;
   background-position: center center;
-  /* Centra la imagen horizontal y verticalmente */
+}
 
+.principal{
+  background-image: url(../../assets/resources/home-icon.svg);
 }
 
 .Register {
@@ -62,4 +68,7 @@
 
 .LogOut {
   background-image: url(../../assets/resources/LogOut_Icon.svg);
+  position: absolute;
+  bottom: 0.625em;
+  width: 73%;
 }

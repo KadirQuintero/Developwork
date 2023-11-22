@@ -7,18 +7,18 @@
       <h1>Informacion Personal</h1>
       <article class="container-grid">
         <section class="sec-info">
-          <p>Nombre: Luis</p>
-          <p>Nombre2: Alejandro</p>
-          <p>Apellido: Carretero</p>
-          <p>Apellido2: Ballesteros</p>
-          <p>Correo: Alejo_carretero@gmail.com</p>
+          <p><strong>Nombre:</strong> {{personalog.nombre}}</p>
+          <p><strong>Segundo nombre:</strong> {{personalog.nombre2}}</p>
+          <p><strong>Apellido:</strong> {{personalog.apellido}}</p>
+          <p><strong>Segundo apellido:</strong> {{personalog.apellido2}}</p>
+          <p><strong>Correo:</strong> {{personalog.correo}}</p>
         </section>
         <section class="sec-info">
-          <p>Rol: Administrativo</p>
-          <p>Equipo: Mantenimento preventivo</p>
-          <p>Estado: Activo</p>
-          <p>Horas_trabajadas: 0</p>
-          <p>Horas_extras: 0</p>
+          <p> <strong>Rol:</strong> {{personalog.rol.nombre_rol}}</p>
+          <p><strong>Equipo:</strong> {{personalog.equipo.nombre_equipo}}</p>
+          <p><strong>Estado:</strong> {{personalog.estado.nombre_estado}}</p>
+          <p><strong>Horas trabajadas:</strong> {{personalog.horas_trabajadas}}</p>
+          <p><strong>Horas extras:</strong> {{personalog.horas_extras}}</p>
         </section>
       </article>
       <Button (click)="CambContra()" class="btn-cambcontra">
