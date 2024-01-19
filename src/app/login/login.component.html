@@ -1,32 +1,46 @@
-<div class="body">
-  <div class="container" id="container-main">
-    <div class="container" id="container-divs">
-      <div class="container" id="div-img">
-        <img src="../../assets/resources/logo.png" alt="logo" />
-      </div>
-      <div class="container" id="div-login">
-        <H1 class="titulo"> Iniciar Sesión </H1>
-        <form id="formulario">
-          <label>Correo:</label>
-          <input
-            class="user" type="email" name="correo" [(ngModel)]="usuario.correo" required
-            placeholder="Digitar su correo" />
-            <p class="msgEmail" *ngIf="msgValidarEmail"> Correo invalido </p>
+<div class="container" id="container-main">
+  <div class="container" id="container-divs">
+    <div class="container" id="div-img">
+      <img src="../../assets/resources/logo.png" alt="logo" />
+    </div>
+    <div class="container" id="div-login">
+      <H1 class="form-title"> Log-In </H1>
+      <form id="form-body">
+        <label>Email</label>
+        <input
+          class="email"
+          type="email"
+          name="email"
+          [(ngModel)]="usuario.correo"
+          required
+          placeholder="Enter your email"
+        />
+        <p class="msgEmail" *ngIf="msgValidarEmail">Invalid email</p>
 
-          <label>Contraseña:</label>
-          <input
-            class="password" name="Contraseña" [(ngModel)]="usuario.contrasena" [type]="ChangeType ? 'password' : 'text'"
-            required placeholder="Digitar Contraseña"/>
+        <label>Password</label>
+        <input
+          class="password"
+          name="password"
+          [(ngModel)]="usuario.contrasena"
+          [type]="ChangeType ? 'password' : 'text'"
+          required
+          placeholder="Enter your password"
+        />
 
-          <div>
-            <input (click)="viewpass()" type="checkbox"/>
-            <label> Mostrar Contraseña</label>
-          </div>
-          <p class="msgCamp" *ngIf="msgValidarCamp"> No pueden haber campos vacios </p>
-          <input
-            (click)="IniciarSesion()" class="btn_ingresar" type="submit" value="Ingresar"/>
-        </form>
-      </div>
+        <div>
+          <input (click)="viewpass()" type="checkbox" />
+          <label> Show password</label>
+        </div>
+        <p class="msgCamp" *ngIf="msgValidarCamp">
+          No pueden haber campos vacios
+        </p>
+        <input
+          (click)="IniciarSesion()"
+          class="btn_enter"
+          type="submit"
+          value="Login"
+        />
+      </form>
     </div>
   </div>
 </div>

@@ -1,57 +1,54 @@
-.body{
-  padding: 2em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
+/*Estilo al contenedor que contiene el div-img y div-login*/
+#container-main {
+  padding: 2rem;
   height: 100vh;
-  background-size: 100%;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
   width: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-p{
+/*Estilos para los mensajes de error*/
+p {
   font-size: 16px;
   color: red;
   position: absolute;
 }
 
-.msgCamp{
+.msgCamp {
   right: 19%;
   top: 23%;
 }
 
-.msgEmail{
+.msgEmail {
   right: 23%;
   top: 46%;
 }
 
-#container-main {
-  height: 100%;
-  width: 100%;
-}
-
-.titulo {
-  font-size: 50 px;
+.form-title {
+  font-size: 50px;
   margin-top: 1em;
 }
 
-/*  */
+/*Centra el contenido de los diferentes contenedores(Main,Divs,img)*/
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+/*Estilo al contenedor de la imagen*/
+#div-img {
   width: 100%;
   height: 100%;
 }
 
+/*Estilo del logo*/
 img {
-  width: 50%;
+  width: 60%;
 }
 
-/*  */
-.user,
+/*Estilos de los campos Email y Password*/
+.email,
 .password {
   background-color: #ededec;
   border: none;
@@ -59,7 +56,7 @@ img {
   padding: 0.4em;
 }
 
-.user:focus,
+.email:focus,
 .password:focus {
   outline: none;
 
@@ -68,20 +65,21 @@ img {
   }
 }
 
-/* Da texto al campo de user y password cuando este se encuentra vacio */
-.user::placeholder,
+/*Da texto al campo Email y Password cuando este se encuentra vacio*/
+.email::placeholder,
 .password::placeholder {
   color: #000;
 }
 
-.user,
+/*Iconos en los campos*/
+.email,
 .password {
   background-size: 1.25em;
   background-repeat: no-repeat;
   background-position: 98%;
 }
 
-.user {
+.email {
   background-image: url(src\assets\resources\Usericon2.svg);
 }
 
@@ -89,8 +87,8 @@ img {
   background-image: url(src\assets\resources\Passicon2.svg);
 }
 
-/* Estilos del boton ingresar en el login */
-.btn_ingresar {
+/*Estilos del boton "Enter"*/
+.btn_enter {
   background-color: #1e512c;
   border-radius: 0.625rem;
   border: none;
@@ -101,15 +99,9 @@ img {
   margin-bottom: 1em;
 }
 
-/*div correspondiente a la imagen*/
-#div-img {
-  width: 100%;
-  height: 100%;
-}
-
 /*div correspondiente al login*/
 #div-login {
-  border-left: 2em solid #cad629;
+  border-left: 12px solid #cad629;
   height: 100%;
   width: 100%;
   padding: 1em;
@@ -128,13 +120,13 @@ img {
 }
 
 /*Formulario de inicio de Sesión*/
-#formulario {
+#form-body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  font-size: 1.5em;
-  grid-gap: 1em;
-  padding: 1.5em;
+  font-size: 16px;
+  grid-gap: 16px;
+  padding: 16px;
 }
 
 /*Estilos de checkBox*/
@@ -152,19 +144,8 @@ input[type="checkbox"]:checked {
   border: 2px solid black;
 }
 
-.body {
-  /*background-image: url(src\assets\resources\ImagenFondo.jpeg);
-  background-size: 100%;*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  height: 100vh;
-}
-
 @media only screen and (max-width: 900px) {
   #container-divs {
     display: flex;
   }
 }
-
