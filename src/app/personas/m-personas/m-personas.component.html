@@ -22,7 +22,7 @@
         <tr
           *ngFor="let persona of lstpersonas"
           (click)="this.personaSelect = persona"
-          [ngClass]="{ seleccionado: personaSelect == persona }"
+          [ngClass]= "{ seleccionado: personaSelect == persona }"
         >
           <td>{{ persona.nombre }}</td>
           <td>{{ persona.apellido }}</td>

@@ -3,17 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { usersComponent } from './Usuario/users.component';
 import { MPersonasComponent } from './personas/m-personas/m-personas.component';
-import { NavComponent } from './nav/nav.component';
+import { NavComponent } from './Shared/nav/nav.component'
 import { AppComponent } from './app.component';
 import { TeamsComponent } from './Equipos/teams/teams.component';
-import { StatsComponent } from './Estadisticas/stats.component';
+
 import { NotificationComponent } from './Notificaciones/notification.component';
 import { registerComponent } from './RegUsuario/register.component';
 import { CambContraComponent } from './camb-contra/camb-contra.component';
 import { ModpersonaComponent } from './personas/modpersona/modpersona.component';
 import { InformationComponent } from './Informacion/information.component';
 import { ModequipoComponent } from './Equipos/modequipo/modequipo.component';
-import { AuthGuard } from './Servicios/auth.guard';
+import { AuthGuard } from './Services/auth.guard';
 import { OrdenesMComponent } from './ordenes/ordenes-m/ordenes-m.component';
 const routes: Routes = [
   {
@@ -48,7 +48,6 @@ const routes: Routes = [
             component: InformationComponent,
           },
           { path: 'cambcontraseña', component: CambContraComponent },
-          { path: 'stats', component: StatsComponent },
           { path: 'notification', component: NotificationComponent },
           {
             path: 'modPersona',

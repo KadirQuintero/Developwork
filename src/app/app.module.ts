@@ -6,10 +6,9 @@ import { LoginComponent } from './login/login.component';
 import { usersComponent } from './Usuario/users.component';
 import { registerComponent } from './RegUsuario/register.component';
 import { NotificationComponent } from './Notificaciones/notification.component';
-import { NavComponent } from './nav/nav.component';
+import { NavComponent } from './Shared/nav/nav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TeamsComponent } from './Equipos/teams/teams.component';
-import { StatsComponent } from './Estadisticas/stats.component';
 import { InformationComponent } from './Informacion/information.component';
 import { TeamservService } from './Equipos/teamserv.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -21,7 +20,7 @@ import { OrdenesMComponent } from './ordenes/ordenes-m/ordenes-m.component';
 import { OrdenComponent } from './ordenes/orden/orden.component';
 import { FordenComponent } from './ordenes/forden/forden.component';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
-import { SocketService } from './Servicios/socket.service';
+import { SocketService } from './Services/socket.service';
 
 const config: SocketIoConfig = { url: 'http://191.88.249.172:3002', options: {} };
 @NgModule({
@@ -33,7 +32,6 @@ const config: SocketIoConfig = { url: 'http://191.88.249.172:3002', options: {} 
     NotificationComponent,
     NavComponent,
     TeamsComponent,
-    StatsComponent,
     InformationComponent,
     MPersonasComponent,
     CambContraComponent,

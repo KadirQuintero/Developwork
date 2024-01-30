@@ -5,8 +5,8 @@ import { equipo } from '../models/equipo';
 import { estado } from '../models/estado';
 import { rol } from '../models/rol';
 import { TeamservService } from '../Equipos/teamserv.service';
-import { EstadoserviceService } from '../Servicios/Estados/estadoservice.service';
-import { RolserviceService } from '../Servicios/Roles/rolservice.service';
+import { EstadoserviceService } from '../Services/Estados/estadoservice.service';
+import { RolserviceService } from '../Services/Roles/rolservice.service';
 import { PersonaService } from '../personas/persona.service';
 
 @Component({

@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { equipo } from '../../models/equipo';
 import { TeamservService } from '../teamserv.service';
 import { estado } from 'src/app/models/estado';
-import { EstadoserviceService } from 'src/app/Servicios/Estados/estadoservice.service';
+import { EstadoserviceService } from 'src/app/Services/Estados/estadoservice.service';
 import { rol } from 'src/app/models/rol';
-import { RolserviceService } from 'src/app/Servicios/Roles/rolservice.service';
+import { RolserviceService } from 'src/app/Services/Roles/rolservice.service';
 import { jornada } from 'src/app/models/jordanas';
-import { JornadaserviceService } from 'src/app/Servicios/Jornadas/jornadaservice.service';
+import { JornadaserviceService } from 'src/app/Services/Jornadas/jornadaservice.service';
 
 @Component({
   selector: 'app-teams',

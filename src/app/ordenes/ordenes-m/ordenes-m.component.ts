@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TeamservService } from 'src/app/Equipos/teamserv.service';
-import { SordenesService } from 'src/app/Servicios/ordenes/sordenes.service';
+
+import { SordenesService } from 'src/app/Services/ordenes/sordenes.service';
 import { ordenes_matenimiento } from 'src/app/models/ordenes_mantenimiento';
 import { persona } from 'src/app/models/persona';
 import { PersonaService } from 'src/app/personas/persona.service';
@@ -12,7 +12,7 @@ import { PersonaService } from 'src/app/personas/persona.service';
 })
 export class OrdenesMComponent implements OnInit {
   ngOnInit(): void {
-   this.refresh();
+    this.refresh();
   }
   modorden: ordenes_matenimiento = new ordenes_matenimiento();
   userLog: persona = new persona();
@@ -52,7 +52,7 @@ export class OrdenesMComponent implements OnInit {
   pad(numero: number): string {
     return numero < 10 ? '0' + numero.toString() : numero.toString();
   }
-  refresh(){
+  refresh() {
     this.spersona.setPersonaLog().subscribe((Response) => {
       this.sordenes.ordenes(Response).subscribe((Response) => {
         this.ordenesP = Response;

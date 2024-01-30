@@ -3,7 +3,7 @@ import { equipo } from '../models/equipo';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
-import { LocalStorageService } from '../Servicios/loalStorage/local-storage.service';
+import { LocalStorageService } from '../Services/loalStorage/local-storage.service';
 
 @Injectable({
   providedIn: 'root',

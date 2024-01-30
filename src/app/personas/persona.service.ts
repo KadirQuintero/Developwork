@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { persona } from '../models/persona';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, tap } from 'rxjs';
-import { LocalStorageService } from '../Servicios/loalStorage/local-storage.service';
+import { LocalStorageService } from '../Services/loalStorage/local-storage.service';
 
 @Injectable({
   providedIn: 'root',
