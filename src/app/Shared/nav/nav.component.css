@@ -43,27 +43,27 @@
 }
 
 .principal{
-  background-image: url(../../../assets/icon/home-icon.svg);
+  background-image: url(../../../assets/icon/Home.svg);
 }
 
 .Register {
-  background-image: url(../../../assets/icon/Register_Icon_Op1.svg);
+  background-image: url(../../../assets/icon/Register.svg);
 }
 
 .Team {
-  background-image: url(../../../assets/icon/Teams_Icon.svg);
+  background-image: url(../../../assets/icon/Team.svg);
 }
 
 .Notifi {
-  background-image: url(../../../assets/icon/Notificacion_Icon.svg);
+  background-image: url(../../../assets/icon/Notificacion.svg);
 }
 
 .Info {
-  background-image: url(../../../assets/icon/Info_Icon.svg);
+  background-image: url(../../../assets/icon/Info.svg);
 }
 
 .LogOut {
-  background-image: url(../../../assets/icon/LogOut_Icon.svg);
+  background-image: url(../../../assets/icon/LogOut.svg);
   position: absolute;
   bottom: 0.625em;
   width: 73%;

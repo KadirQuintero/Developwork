@@ -1,6 +1,7 @@
 /*Estilo al contenedor que contiene el div-img y div-login*/
 #container-main {
-  margin-top: -30px;
+  position: relative; /*Temporal*/
+  top: -30px; /*Temporal*/
   padding: 2rem;
   height: 100vh;
   width: 100%;
@@ -80,12 +81,12 @@ img {
 }
 
 .email {
-  background-image: url(src\assets\resources\Usericon2.svg);
+  background-image: url(../../assets/icon/User.svg);
   opacity: .5;
 }
 
 .password {
-  background-image: url(src\assets\resources\Passicon2.svg);
+  background-image: url(../../assets/icon/Passicon2.svg);
   opacity: .5;
 }
 
@@ -115,12 +116,15 @@ img {
   flex-direction: column;
   width: 100%;
   font-size: 16px;
-  grid-gap: 16px;
+  gap: 20px;
   padding: 16px;
 }
 
 .label-showpass{
   color: #000;
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
 }
 
 /*Estilos de checkBox*/
@@ -135,7 +139,7 @@ input[type="checkbox"] {
 
 input[type="checkbox"]:checked {
   background-color: #1e512c;
-  border: 2px solid black;
+  border: 2px solid #000;
 }
 
 @media only screen and (max-width: 900px) {
