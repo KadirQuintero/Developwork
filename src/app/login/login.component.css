@@ -64,12 +64,20 @@ img {
   background-size: 1.25em; /*Tamaño del icono.*/
   background-repeat: no-repeat;
   background-position: 98%; /*Posicion del icono.*/
+
+  &.email{
+    background-image: url(../../assets/icon/User.svg);
+  }
+  &.password{
+    background-image: url(../../assets/icon/Passicon2.svg);
+  }
 }
 
 /*Da texto al campo Email y Password cuando este se encuentra vacio*/
 .email::placeholder,
 .password::placeholder {
   color: #000;
+  opacity: .5;
 }
 
 .email:focus,
@@ -78,16 +86,6 @@ img {
   &::placeholder {
     color: transparent;
   }
-}
-
-.email {
-  background-image: url(../../assets/icon/User.svg);
-  opacity: .5;
-}
-
-.password {
-  background-image: url(../../assets/icon/Passicon2.svg);
-  opacity: .5;
 }
 
 /*Estilos del boton "Enter"*/
@@ -104,7 +102,7 @@ img {
 /*div correspondiente al login*/
 #div-login {
   height: 100%;
-  width: 50%;
+  width: 45%;
   padding: 1em;
   border-radius: 10px;
   background-color: rgb(251, 252, 241);

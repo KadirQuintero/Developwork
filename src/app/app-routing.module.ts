@@ -6,7 +6,6 @@ import { MPersonasComponent } from './personas/m-personas/m-personas.component';
 import { NavComponent } from './Shared/nav/nav.component'
 import { AppComponent } from './app.component';
 import { TeamsComponent } from './Equipos/teams/teams.component';
-
 import { NotificationComponent } from './Notificaciones/notification.component';
 import { registerComponent } from './RegUsuario/register.component';
 import { CambContraComponent } from './camb-contra/camb-contra.component';
