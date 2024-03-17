@@ -1,30 +1,31 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { persona } from '../models/persona';
-import { equipo } from '../models/equipo';
-import { estado } from '../models/estado';
-import { rol } from '../models/rol';
-import { TeamservService } from '../Equipos/teamserv.service';
+import { persona } from '../interface/persona';
+import { equipo } from '../interface/equipo';
+import { estado } from '../interface/estado';
+import { rol } from '../interface/rol';
+import { TeamservService } from '../Services/teams/teamserv.service';
 import { EstadoserviceService } from '../Services/Estados/estadoservice.service';
 import { RolserviceService } from '../Services/Roles/rolservice.service';
-import { PersonaService } from '../personas/persona.service';
+import { PersonaService } from '../Services/personas/persona.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
+
 export class registerComponent {
-  persona: persona = new persona();
+  persona: persona = new persona;
   verequipo: equipo[] = [];
   verestado: estado[] = [];
   verroles: rol[] = [];
+
   constructor(
-    private router: Router,
     private serviceteam: TeamservService,
     private serviceestado: EstadoserviceService,
     private rolService: RolserviceService,
-    private personaSerive: PersonaService
+    private personaSerive: PersonaService,
   ) {}
 
   ngOnInit(): void {

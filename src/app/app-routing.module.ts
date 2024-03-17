@@ -12,8 +12,10 @@ import { CambContraComponent } from './camb-contra/camb-contra.component';
 import { ModpersonaComponent } from './personas/modpersona/modpersona.component';
 import { InformationComponent } from './Informacion/information.component';
 import { ModequipoComponent } from './Equipos/modequipo/modequipo.component';
-import { AuthGuard } from './Services/auth.guard';
 import { OrdenesMComponent } from './ordenes/ordenes-m/ordenes-m.component';
+import { ListarComponent } from './listar/listar.component';
+
+//import { AuthGuard } from './Services/auth.guard';
 const routes: Routes = [
   {
     path: '',
@@ -37,6 +39,10 @@ const routes: Routes = [
             path: 'register',
             component: registerComponent,
           },
+          {
+            path: 'list',
+            component: ListarComponent,
+          },
           { path: 'nav', component: NavComponent },
           {
             path: 'teams',
@@ -54,7 +60,7 @@ const routes: Routes = [
           },
           { path: 'modEquipo', component: ModequipoComponent },
         ],
-        canActivate: [AuthGuard],
+        //canActivate: [AuthGuard],
       },
     ],
   },

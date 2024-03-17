@@ -1,21 +1,22 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
-import { SocketService } from '../Services/socket.service';
-import { PersonaService } from '../personas/persona.service';
-import { persona } from '../models/persona';
-import { notificacion } from '../models/notificacion';
+import { SocketService } from '../Services/socket/socket.service';
+import { PersonaService } from '../Services/personas/persona.service';
+import { persona } from '@/app/interface/persona';
+import { notificacion } from '@/app/interface/notificacion';
+
 @Component({
   selector: 'app-notification',
   templateUrl: './notification.component.html',
   styleUrls: ['./notification.component.css'],
 })
+
 export class NotificationComponent implements OnInit, OnDestroy {
   notificaciones: any[] = [];
   nuevaNotificacion: notificacion = new notificacion();
 
-  constructor(private Ssoket: SocketService, private spersona: PersonaService) {
+  constructor(private Ssoket: SocketService, private spersona: PersonaService) {}
 
-  }
   ngOnDestroy(): void {
     this.Ssoket.disconet().subscribe();
   }

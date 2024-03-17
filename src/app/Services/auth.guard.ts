@@ -1,4 +1,4 @@
-import {
+/*import {
   CanActivate,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
@@ -52,4 +52,4 @@ export class AuthGuard implements CanActivate {
       return false;
     }
   }
-}
+}*/

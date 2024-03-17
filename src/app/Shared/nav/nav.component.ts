@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LocalStorageService } from '../../Services/loalStorage/local-storage.service';
-import { PersonaService } from '../../personas/persona.service';
+import { PersonaService } from '../../Services/personas/persona.service';
 
 @Component({
   selector: 'app-nav',
@@ -41,11 +41,15 @@ export class NavComponent implements OnInit {
   }
 
   RegisterUser(): void {
-    this.router.navigate(['user/personas']);
+    this.router.navigate(['user/register']);
   }
 
   Teams(): void {
     this.router.navigate(['user/teams']);
+  }
+
+  List(): void {
+    this.router.navigate(['user/list']);
   }
 
   Notifications(): void {

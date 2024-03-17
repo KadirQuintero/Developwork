@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { equipo } from '../../models/equipo';
-import { TeamservService } from '../teamserv.service';
-import { estado } from 'src/app/models/estado';
+import { equipo } from '@/app/interface/equipo';
+import { TeamservService } from '../../Services/teams/teamserv.service';
+import { estado } from '@/app/interface/estado';
 import { EstadoserviceService } from 'src/app/Services/Estados/estadoservice.service';
-import { rol } from 'src/app/models/rol';
+import { rol } from '@/app/interface/rol';
 import { RolserviceService } from 'src/app/Services/Roles/rolservice.service';
-import { jornada } from 'src/app/models/jordanas';
-import { JornadaserviceService } from 'src/app/Services/Jornadas/jornadaservice.service';
 
 @Component({
   selector: 'app-teams',
@@ -21,14 +19,12 @@ export class TeamsComponent implements OnInit {
   verequipo: equipo[] = [];
   verestado: estado[] = [];
   verroles: rol[] = [];
-  verjornada: jornada[] = [];
 
   constructor(
     private router: Router,
     private serviceteam: TeamservService,
     private serviceestado: EstadoserviceService,
     private rolService: RolserviceService,
-    private jornadaService: JornadaserviceService
   ) {}
 
   ngOnInit(): void {
@@ -40,9 +36,6 @@ export class TeamsComponent implements OnInit {
     });
     this.rolService.getData().subscribe((Response: rol[]) => {
       this.verroles = Response;
-    });
-    this.jornadaService.getData().subscribe((Response: jornada[]) => {
-      this.verjornada = Response;
     });
   }
 

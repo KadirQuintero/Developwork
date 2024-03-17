@@ -1,13 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { TeamservService } from 'src/app/Equipos/teamserv.service';
+import { TeamservService } from '@/app/Services/teams/teamserv.service';
 import { EstadoserviceService } from 'src/app/Services/Estados/estadoservice.service';
 import { SordenesService } from 'src/app/Services/ordenes/sordenes.service';
-import { equipo } from 'src/app/models/equipo';
-import { estado } from 'src/app/models/estado';
-import { ordenes_matenimiento } from 'src/app/models/ordenes_mantenimiento';
-import { persona } from 'src/app/models/persona';
-import { prioridad } from 'src/app/models/prioridad';
-import { PersonaService } from 'src/app/personas/persona.service';
+import { equipo } from '@/app/interface/equipo';
+import { estado } from '@/app/interface/estado';
+import { ordenes_matenimiento } from '@/app/interface/ordenes_mantenimiento';
+import { persona } from '@/app/interface/persona';
+import { prioridad } from '@/app/interface/prioridad';
+import { PersonaService } from 'src/app/Services/personas/persona.service';
 
 @Component({
   selector: 'app-forden',
