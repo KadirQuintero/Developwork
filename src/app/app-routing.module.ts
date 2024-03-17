@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { usersComponent } from './Usuario/users.component';
-import { MPersonasComponent } from './personas/m-personas/m-personas.component';
+//import { MPersonasComponent } from './personas/m-personas/m-personas.component';
 import { NavComponent } from './Shared/nav/nav.component'
 import { AppComponent } from './app.component';
 import { TeamsComponent } from './Equipos/teams/teams.component';
@@ -33,7 +33,7 @@ const routes: Routes = [
           },
           {
             path: 'personas',
-            component: MPersonasComponent,
+            //component: MPersonasComponent,
           },
           {
             path: 'register',

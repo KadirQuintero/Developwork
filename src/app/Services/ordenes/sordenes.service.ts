@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ordenes_matenimiento } from 'src/app/models/ordenes_mantenimiento';
-import { persona } from 'src/app/models/persona';
+import { ordenes_matenimiento } from '@/app/interface/ordenes_mantenimiento';
+import { persona } from '@/app/interface/persona';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LocalStorageService } from '../loalStorage/local-storage.service';
 import { Observable } from 'rxjs';

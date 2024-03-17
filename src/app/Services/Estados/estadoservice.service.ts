@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { estado } from 'src/app/models/estado';
+import { estado } from '@/app/interface/estado';
 import { LocalStorageService } from '../loalStorage/local-storage.service';
 
 @Injectable({
