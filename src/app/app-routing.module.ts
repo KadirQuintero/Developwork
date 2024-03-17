@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { usersComponent } from './Usuario/users.component';
 //import { MPersonasComponent } from './personas/m-personas/m-personas.component';
-import { NavComponent } from './Shared/nav/nav.component'
+import { NavComponent } from './Shared/nav/nav.component';
 import { AppComponent } from './app.component';
 import { TeamsComponent } from './Equipos/teams/teams.component';
 import { NotificationComponent } from './Notificaciones/notification.component';
@@ -31,10 +31,10 @@ const routes: Routes = [
             path: '',
             component: OrdenesMComponent,
           },
-          {
+          /*{
             path: 'personas',
-            //component: MPersonasComponent,
-          },
+            component: ModpersonaComponent,
+          },*/
           {
             path: 'register',
             component: registerComponent,

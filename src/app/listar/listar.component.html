@@ -7,43 +7,42 @@
       <div class="camp-buscar">
         <input type="text" placeholder="Buscar persona" />
       </div>
-    <div class="con-table">
-      <table>
-        <thead>
-          <th>Nombre</th>
-          <th>Apellido</th>
-          <th>Correo</th>
-          <th>Estado</th>
-          <th>Rol</th>
-          <th>Equipo</th>
-        </thead>
-        <tbody>
-          <tr
-            *ngFor="let persona of lstpersonas"
-            (click)="this.personaSelect = persona"
-            [ngClass]= "{ seleccionado: personaSelect == persona }"
-          >
-            <td>{{ persona.nombre }}</td>
-            <td>{{ persona.apellido }}</td>
-            <td>{{ persona.correo }}</td>
-            <td>{{ persona.estado.nombre_estado }}</td>
-            <td>{{ persona.rol.nombre_rol }}</td>
-            <td>{{ persona.equipo.nombre_equipo }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="btn">
-      <button
-        [disabled]="personaSelect.nombre == '' ? true : false"
-        (click)="modPersona()">
-        Modificar
-      </button>
-    </div>
+      <div class="con-table">
+        <table>
+          <thead>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+            <th>Estado</th>
+            <th>Rol</th>
+            <th>Equipo</th>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let persona of lstpersonas"
+              (click)="this.personaSelect = persona"
+              [ngClass]="{ seleccionado: personaSelect == persona }"
+            >
+              <td>{{ persona.nombre }}</td>
+              <td>{{ persona.apellido }}</td>
+              <td>{{ persona.correo }}</td>
+              <td>{{ persona.estado.nombre_estado }}</td>
+              <td>{{ persona.rol.nombre_rol }}</td>
+              <td>{{ persona.equipo.nombre_equipo }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="btn">
+        <button
+          [disabled]="personaSelect.nombre == '' ? true : false"
+          (click)="modPersona()"
+        >
+          Modificar
+        </button>
+      </div>
     </section>
 
-    <section>
-
-    </section>
+    <section></section>
   </article>
 </main>

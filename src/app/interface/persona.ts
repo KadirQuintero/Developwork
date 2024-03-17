@@ -9,8 +9,8 @@ export class persona{
     nombre2:string='';
     apellido:string='';
     apellido2:string='';
-    correo?:string='';
-    contrasena?:string='';
+    correo:string='';
+    contrasena:string='';
     equipo:equipo= new equipo();
     estado:estado= new estado();
     rol:rol= new rol();

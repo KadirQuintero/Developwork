@@ -12,7 +12,7 @@ export class CambContraComponent {
   newCon: String = '';
   ChangeType: boolean = true;
   _user: persona = new persona();
-  response:String ='';
+  response: String = '';
 
   constructor(private servicePersona: PersonaService) {
     this.servicePersona.setPersonaLog().subscribe((response: persona) => {
@@ -35,7 +35,7 @@ export class CambContraComponent {
     };
     this.servicePersona.chPass(user).subscribe(
       (response: any) => {
-        this.response=response;
+        this.response = response;
       },
       (error) => {
         console.log(error.status);

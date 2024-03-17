@@ -22,7 +22,7 @@ export class ModequipoComponent {
     private router: Router,
     private serviceequipo: TeamservService,
     private serviceestado: EstadoserviceService,
-    private rolService: RolserviceService,
+    private rolService: RolserviceService
   ) {}
 
   modificarequipo() {

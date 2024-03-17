@@ -22,7 +22,7 @@
 }
 
 /*Div que almacena el input y boton buscar*/
-.camp-buscar{
+.camp-buscar {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,8 +68,10 @@ td,
 th {
   font-size: 18px;
   height: 1em;
-  border-bottom: 1px solid #000; /* Agrega un borde para resaltar las celdas (opcional) */
-  padding: 0.7em 0.7em 0.7em 0.7em; /* Espacio alrededor del contenido de la celda */
+  border-bottom: 1px solid #000;
+  /* Agrega un borde para resaltar las celdas (opcional) */
+  padding: 0.7em 0.7em 0.7em 0.7em;
+  /* Espacio alrededor del contenido de la celda */
 }
 
 /*Cabecera de la tabla*/

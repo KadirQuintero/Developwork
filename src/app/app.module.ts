@@ -24,7 +24,10 @@ import { SocketService } from '@/app/Services/socket/socket.service';
 import { ListarComponent } from './listar/listar.component';
 import { NgClass } from '@angular/common';
 
-const config: SocketIoConfig = { url: 'http://191.88.249.172:3002', options: {} };
+const config: SocketIoConfig = {
+  url: 'http://191.88.249.172:3002',
+  options: {},
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +56,11 @@ const config: SocketIoConfig = { url: 'http://191.88.249.172:3002', options: {} 
     ReactiveFormsModule,
     SocketIoModule.forRoot(config), // Corregido aquí
   ],
-  providers: [TeamservService, importProvidersFrom(HttpClientModule), SocketService],
+  providers: [
+    TeamservService,
+    importProvidersFrom(HttpClientModule),
+    SocketService,
+  ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

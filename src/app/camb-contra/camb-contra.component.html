@@ -11,16 +11,24 @@
       </fieldset>
       <fieldset>
         <label for=""> Nueva contraseña</label>
-        <input type="password" name="newCon" [type]="ChangeType ? 'password' : 'text'" [(ngModel)]="newCon" />
+        <input
+          type="password"
+          name="newCon"
+          [type]="ChangeType ? 'password' : 'text'"
+          [(ngModel)]="newCon"
+        />
       </fieldset>
       <fieldset>
         <label for=""> Confirmar contraseña</label>
         <input type="password" [type]="ChangeType ? 'password' : 'text'" />
       </fieldset>
       <div class="div-check">
-        <label for=""> Mostrar contraseña</label> <input class="check" type="checkbox" (click)="viewpass()"/>
+        <label for=""> Mostrar contraseña</label>
+        <input class="check" type="checkbox" (click)="viewpass()" />
       </div>
-      <p *ngIf="response!=''" style="color: green; font-size: 1.5em;">{{response}}</p>
+      <p *ngIf="response != ''" style="color: green; font-size: 1.5em">
+        {{ response }}
+      </p>
       <button (click)="chPassword()">Cambiar</button>
     </form>
   </div>
