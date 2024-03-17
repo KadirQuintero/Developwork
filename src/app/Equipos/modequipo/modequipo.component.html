@@ -15,16 +15,6 @@
           </option>
         </select>
 
-        <label for="jornada" >Jornada</label>
-        <select name="id_jornada" [(ngModel)]="equipo.jornada.id_jornada">
-          <option
-            *ngFor="let jornada of verjornada"
-            [value]="equipo.jornada.id_jornada"
-          >
-            {{ jornada.nombre_jornada }}
-          </option>
-        </select>
-
         <label for="rol">Rol</label>
         <select name="id_rol" [(ngModel)]="equipo.rol.id_rol">
           <option *ngFor="let rol of verroles" [value]="equipo.rol.id_rol">

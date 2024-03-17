@@ -78,18 +78,7 @@
               class="form-input input-email"
               type="email"
               required/>
-              <p *ngIf="msgValidarEmail" style="color: red; font-size: 16px;"> Correo invalido </p>
-
-            <label>Contraseña</label>
-            <input
-              [(ngModel)]="persona.contrasena"
-              name="password"
-              class="form-input input-pass"
-              type="password"
-              requiered/>
           </fieldset>
-          <p *ngIf="msgValidarCamp" style="color: red; font-size: 16px;"> Ingrese minimo un nombre y apellido </p>
-          <p *ngIf="msgValidarLenght" style="color: red; font-size: 16px;"> Los campos no pueden superar los 10 caracteres </p>
       <input class="form-btn-registrar" type="submit" value="Registrar" />
     </form>
   </div>

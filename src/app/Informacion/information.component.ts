@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { PersonaService } from '../personas/persona.service';
-import { persona } from '../models/persona';
+import { PersonaService } from '../Services/personas/persona.service';
+import { persona } from '@/app/interface/persona';
 
 @Component({
   selector: 'app-information',

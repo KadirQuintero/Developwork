@@ -2,19 +2,20 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { usersComponent } from './Usuario/users.component';
-import { MPersonasComponent } from './personas/m-personas/m-personas.component';
-import { NavComponent } from './nav/nav.component';
+//import { MPersonasComponent } from './personas/m-personas/m-personas.component';
+import { NavComponent } from './Shared/nav/nav.component';
 import { AppComponent } from './app.component';
 import { TeamsComponent } from './Equipos/teams/teams.component';
-import { StatsComponent } from './Estadisticas/stats.component';
 import { NotificationComponent } from './Notificaciones/notification.component';
 import { registerComponent } from './RegUsuario/register.component';
 import { CambContraComponent } from './camb-contra/camb-contra.component';
 import { ModpersonaComponent } from './personas/modpersona/modpersona.component';
 import { InformationComponent } from './Informacion/information.component';
 import { ModequipoComponent } from './Equipos/modequipo/modequipo.component';
-import { AuthGuard } from './Servicios/auth.guard';
 import { OrdenesMComponent } from './ordenes/ordenes-m/ordenes-m.component';
+import { ListarComponent } from './listar/listar.component';
+
+//import { AuthGuard } from './Services/auth.guard';
 const routes: Routes = [
   {
     path: '',
@@ -30,13 +31,17 @@ const routes: Routes = [
             path: '',
             component: OrdenesMComponent,
           },
-          {
+          /*{
             path: 'personas',
-            component: MPersonasComponent,
-          },
+            component: ModpersonaComponent,
+          },*/
           {
             path: 'register',
             component: registerComponent,
+          },
+          {
+            path: 'list',
+            component: ListarComponent,
           },
           { path: 'nav', component: NavComponent },
           {
@@ -48,7 +53,6 @@ const routes: Routes = [
             component: InformationComponent,
           },
           { path: 'cambcontraseña', component: CambContraComponent },
-          { path: 'stats', component: StatsComponent },
           { path: 'notification', component: NotificationComponent },
           {
             path: 'modPersona',
@@ -56,7 +60,7 @@ const routes: Routes = [
           },
           { path: 'modEquipo', component: ModequipoComponent },
         ],
-        canActivate: [AuthGuard],
+        //canActivate: [AuthGuard],
       },
     ],
   },

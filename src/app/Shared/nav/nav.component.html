@@ -1,0 +1,34 @@
+<main id="container-main" (mouseenter)="VerBoton()" (mouseleave)="VerBoton()">
+  <nav id="navi-admin">
+    <button class="nav_button principal" (click)="Principal()">
+      <span *ngIf="MostrarBoton"></span>
+    </button>
+    <Button class="nav_button Register" (click)="RegisterUser()">
+      <span *ngIf="MostrarBoton"></span>
+    </Button>
+    <Button class="nav_button Team" (click)="Teams()">
+      <span *ngIf="MostrarBoton"></span>
+    </Button>
+    <Button class="nav_button List" (click)="List()">
+      <span *ngIf="MostrarBoton"></span>
+    </Button>
+    <Button class="nav_button Notifi" (click)="Notifications()">
+      <span *ngIf="MostrarBoton"></span>
+    </Button>
+    <Button class="nav_button Info" (click)="Information()">
+      <span *ngIf="MostrarBoton"></span>
+    </Button>
+    <Button class="nav_button LogOut" (click)="LogOut()">
+      <span *ngIf="MostrarBoton"></span>
+    </Button>
+  </nav>
+</main>
+
+<!--
+*ngIf="validarOpera || validarAdmin"
+*ngIf="validarAdmin"
+*ngIf="validarAdmin"
+*ngIf="validarOpera || validarAdmin"
+*ngIf="validarOpera || validarAdmin"
+*ngIf="validarOpera || validarAdmin"
+-->
