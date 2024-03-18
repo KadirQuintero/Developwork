@@ -1,4 +1,4 @@
-/*import {
+import {
   CanActivate,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
@@ -7,18 +7,19 @@
 } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
-import { PersonaService } from '../personas/persona.service';
+import { PersonaService } from '@/app/Services/personas/persona.service';
 import { LocalStorageService } from './loalStorage/local-storage.service';
+
 @Injectable({
   providedIn: 'root',
 })
+
 export class AuthGuard implements CanActivate {
   constructor(
     private serviceLocalStorage: LocalStorageService,
     private router: Router,
     private personaService: PersonaService
-  ) {}
+  ) { }
 
   canActivate(
     next: ActivatedRouteSnapshot,
@@ -52,4 +53,4 @@ export class AuthGuard implements CanActivate {
       return false;
     }
   }
-}*/
+}
