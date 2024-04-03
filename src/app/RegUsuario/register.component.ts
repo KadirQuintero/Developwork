@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
 import { persona } from '../interface/persona';
 import { equipo } from '../interface/equipo';
 import { estado } from '../interface/estado';
@@ -14,22 +14,21 @@ import { PersonaService } from '../Services/personas/persona.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
-
 export class registerComponent {
-  persona: persona = new persona;
+  persona: persona = new persona();
   verequipo: equipo[] = [];
   verestado: estado[] = [];
   verroles: rol[] = [];
-  msgValidarLenght: boolean = false;
-  msgValidarCamp: boolean = false;
-  msgValidarEmail: boolean = false;
+  // msgValidarLenght: boolean = false;
+  // msgValidarCamp: boolean = false;
+  // msgValidarEmail: boolean = false;
 
   constructor(
     private serviceteam: TeamservService,
     private serviceestado: EstadoserviceService,
     private rolService: RolserviceService,
-    private personaSerive: PersonaService,
-  ) { }
+    private personaSerive: PersonaService
+  ) {}
 
   ngOnInit(): void {
     this.serviceteam.getData().subscribe((Response: equipo[]) => {
@@ -58,42 +57,47 @@ export class registerComponent {
   }
 
   async addPersona() {
-    const { nombre, nombre2, apellido, apellido2, correo} = this.persona;
-    let { contrasena } = this.persona
+    const { nombre, nombre2, apellido, apellido2, correo } = this.persona;
+    let { contrasena } = this.persona;
 
     if (!(this.ValidarCamp(nombre) && this.ValidarCamp(apellido))) {
-      this.msgValidarCamp = true;
-      alert("Ingrese minimo un nombre y un apellido");
+      // this.msgValidarCamp = true;
+      alert('Ingrese minimo un nombre y un apellido');
       return;
     }
 
-    if (!(
-      this.ValidarLenght(nombre) &&
-      this.ValidarLenght(nombre2) &&
-      this.ValidarLenght(apellido) &&
-      this.ValidarLenght(apellido2)
-    )) {
-      this.msgValidarLenght = true;
-      alert("Los campos no pueden puerar los 10 caracteres")
+    if (
+      !(
+        this.ValidarLenght(nombre) &&
+        this.ValidarLenght(nombre2) &&
+        this.ValidarLenght(apellido) &&
+        this.ValidarLenght(apellido2)
+      )
+    ) {
+      // this.msgValidarLenght = true;
+      alert('Los campos no pueden puerar los 10 caracteres');
+      return;
     }
 
     if (correo !== undefined && !this.validarEmail(correo)) {
-      this.msgValidarEmail = true;
-      alert("Formato de correo incorrecto");
+      // this.msgValidarEmail = true;
+      alert('Formato de correo incorrecto');
+      return;
     }
 
     function generarcontraseña(longitud: number): string {
       //Constante que almacena los caracteres que contrendra la contraseña
-      const caracteres: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+'
+      const caracteres: string =
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+';
       //Obtenemos la longitud de los caracteres proporcionados
-      const caractereslength = caracteres.length
+      const caractereslength = caracteres.length;
 
       //Declaro una variable constraseña
-      let contraseña: string = ''
+      let contraseña: string = '';
       //Se crea un array que será del tamaño de la longitud de la contraseña
       const array = new Uint32Array(longitud);
       //Se usa el objeto crypto del navegador para generar valores aleatorios y cargar el 'array' con ellos
-      window.crypto.getRandomValues(array)
+      window.crypto.getRandomValues(array);
 
       /*Iteramos sobre cada elemento del 'array' concatenando los valores almacenados en el 'array'.
       array[i] % caracteresLength devuelve un índice aleatorio dentro del rango de caracteres permitido,
@@ -103,10 +107,10 @@ export class registerComponent {
       }
 
       //Retornamos la contraseña
-      return contraseña
+      return contraseña;
     }
 
-    contrasena = generarcontraseña(10)
+    contrasena = generarcontraseña(10);
 
     //console.log(nombre, apellido, correo, contrasena)
 

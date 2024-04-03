@@ -12,8 +12,8 @@ import { LocalStorageService } from '../Services/loalStorage/local-storage.servi
 
 export class LoginComponent {
   public usuario: persona = new persona();
-  msgValidarEmail: boolean = false;
-  msgValidarCamp: boolean = false;
+  // msgValidarEmail: boolean = false;
+  // msgValidarCamp: boolean = false;
   ChangeType: boolean = true;
 
   constructor(
@@ -40,11 +40,15 @@ export class LoginComponent {
 
     if (correo !== undefined && !this.ValidarCamp(correo)
     || contrasena !== undefined && !this.ValidarCamp(contrasena)){
-      this.msgValidarCamp = true; return;
+      // this.msgValidarCamp = true;
+      alert("Los campos correo y contraseña no pueden estar vacios")
+      return;
     }
 
     if (correo !== undefined &&  !this.validarEmail(correo)) {
-      this.msgValidarEmail = true; return;
+      // this.msgValidarEmail = true;
+      alert("Formato de correo invalido")
+      return;
     }
 
     this.PersonaService.login(this.usuario).subscribe(
