@@ -75,7 +75,7 @@ export class registerComponent {
       )
     ) {
       // this.msgValidarLenght = true;
-      alert('Los campos no pueden puerar los 10 caracteres');
+      alert('Los nombres y apellidos no pueden ser mayores a 10 caracteres');
       return;
     }
 
