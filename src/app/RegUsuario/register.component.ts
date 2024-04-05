@@ -19,9 +19,6 @@ export class registerComponent {
   verequipo: equipo[] = [];
   verestado: estado[] = [];
   verroles: rol[] = [];
-  // msgValidarLenght: boolean = false;
-  // msgValidarCamp: boolean = false;
-  // msgValidarEmail: boolean = false;
 
   constructor(
     private serviceteam: TeamservService,
@@ -31,36 +28,73 @@ export class registerComponent {
   ) {}
 
   ngOnInit(): void {
-    this.serviceteam.getData().subscribe((Response: equipo[]) => {
-      this.verequipo = Response;
+    // this.serviceteam.getData().subscribe((Response: equipo[]) => {
+    //   this.verequipo = Response;
+    // });
+    // this.serviceestado.getData().subscribe((Response: estado[]) => {
+    //   this.verestado = Response;
+    // });
+    this.rolService.getData().subscribe((Response: any) => {
+      this.verroles = Response.data.roles
+      console.log("Data: ", this.verroles)
     });
-
-    this.serviceestado.getData().subscribe((Response: estado[]) => {
-      this.verestado = Response;
-    });
-    this.rolService.getData().subscribe((Response: rol[]) => {
-      this.verroles = Response;
-    });
+    let arrayNormal = this.verroles.map(objeto => objeto.id_rol)
+    console.log("Array normal: ", arrayNormal)
   }
 
-  ValidarCamp(value: string): boolean {
+  objectValues(obj: any) {
+    return Object.values(obj);
+  }
+
+  //Valida que el campo no este vacio
+  validateField(value: string): boolean {
     return value.trim() !== '';
   }
 
-  ValidarLenght(value: string): boolean {
-    return value.length <= 10;
+  //Valida que la longitud del nombre sea menor o igual 15
+  validateLenght(value: string): boolean {
+    return value.length <= 15;
   }
 
-  validarEmail(email: string): boolean {
+  //Valida el formato del correo que se ingresa
+  validateEmail(email: string): boolean {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
 
+  //genera una contraseña aleatoria
+  randomPassword(longitud: number): string {
+    //Constante que almacena los caracteres que contrendra la contraseña
+    const caracteres: string =
+      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+';
+
+    //Obtenemos la longitud de los caracteres proporcionados
+    const caractereslength = caracteres.length;
+
+    //Declaro una variable constraseña
+    let password: string = '';
+
+    //Se crea un array que será del tamaño de la longitud de la contraseña
+    const array = new Uint32Array(longitud);
+
+    //Se usa el objeto crypto del navegador para generar valores aleatorios y cargar el 'array' con ellos
+    window.crypto.getRandomValues(array);
+
+    /*Iteramos sobre cada elemento del 'array' concatenando los valores almacenados en el 'array'.
+    array[i] % caracteresLength devuelve un índice aleatorio dentro del rango de caracteres permitido,
+    utilizando el operador módulo %.*/
+    for (let i = 0; i < longitud; i++) {
+      password += caracteres[array[i] % caractereslength];
+    }
+
+    //Retornamos la contraseña
+    return password;
+  }
+
   async addPersona() {
     const { nombre, nombre2, apellido, apellido2, correo } = this.persona;
-    let { contrasena } = this.persona;
 
-    if (!(this.ValidarCamp(nombre) && this.ValidarCamp(apellido))) {
+    if (!(this.validateField(nombre) && this.validateField(apellido))) {
       // this.msgValidarCamp = true;
       alert('Ingrese minimo un nombre y un apellido');
       return;
@@ -68,53 +102,27 @@ export class registerComponent {
 
     if (
       !(
-        this.ValidarLenght(nombre) &&
-        this.ValidarLenght(nombre2) &&
-        this.ValidarLenght(apellido) &&
-        this.ValidarLenght(apellido2)
+        this.validateLenght(nombre) &&
+        this.validateLenght(nombre2) &&
+        this.validateLenght(apellido) &&
+        this.validateLenght(apellido2)
       )
     ) {
-      // this.msgValidarLenght = true;
       alert('Los nombres y apellidos no pueden ser mayores a 10 caracteres');
       return;
     }
 
-    if (correo !== undefined && !this.validarEmail(correo)) {
-      // this.msgValidarEmail = true;
+    if (correo !== undefined && !this.validateEmail(correo)) {
       alert('Formato de correo incorrecto');
       return;
     }
 
-    function generarcontraseña(longitud: number): string {
-      //Constante que almacena los caracteres que contrendra la contraseña
-      const caracteres: string =
-        'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+';
-      //Obtenemos la longitud de los caracteres proporcionados
-      const caractereslength = caracteres.length;
+    this.persona.contrasena = this.randomPassword(10);
+    this.persona.rol.id_rol = '2';
+    this.persona.estado.id_estado = '2';
 
-      //Declaro una variable constraseña
-      let contraseña: string = '';
-      //Se crea un array que será del tamaño de la longitud de la contraseña
-      const array = new Uint32Array(longitud);
-      //Se usa el objeto crypto del navegador para generar valores aleatorios y cargar el 'array' con ellos
-      window.crypto.getRandomValues(array);
-
-      /*Iteramos sobre cada elemento del 'array' concatenando los valores almacenados en el 'array'.
-      array[i] % caracteresLength devuelve un índice aleatorio dentro del rango de caracteres permitido,
-      utilizando el operador módulo %.*/
-      for (let i = 0; i < longitud; i++) {
-        contraseña += caracteres[array[i] % caractereslength];
-      }
-
-      //Retornamos la contraseña
-      return contraseña;
-    }
-
-    contrasena = generarcontraseña(10);
-
-    //console.log(nombre, apellido, correo, contrasena)
-
-    const postData = { key: 'value' }; // Reemplaza con tus datos
+    console.log('La persona que mando: ', this.persona);
+    // const postData = { key: 'value' }; // Reemplaza con tus datos
     this.personaSerive.postData(this.persona).subscribe(
       (response) => {
         console.log('Respuesta del servidor:', response);

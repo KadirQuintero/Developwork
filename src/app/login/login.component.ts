@@ -9,7 +9,6 @@ import { LocalStorageService } from '../Services/loalStorage/local-storage.servi
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-
 export class LoginComponent {
   public usuario: persona = new persona();
   // msgValidarEmail: boolean = false;
@@ -36,20 +35,22 @@ export class LoginComponent {
   }
 
   IniciarSesion(): void {
-    const { correo, contrasena } = this.usuario;
+    // const { correo, contrasena } = this.usuario;
 
-    if (correo !== undefined && !this.ValidarCamp(correo)
-    || contrasena !== undefined && !this.ValidarCamp(contrasena)){
-      // this.msgValidarCamp = true;
-      alert("Los campos correo y contraseña no pueden estar vacios")
-      return;
-    }
+    // if (
+    //   (correo !== undefined && !this.ValidarCamp(correo)) ||
+    //   (contrasena !== undefined && !this.ValidarCamp(contrasena))
+    // ) {
+    //   // this.msgValidarCamp = true;
+    //   alert('Los campos correo y contraseña no pueden estar vacios');
+    //   return;
+    // }
 
-    if (correo !== undefined &&  !this.validarEmail(correo)) {
-      // this.msgValidarEmail = true;
-      alert("Formato de correo invalido")
-      return;
-    }
+    // if (correo !== undefined && !this.validarEmail(correo)) {
+    //   // this.msgValidarEmail = true;
+    //   alert('Formato de correo invalido');
+    //   return;
+    // }
 
     this.PersonaService.login(this.usuario).subscribe(
       (response: string) => {
@@ -58,8 +59,14 @@ export class LoginComponent {
           this.serviceLocalStorage.setItem('jwt', response);
           this.PersonaService.setPersonaLog();
           this.router.navigate(['/user']);
-        }},
-      (error) => {console.error('Error durante el inicio de sesión:', error);
+        }
+      },
+      (error) => {
+        console.error(
+          'Error durante el inicio de sesión:',
+          error,
+          console.log('Usuario: ', this.usuario)
+        );
       }
     );
   }

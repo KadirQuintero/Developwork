@@ -48,12 +48,44 @@ export class PersonaService {
     return this.personaMod;
   }
 
-  private URL: string = 'http://191.88.249.172:3000/Usuarios/';
+  private URL: string =
+    'https://2fc68cmh-3000.use2.devtunnels.ms/api/v1/user/login';
+
+  private URL2: string =
+    'https://2fc68cmh-3000.use2.devtunnels.ms/api/v1/user/createUser';
+
   constructor(
     private http: HttpClient,
     private serviceLocalStorage: LocalStorageService
   ) {
     this.token = serviceLocalStorage.getItem('jwt');
+  }
+
+  //Loggearse en la aplicacion
+  login(data: persona): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + this.token,
+    });
+
+    return this.http.post(this.URL, data, {headers}).pipe(
+      catchError((error) => {
+        console.log("La URL: ", this.URL)
+        console.log("La data: ", data);
+        console.error('Error en la solicitud:', error);
+        throw error;
+      })
+    );
+  }
+
+  //Trae la informacion del usuario loggeado
+  setPersonaLog(): Observable<any> {
+    this.token = this.serviceLocalStorage.getItem('jwt');
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + this.token,
+    });
+    return this.http.get(this.URL + 'usuario', { headers });
   }
 
   getData(): Observable<any> {
@@ -70,30 +102,9 @@ export class PersonaService {
       Authorization: 'Bearer ' + this.token,
     });
     console.log(headers);
-    return this.http.post(this.URL, data, { headers });
+    return this.http.post(this.URL2, data, { headers });
   }
 
-  login(data: persona): Observable<any> {
-    return this.http
-      .post(this.URL + 'login', data, { responseType: 'text' })
-      .pipe(
-        catchError((error) => {
-          console.error('Error en la solicitud:', error);
-          throw error; // Puedes manejar el error según tus necesidades
-        }),
-      );
-  }
-
-  setPersonaLog(): Observable<any> {
-    this.token = this.serviceLocalStorage.getItem('jwt');
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: 'Bearer ' + this.token,
-    });
-    return this.http.get(this.URL + 'usuario', { headers });
-  }
-
-    //Se usa en ModpersonaComponent
   modPersona(persona: persona): Observable<any> {
     this.token = this.serviceLocalStorage.getItem('jwt');
     const headers = new HttpHeaders({
@@ -109,6 +120,8 @@ export class PersonaService {
       Authorization: 'Bearer ' + this.token,
     });
     return this.http.put(this.URL + 'chpass', user, {
-      headers, responseType: 'text',});
+      headers,
+      responseType: 'text',
+    });
   }
 }
