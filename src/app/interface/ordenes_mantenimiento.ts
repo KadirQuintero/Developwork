@@ -3,12 +3,12 @@ import { equipo } from './equipo';
 import { persona } from './persona';
 import { prioridad } from './prioridad';
 export class ordenes_matenimiento {
-  estado: estado = new estado();
   id_orden: string = '';
-  descripcion: string = '';
-  equipo: equipo = new equipo();
   comentarios: string = '';
-  personas: persona[] = [];
+  equipo: equipo = new equipo();
   prioridad: prioridad = new prioridad();
-  administrativo: persona = new persona();
+  estado: estado = new estado();
+  administrativo: persona = new persona(); //No recuerdo pa' que era xd
+  descripcion: string = ''; //no existe en la BD
+  personas: persona[] = []; //No recuerdo pa' que era
 }

@@ -28,6 +28,7 @@ export class OrdenesMComponent implements OnInit {
     this.refresh();
     this.modorden = ordenM;
   }
+  
   newOrden() {
     var fechaHoraActual = new Date();
     var año = fechaHoraActual.getFullYear();

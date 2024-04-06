@@ -77,6 +77,7 @@ export class FordenComponent {
       }
     });
   }
+  
   agregar(): void {
     this.nuevo = !this.nuevo;
     this.modorden.equipo =
@@ -96,6 +97,7 @@ export class FordenComponent {
     });
     this.cerrar();
   }
+
   actualizar() {
     this.modorden.equipo =
       this.equipos.find((x) => x.id_equipo == this.modorden.equipo.id_equipo) ||
