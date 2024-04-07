@@ -28,7 +28,7 @@ export class OrdenesMComponent implements OnInit {
     this.refresh();
     this.modorden = ordenM;
   }
-  
+
   newOrden() {
     var fechaHoraActual = new Date();
     var año = fechaHoraActual.getFullYear();
@@ -47,7 +47,7 @@ export class OrdenesMComponent implements OnInit {
       this.pad(segundos);
     console.log(fechaHoraFormateada);
     this.modorden = new ordenes_matenimiento();
-    this.modorden.id_orden = 'O' + fechaHoraFormateada;
+    this.modorden.idOrder = 'O' + fechaHoraFormateada;
   }
   pad(numero: number): string {
     return numero < 10 ? '0' + numero.toString() : numero.toString();

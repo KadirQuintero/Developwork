@@ -36,10 +36,10 @@ export class registerComponent {
     // });
     this.rolService.getData().subscribe((Response: any) => {
       this.verroles = Response.data.roles
-      console.log("Data: ", this.verroles)
+      console.log("Roles: ", this.verroles)
     });
-    let arrayNormal = this.verroles.map(objeto => objeto.id_rol)
-    console.log("Array normal: ", arrayNormal)
+    // let arrayNormal = this.verroles.map(objeto => objeto.id_rol)
+    // console.log("Array normal: ", arrayNormal)
   }
 
   objectValues(obj: any) {
@@ -92,9 +92,9 @@ export class registerComponent {
   }
 
   async addPersona() {
-    const { nombre, nombre2, apellido, apellido2, correo } = this.persona;
+    const { nombre1, nombre2, apellido1, apellido2, correo } = this.persona;
 
-    if (!(this.validateField(nombre) && this.validateField(apellido))) {
+    if (!(this.validateField(nombre1) && this.validateField(apellido1))) {
       // this.msgValidarCamp = true;
       alert('Ingrese minimo un nombre y un apellido');
       return;
@@ -102,9 +102,9 @@ export class registerComponent {
 
     if (
       !(
-        this.validateLenght(nombre) &&
+        this.validateLenght(nombre1) &&
         this.validateLenght(nombre2) &&
-        this.validateLenght(apellido) &&
+        this.validateLenght(apellido1) &&
         this.validateLenght(apellido2)
       )
     ) {
@@ -117,16 +117,15 @@ export class registerComponent {
       return;
     }
 
-    this.persona.contrasena = this.randomPassword(10);
-    this.persona.rol.id_rol = '2';
-    this.persona.estado.id_estado = '2';
+    this.persona.contra = this.randomPassword(8);
+    this.persona.estado = '1';
 
     console.log('La persona que mando: ', this.persona);
-    // const postData = { key: 'value' }; // Reemplaza con tus datos
+
     this.personaSerive.postData(this.persona).subscribe(
       (response) => {
         console.log('Respuesta del servidor:', response);
-        alert(`El usuario ${nombre} ${apellido} fue registrado con éxito.`);
+        alert(`El usuario ${nombre1} ${apellido1} fue registrado con éxito.`);
       },
       (error) => {
         console.error('Error en la solicitud:', error);

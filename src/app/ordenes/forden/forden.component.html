@@ -1,13 +1,13 @@
 <div class="_modal">
   <div class="_content">
     <form action="post">
-      <h1>Orden de mantenimiento: {{ modorden.id_orden }}</h1>
+      <h1>Orden de mantenimiento: {{ modorden.idOrder }}</h1>
 
       <fieldset class="group_1">
         <label>Administrativo adscrito:
           <input
           name="id_usuario"
-          [(ngModel)]="modorden.administrativo.nombre"
+          [(ngModel)]="modorden.idUser"
           type="text"
           disabled="id_usuario"
           />
@@ -16,7 +16,7 @@
         <label>Prioridad:
           <select
           name="id_prioridad"
-          [(ngModel)]="modorden.prioridad.id_prioridad">
+          [(ngModel)]="modorden.prioridad">
           <option
             *ngFor="let prioridad of prioridades"
             [value]="prioridad.id_prioridad">
@@ -26,9 +26,9 @@
         </label>
 
         <label>Estado de la orden:
-          <select name="id_estado" [(ngModel)]="modorden.estado.id_estado">
+          <select name="id_estado" [(ngModel)]="modorden.estado">
             <option *ngFor="let estado of estados" [value]="estado.id_estado">
-              {{ estado.nombre_estado }}
+              {{ estado.nombre }}
             </option>
           </select>
         </label>
@@ -36,14 +36,14 @@
 
       <fieldset class="group_2">
         <label>Equipo: </label>
-        <select name="id_equipo" [(ngModel)]="modorden.equipo.id_equipo">
+        <select name="id_equipo" [(ngModel)]="modorden.idEquipo">
           <option *ngFor="let equipo of equipos" [value]="equipo.id_equipo">
             {{ equipo.nombre_equipo }}
           </option>
         </select>
 
         <label>Descripcion de la orden: </label>
-        <textarea name="descripcion" id="descripcion" [(ngModel)]="modorden.descripcion"
+        <textarea name="descripcion" id="descripcion" [(ngModel)]="modorden.description"
         cols="30" rows="3"></textarea>
         </fieldset>
     </form>

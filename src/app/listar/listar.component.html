@@ -23,19 +23,19 @@
               (click)="this.personaSelect = persona"
               [ngClass]="{ seleccionado: personaSelect == persona }"
             >
-              <td>{{ persona.nombre }}</td>
-              <td>{{ persona.apellido }}</td>
+              <td>{{ persona.nombre1 }}</td>
+              <td>{{ persona.apellido1 }}</td>
               <td>{{ persona.correo }}</td>
-              <td>{{ persona.estado.nombre_estado }}</td>
-              <td>{{ persona.rol.nombre_rol }}</td>
-              <td>{{ persona.equipo.nombre_equipo }}</td>
+              <td>{{ persona.estado }}</td>
+              <td>{{ persona.rol}}</td>
+
             </tr>
           </tbody>
         </table>
       </div>
       <div class="btn">
         <button
-          [disabled]="personaSelect.nombre == '' ? true : false"
+          [disabled]="personaSelect.nombre1 == '' ? true : false"
           (click)="modPersona()"
         >
           Modificar

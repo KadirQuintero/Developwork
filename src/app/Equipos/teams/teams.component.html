@@ -26,15 +26,14 @@
       <select
         name="id_estado"
         id="id_estado"
-        [(ngModel)]="nuevoEquipo.estado.id_estado"
-        [ngModelOptions]="{ standalone: true }"
+        [(ngModel)]="nuevoEquipo.estado"
       >
         <option
           *ngFor="let estado of verestado"
           [value]="estado.id_estado"
           selected="estado === id_estado"
         >
-          {{ estado.nombre_estado }}
+          {{ estado.nombre }}
         </option>
       </select>
     </fieldset>
@@ -77,7 +76,7 @@
         >
           <td>{{ equipo.nombre_equipo }}</td>
           <td>{{ equipo.descripcion }}</td>
-          <td>{{ equipo.estado.nombre_estado }}</td>
+          <td>{{ equipo.estado }}</td>
           <!-- <td>{{ equipo.rol.nombre_rol }}</td> -->
         </tr>
       </tbody>

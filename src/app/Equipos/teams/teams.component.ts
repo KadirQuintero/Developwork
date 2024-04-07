@@ -28,15 +28,16 @@ export class TeamsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.serviceteam.getData().subscribe((Response: equipo[]) => {
-      this.verequipo = Response;
+    // this.serviceteam.getData().subscribe((Response: equipo[]) => {
+    //   this.verequipo = Response;
+    // });
+    this.serviceestado.getData().subscribe((Response: any) => {
+      this.verestado = Response.data.estados;
+      console.log("Roles: ",this.verestado)
     });
-    this.serviceestado.getData().subscribe((Response: estado[]) => {
-      this.verestado = Response;
-    });
-    this.rolService.getData().subscribe((Response: rol[]) => {
-      this.verroles = Response;
-    });
+    // this.rolService.getData().subscribe((Response: rol[]) => {
+    //   this.verroles = Response;
+    // });
   }
 
     ValidarCamp(value: string): boolean {
@@ -45,26 +46,32 @@ export class TeamsComponent implements OnInit {
   msgValidarCamp: boolean = false;
 
   async AgregarEquipo() {
+    this.nuevoEquipo.id_equipo = '92734'
+
     const { nombre_equipo, descripcion } = this.nuevoEquipo;
 
-    switch (true) {
-      case !this.ValidarCamp(nombre_equipo):
-      this.msgValidarCamp = true;
-      break;
+    // switch (true) {
+    //   case !this.ValidarCamp(nombre_equipo):
+    //   this.msgValidarCamp = true;
+    //   break;
 
-      case descripcion !== undefined && !this.ValidarCamp(descripcion):
-      this.msgValidarCamp = true;
-      break;
+    //   case descripcion !== undefined && !this.ValidarCamp(descripcion):
+    //   this.msgValidarCamp = true;
+    //   break;
 
-      default:
-        this.serviceteam.addEquipo(this.nuevoEquipo).subscribe(
-          (response) => { console.log('Equipo agregado con éxito:', response);
-            this.verequipo.push(this.nuevoEquipo);
-          },
-          (error) => {console.error('Error al agregar equipo:', error);
-          }
-        );
-    }
+    //   default:
+
+    // }
+
+    console.log(this.nuevoEquipo)
+    this.serviceteam.addEquipo(this.nuevoEquipo).subscribe(
+      (response) => { console.log('Equipo agregado con éxito:', response);
+        alert("Nuevo equipo agregado con exito")
+        this.verequipo.push(this.nuevoEquipo);
+      },
+      (error) => {console.error('Error al agregar equipo:', error);
+      }
+    );
   }
 
   modEquipo() {

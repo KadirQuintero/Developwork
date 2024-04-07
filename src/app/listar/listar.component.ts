@@ -16,7 +16,7 @@ export class ListarComponent implements OnInit{
     private router: Router){    this.servicepersona.getData().subscribe((Response: persona[]) => {
       this.lstpersonas = Response;
     });
-    if (this.personaSelect.id_usuario == '') {
+    if (this.personaSelect.id_user == '') {
       this.servicepersona.getData().subscribe((Response: persona[]) => {
         this.lstpersonas = Response;
       });

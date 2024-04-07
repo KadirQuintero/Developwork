@@ -22,8 +22,8 @@ export class NotificationComponent implements OnInit, OnDestroy {
   }
   ngOnInit(): void {
     this.spersona.setPersonaLog().subscribe((Response: persona) => {
-      this.nuevaNotificacion.idAdmin = Response.id_usuario;
-      this.nuevaNotificacion.id_equipo = Response.equipo.id_equipo;
+      this.nuevaNotificacion.idAdmin = Response.id_user;
+      //this.nuevaNotificacion.id_equipo = Response.equipo.id_equipo;
       this.Ssoket.conectarConIdUsuario(Response).subscribe(
         (notificacion: any) => {
           this.notificaciones = notificacion;

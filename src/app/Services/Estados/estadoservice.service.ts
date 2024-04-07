@@ -15,7 +15,7 @@ export class EstadoserviceService {
     return this.Estados;
   }
 
-  private URL: string = 'http://191.88.249.172:3000/Estados/';
+  private URL: string = 'https://2fc68cmh-3001.use2.devtunnels.ms/api/v1/user/getAtri';
   constructor(
     private http: HttpClient,
     private serviceLocalStorage: LocalStorageService

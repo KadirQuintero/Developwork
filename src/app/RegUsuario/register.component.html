@@ -28,9 +28,9 @@
           </select> -->
 
           <label for=""> Rol </label>
-          <select name="id_rol" id="id_rol" [(ngModel)]="persona.rol.id_rol">
+          <select name="id_rol" id="id_rol" [(ngModel)]="persona.rol">
               <option *ngFor="let rol of verroles" [ngValue]="rol.id_rol">
-                  {{ rol }}
+                  {{ rol.nombre }}
               </option>
           </select>
         </fieldset>
@@ -38,7 +38,7 @@
           <fieldset class="field-input">
             <label>N° Identificacion </label>
               <input
-                [(ngModel)]="persona.id_usuario"
+                [(ngModel)]="persona.id_user"
                 name="id_usuario"
                 class="form-input input-text"
                 type="text"
@@ -46,7 +46,7 @@
 
               <label>Primer nombre</label>
               <input
-                [(ngModel)]="persona.nombre"
+                [(ngModel)]="persona.nombre1"
                 name="nombre"
                 class="form-input input-text"
                 type="text"
@@ -62,7 +62,7 @@
 
             <label>Primer apellido</label>
             <input
-              [(ngModel)]="persona.apellido"
+              [(ngModel)]="persona.apellido1"
               name="apellido"
               class="form-input input-text"
               type="text"
