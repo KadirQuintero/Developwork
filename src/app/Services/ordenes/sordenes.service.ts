@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class SordenesService {
   private forden: ordenes_matenimiento = new ordenes_matenimiento();
-  private URL: string = 'http://191.88.249.172:3002/ordenes';
+  private URL: string = 'https://2fc68cmh-3000.use2.devtunnels.ms/ordenes/realize';
   private token: string = '';
   private headers = new HttpHeaders();
 

@@ -37,6 +37,8 @@ export class TeamservService {
   }
 
   private URL: string = 'https://2fc68cmh-3001.use2.devtunnels.ms/api/v1/teams/createTeams';
+  private URL2: string = 'https://2fc68cmh-3001.use2.devtunnels.ms/api/v1/teams'
+
   constructor(
     private http: HttpClient,
     private serviceLocalStorage: LocalStorageService
@@ -75,6 +77,6 @@ export class TeamservService {
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
-    return this.http.get(`${this.URL}`, { headers });
+    return this.http.get(`${this.URL2}`, { headers });
   }
 }

@@ -53,13 +53,13 @@ export class OrdenesMComponent implements OnInit {
     return numero < 10 ? '0' + numero.toString() : numero.toString();
   }
   refresh() {
-    this.spersona.setPersonaLog().subscribe((Response) => {
-      this.sordenes.ordenes(Response).subscribe((Response) => {
-        this.ordenesP = Response;
-      });
-      this.sordenes.ordenesP(Response).subscribe((Response) => {
-        this.ordenesR = Response;
-      });
-    });
+    // this.spersona.setPersonaLog().subscribe((Response) => {
+    //   this.sordenes.ordenes(Response).subscribe((Response) => {
+    //     this.ordenesP = Response;
+    //   });
+    //   this.sordenes.ordenesP(Response).subscribe((Response) => {
+    //     this.ordenesR = Response;
+    //   });
+    // });
   }
 }

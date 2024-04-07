@@ -9,18 +9,19 @@
           name="id_usuario"
           [(ngModel)]="modorden.idUser"
           type="text"
-          disabled="id_usuario"
+          
           />
         </label>
 
         <label>Prioridad:
           <select
           name="id_prioridad"
+          id="id_prioridad"
           [(ngModel)]="modorden.prioridad">
           <option
-            *ngFor="let prioridad of prioridades"
-            [value]="prioridad.id_prioridad">
-            {{ prioridad.nombre_prioridad }}
+            *ngFor="let item of prioridades"
+            [value]="item.id_prioridad">
+            {{ item.nombre }}
           </option>
         </select>
         </label>
@@ -37,8 +38,8 @@
       <fieldset class="group_2">
         <label>Equipo: </label>
         <select name="id_equipo" [(ngModel)]="modorden.idEquipo">
-          <option *ngFor="let equipo of equipos" [value]="equipo.id_equipo">
-            {{ equipo.nombre_equipo }}
+          <option *ngFor="let item of equipos" [value]="item.id_equipo">
+            {{ item.nombre }}
           </option>
         </select>
 
@@ -50,8 +51,9 @@
     <button class="btn btn-success" (click)="cerrar()"></button>
 
     <div class="div-crud">
-      <button class="btn-crud" *ngIf="nuevo" (click)="agregar()">Agregar Orden</button>
-      <button class="btn-crud" (click)="actualizar()">Agregar</button>
+      <button class="btn-crud"  (click)="agregar()">Agregar Orden</button>
+      <!-- <button class="btn-crud" (click)="actualizar()">Modificar Orden</button> -->
     </div>
   </div>
 </div>
+<!-- *ngIf="nuevo" -->

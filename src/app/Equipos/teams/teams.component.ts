@@ -48,7 +48,7 @@ export class TeamsComponent implements OnInit {
   async AgregarEquipo() {
     this.nuevoEquipo.id_equipo = '92734'
 
-    const { nombre_equipo, descripcion } = this.nuevoEquipo;
+    const { nombre , descripcion } = this.nuevoEquipo;
 
     // switch (true) {
     //   case !this.ValidarCamp(nombre_equipo):

@@ -6,7 +6,7 @@
     <fieldset class="form-input">
       <label for="nombre">Nombre </label>
       <input
-        [(ngModel)]="nuevoEquipo.nombre_equipo"
+        [(ngModel)]="nuevoEquipo.nombre"
         name="nombre"
         id="nombre"
       />
@@ -74,7 +74,7 @@
           (click)="this.equipoSelect = equipo"
           [ngClass]="{ seleccionado: equipoSelect == equipo }"
         >
-          <td>{{ equipo.nombre_equipo }}</td>
+          <td>{{ equipo.nombre }}</td>
           <td>{{ equipo.descripcion }}</td>
           <td>{{ equipo.estado }}</td>
           <!-- <td>{{ equipo.rol.nombre_rol }}</td> -->
@@ -89,7 +89,7 @@
     </button>
     <button
       class="btn-crud crud_modificar"
-      [disabled]="equipoSelect.nombre_equipo == '' ? true : false"
+      [disabled]="equipoSelect.nombre == '' ? true : false"
       (click)="modEquipo()"
     >
       Modificar
