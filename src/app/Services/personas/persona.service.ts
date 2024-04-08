@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { persona } from '../../interface/persona';
+import { persona } from '../../Interface/persona';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, tap } from 'rxjs';
 import { LocalStorageService } from '../loalStorage/local-storage.service';

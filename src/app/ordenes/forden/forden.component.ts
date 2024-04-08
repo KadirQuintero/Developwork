@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TeamservService } from '@/app/Services/teams/teamserv.service';
 import { EstadoserviceService } from 'src/app/Services/Estados/estadoservice.service';
 import { SordenesService } from 'src/app/Services/ordenes/sordenes.service';
-import { equipo } from '@/app/interface/equipo';
-import { estado } from '@/app/interface/estado';
-import { ordenes_matenimiento } from '@/app/interface/ordenes_mantenimiento';
-import { persona } from '@/app/interface/persona';
-import { prioridad } from '@/app/interface/prioridad';
+import { equipo } from '@/app/Interface/equipo';
+import { estado } from '@/app/Interface/estado';
+import { ordenes_matenimiento } from '@/app/Interface/ordenes_mantenimiento';
+import { persona } from '@/app/Interface/persona';
+import { prioridad } from '@/app/Interface/prioridad';
 import { PersonaService } from 'src/app/Services/personas/persona.service';
 import { PrioridadesService } from '@/app/Services/prioridades.service';
 

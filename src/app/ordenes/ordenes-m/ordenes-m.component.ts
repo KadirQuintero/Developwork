@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SordenesService } from 'src/app/Services/ordenes/sordenes.service';
-import { ordenes_matenimiento } from '@/app/interface/ordenes_mantenimiento';
-import { persona } from '@/app/interface/persona';
+import { ordenes_matenimiento } from '@/app/Interface/ordenes_mantenimiento';
+import { persona } from '@/app/Interface/persona';
 import { PersonaService } from 'src/app/Services/personas/persona.service';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PersonaService } from '../Services/personas/persona.service';
-import { persona } from '@/app/interface/persona';
+import { persona } from '@/app/Interface/persona';
 
 @Component({
   selector: 'app-camb-contra',

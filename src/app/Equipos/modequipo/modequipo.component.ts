@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { equipo } from '@/app/interface/equipo';
+import { equipo } from '@/app/Interface/equipo';
 import { TeamservService } from '../../Services/teams/teamserv.service';
 import { Router } from '@angular/router';
-import { estado } from '@/app/interface/estado';
+import { estado } from '@/app/Interface/estado';
 import { EstadoserviceService } from 'src/app/Services/Estados/estadoservice.service';
-import { rol } from '@/app/interface/rol';
+import { rol } from '@/app/Interface/rol';
 import { RolserviceService } from 'src/app/Services/Roles/rolservice.service';
 
 @Component({

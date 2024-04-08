@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { persona } from '@/app/interface/persona';
+import { persona } from '@/app/Interface/persona';
 import { PersonaService } from '../Services/personas/persona.service';
 import { LocalStorageService } from '../Services/loalStorage/local-storage.service';
 

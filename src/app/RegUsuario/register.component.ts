@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 // import { Router } from '@angular/router';
-import { persona } from '../interface/persona';
-import { equipo } from '../interface/equipo';
-import { estado } from '../interface/estado';
-import { rol } from '../interface/rol';
+import { persona } from '../Interface/persona';
+import { equipo } from '../Interface/equipo';
+import { estado } from '../Interface/estado';
+import { rol } from '../Interface/rol';
 import { TeamservService } from '../Services/teams/teamserv.service';
 import { EstadoserviceService } from '../Services/Estados/estadoservice.service';
 import { RolserviceService } from '../Services/Roles/rolservice.service';
