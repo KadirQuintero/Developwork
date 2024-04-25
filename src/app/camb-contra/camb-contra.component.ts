@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { PersonaService } from '../personas/persona.service';
-import { persona } from '../models/persona';
+import { PersonaService } from '../Services/personas/persona.service';
+import { persona } from '@/app/Interface/persona';
 
 @Component({
   selector: 'app-camb-contra',
@@ -12,7 +12,7 @@ export class CambContraComponent {
   newCon: String = '';
   ChangeType: boolean = true;
   _user: persona = new persona();
-  response:String ='';
+  response: String = '';
 
   constructor(private servicePersona: PersonaService) {
     this.servicePersona.setPersonaLog().subscribe((response: persona) => {
@@ -30,12 +30,12 @@ export class CambContraComponent {
     const user: any = {
       correo: this._user.correo,
       contrasena: this.contrasena,
-      id_usuario: this._user.id_usuario,
+      id_usuario: this._user.id_user,
       nuevaCon: this.newCon,
     };
     this.servicePersona.chPass(user).subscribe(
       (response: any) => {
-        this.response=response;
+        this.response = response;
       },
       (error) => {
         console.log(error.status);

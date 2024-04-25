@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { persona } from 'src/app/models/persona';
-import { PersonaService } from '../persona.service';
-import { estado } from 'src/app/models/estado';
-import { EstadoserviceService } from 'src/app/Servicios/Estados/estadoservice.service';
-import { rol } from 'src/app/models/rol';
-import { RolserviceService } from 'src/app/Servicios/Roles/rolservice.service';
 import { Router } from '@angular/router';
-import { TeamservService } from 'src/app/Equipos/teamserv.service';
-import { equipo } from 'src/app/models/equipo';
+import { equipo } from '../../Interface/equipo';
+import { rol } from '../../Interface/rol';
+import { estado } from '../../Interface/estado';
+import { persona } from '../../Interface/persona';
+import { TeamservService } from '@/app/Services/teams/teamserv.service';
+import { RolserviceService } from 'src/app/Services/Roles/rolservice.service';
+import { EstadoserviceService } from 'src/app/Services/Estados/estadoservice.service';
+import { PersonaService } from '../../Services/personas/persona.service';
 
 @Component({
   selector: 'app-modpersona',
@@ -27,7 +27,7 @@ export class ModpersonaComponent {
     private serviceteam: TeamservService,
     private serviceestado: EstadoserviceService,
     private rolService: RolserviceService
-  ) {}
+  ) { }
 
   modificar() {
     this.servicePersona.modPersona(this.persona).subscribe();
@@ -35,7 +35,7 @@ export class ModpersonaComponent {
     this.router.navigate(['/user/personas']);
   }
   ngOnInit(): void {
-    if (this.servicePersona.getPersona().id_usuario == '') {
+    if (this.servicePersona.getPersona().id_user == '') {
       this.router.navigate(['/user/personas']);
     } else {
       this.persona = this.servicePersona.getPersona();

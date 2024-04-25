@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { equipo } from 'src/app/models/equipo';
-import { TeamservService } from '../teamserv.service';
+import { equipo } from '@/app/Interface/equipo';
+import { TeamservService } from '../../Services/teams/teamserv.service';
 import { Router } from '@angular/router';
-import { estado } from 'src/app/models/estado';
-import { EstadoserviceService } from 'src/app/Servicios/Estados/estadoservice.service';
-import { rol } from 'src/app/models/rol';
-import { RolserviceService } from 'src/app/Servicios/Roles/rolservice.service';
-import { jornada } from 'src/app/models/jordanas';
-import { JornadaserviceService } from 'src/app/Servicios/Jornadas/jornadaservice.service';
+import { estado } from '@/app/Interface/estado';
+import { EstadoserviceService } from 'src/app/Services/Estados/estadoservice.service';
+import { rol } from '@/app/Interface/rol';
+import { RolserviceService } from 'src/app/Services/Roles/rolservice.service';
 
 @Component({
   selector: 'app-modequipo',
@@ -19,14 +17,12 @@ export class ModequipoComponent {
   verestado: estado[] = [];
   verroles: rol[] = [];
   verequipo: equipo[] = [];
-  verjornada: jornada[] = [];
 
   constructor(
     private router: Router,
     private serviceequipo: TeamservService,
     private serviceestado: EstadoserviceService,
-    private rolService: RolserviceService,
-    private jornadaService: JornadaserviceService
+    private rolService: RolserviceService
   ) {}
 
   modificarequipo() {
@@ -50,9 +46,6 @@ export class ModequipoComponent {
       });
       this.rolService.getData().subscribe((Response: rol[]) => {
         this.verroles = Response;
-      });
-      this.jornadaService.getData().subscribe((Response: jornada[]) => {
-        this.verjornada = Response;
       });
     }
   }

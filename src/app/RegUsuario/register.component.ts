@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { persona } from '../models/persona';
-import { equipo } from '../models/equipo';
-import { estado } from '../models/estado';
-import { rol } from '../models/rol';
-import { TeamservService } from '../Equipos/teamserv.service';
-import { EstadoserviceService } from '../Servicios/Estados/estadoservice.service';
-import { RolserviceService } from '../Servicios/Roles/rolservice.service';
-import { PersonaService } from '../personas/persona.service';
+// import { Router } from '@angular/router';
+import { persona } from '../Interface/persona';
+import { equipo } from '../Interface/equipo';
+import { estado } from '../Interface/estado';
+import { rol } from '../Interface/rol';
+import { TeamservService } from '../Services/teams/teamserv.service';
+import { EstadoserviceService } from '../Services/Estados/estadoservice.service';
+import { RolserviceService } from '../Services/Roles/rolservice.service';
+import { PersonaService } from '../Services/personas/persona.service';
 
 @Component({
   selector: 'app-register',
@@ -19,8 +19,9 @@ export class registerComponent {
   verequipo: equipo[] = [];
   verestado: estado[] = [];
   verroles: rol[] = [];
+  serviceLocalStorage: any;
+
   constructor(
-    private router: Router,
     private serviceteam: TeamservService,
     private serviceestado: EstadoserviceService,
     private rolService: RolserviceService,
@@ -28,66 +29,105 @@ export class registerComponent {
   ) {}
 
   ngOnInit(): void {
-    this.serviceteam.getData().subscribe((Response: equipo[]) => {
-      this.verequipo = Response;
+    // this.serviceteam.getData().subscribe((Response: equipo[]) => {
+    //   this.verequipo = Response;
+    // });
+    // this.serviceestado.getData().subscribe((Response: estado[]) => {
+    //   this.verestado = Response;
+    // });
+    this.rolService.getData().subscribe((Response: any) => {
+      this.verroles = Response.data.roles
+      console.log("Roles: ", this.verroles)
     });
-
-    this.serviceestado.getData().subscribe((Response: estado[]) => {
-      this.verestado = Response;
-    });
-    this.rolService.getData().subscribe((Response: rol[]) => {
-      this.verroles = Response;
-    });
+    // let arrayNormal = this.verroles.map(objeto => objeto.id_rol)
+    // console.log("Array normal: ", arrayNormal)
   }
 
-  ValidarLenght(value: string): boolean {
-    return value.length <= 10;
+  objectValues(obj: any) {
+    return Object.values(obj);
   }
-  msgValidarLenght: boolean = false;
 
-  ValidarCamp(value: string): boolean {
+  //Valida que el campo no este vacio
+  validateField(value: string): boolean {
     return value.trim() !== '';
   }
-  msgValidarCamp: boolean = false;
 
-  validarEmail(email: string): boolean {
+  //Valida que la longitud del nombre sea menor o igual 15
+  validateLenght(value: string): boolean {
+    return value.length <= 15;
+  }
+
+  //Valida el formato del correo que se ingresa
+  validateEmail(email: string): boolean {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
-  msgValidarEmail: boolean = false;
+
+  //genera una contraseña aleatoria
+  randomPassword(longitud: number): string {
+    //Constante que almacena los caracteres que contrendra la contraseña
+    const caracteres: string =
+      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+';
+
+    //Obtenemos la longitud de los caracteres proporcionados
+    const caractereslength = caracteres.length;
+
+    //Declaro una variable constraseña
+    let password: string = '';
+
+    //Se crea un array que será del tamaño de la longitud de la contraseña
+    const array = new Uint32Array(longitud);
+
+    //Se usa el objeto crypto del navegador para generar valores aleatorios y cargar el 'array' con ellos
+    window.crypto.getRandomValues(array);
+
+    /*Iteramos sobre cada elemento del 'array' concatenando los valores almacenados en el 'array'.
+    array[i] % caracteresLength devuelve un índice aleatorio dentro del rango de caracteres permitido,
+    utilizando el operador módulo %.*/
+    for (let i = 0; i < longitud; i++) {
+      password += caracteres[array[i] % caractereslength];
+    }
+
+    //Retornamos la contraseña
+    return password;
+  }
 
   async addPersona() {
-    const { nombre, nombre2, apellido, apellido2, correo } = this.persona;
+    const { nombre1, nombre2, apellido1, apellido2, correo } = this.persona;
 
-    switch (true) {
-      case !(this.ValidarCamp(nombre) && this.ValidarCamp(apellido)):
-        this.msgValidarCamp = true;
-        break;
-
-      case !(
-        this.ValidarLenght(nombre) &&
-        this.ValidarLenght(nombre2) &&
-        this.ValidarLenght(apellido) &&
-        this.ValidarLenght(apellido2)
-      ):
-        this.msgValidarLenght = true;
-        break;
-
-      case correo !== undefined && !this.validarEmail(correo):
-        this.msgValidarEmail = true;
-        break;
-
-      default:
-        const postData = { key: 'value' }; // Reemplaza con tus datos
-        this.personaSerive.postData(this.persona).subscribe(
-          (response) => {
-            console.log('Respuesta del servidor:', response);
-            alert(`El usuario ${nombre} ${apellido} fue registrado con éxito.`);
-          },
-          (error) => {
-            console.error('Error en la solicitud:', error);
-          }
-        );
+    if (!(this.validateField(nombre1) && this.validateField(apellido1))) {
+      // this.msgValidarCamp = true;
+      alert('Ingrese minimo un nombre y un apellido');
+      return;
     }
+
+    if (
+      !(
+        this.validateLenght(nombre1) &&
+        this.validateLenght(nombre2) &&
+        this.validateLenght(apellido1) &&
+        this.validateLenght(apellido2)
+      )
+    ) {
+      alert('Los nombres y apellidos no pueden ser mayores a 10 caracteres');
+      return;
+    }
+
+    if (correo !== undefined && !this.validateEmail(correo)) {
+      alert('Formato de correo incorrecto');
+      return;
+    }
+
+    this.persona.contra = this.randomPassword(8);
+    this.persona.estado = '1';
+
+    this.personaSerive.postData(this.persona).subscribe(
+      (response) => {
+        alert(`El usuario ${nombre1} ${apellido1} fue registrado con éxito.`);
+      },
+      (error) => {
+        console.error('Error en la solicitud:', error);
+      }
+    );
   }
 }

@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { equipo } from '../../models/equipo';
-import { TeamservService } from '../teamserv.service';
-import { estado } from 'src/app/models/estado';
-import { EstadoserviceService } from 'src/app/Servicios/Estados/estadoservice.service';
-import { rol } from 'src/app/models/rol';
-import { RolserviceService } from 'src/app/Servicios/Roles/rolservice.service';
-import { jornada } from 'src/app/models/jordanas';
-import { JornadaserviceService } from 'src/app/Servicios/Jornadas/jornadaservice.service';
+import { equipo } from '@/app/Interface/equipo';
+import { TeamservService } from '../../Services/teams/teamserv.service';
+import { estado } from '@/app/Interface/estado';
+import { EstadoserviceService } from 'src/app/Services/Estados/estadoservice.service';
+import { rol } from '@/app/Interface/rol';
+import { RolserviceService } from 'src/app/Services/Roles/rolservice.service';
 
 @Component({
   selector: 'app-teams',
@@ -21,29 +19,25 @@ export class TeamsComponent implements OnInit {
   verequipo: equipo[] = [];
   verestado: estado[] = [];
   verroles: rol[] = [];
-  verjornada: jornada[] = [];
 
   constructor(
     private router: Router,
     private serviceteam: TeamservService,
     private serviceestado: EstadoserviceService,
     private rolService: RolserviceService,
-    private jornadaService: JornadaserviceService
   ) {}
 
   ngOnInit(): void {
-    this.serviceteam.getData().subscribe((Response: equipo[]) => {
-      this.verequipo = Response;
+    // this.serviceteam.getData().subscribe((Response: equipo[]) => {
+    //   this.verequipo = Response;
+    // });
+    this.serviceestado.getData().subscribe((Response: any) => {
+      this.verestado = Response.data.estados;
+      console.log("Roles: ",this.verestado)
     });
-    this.serviceestado.getData().subscribe((Response: estado[]) => {
-      this.verestado = Response;
-    });
-    this.rolService.getData().subscribe((Response: rol[]) => {
-      this.verroles = Response;
-    });
-    this.jornadaService.getData().subscribe((Response: jornada[]) => {
-      this.verjornada = Response;
-    });
+    // this.rolService.getData().subscribe((Response: rol[]) => {
+    //   this.verroles = Response;
+    // });
   }
 
     ValidarCamp(value: string): boolean {
@@ -52,26 +46,32 @@ export class TeamsComponent implements OnInit {
   msgValidarCamp: boolean = false;
 
   async AgregarEquipo() {
-    const { nombre_equipo, descripcion } = this.nuevoEquipo;
+    this.nuevoEquipo.id_equipo = '92734'
 
-    switch (true) {
-      case !this.ValidarCamp(nombre_equipo):
-      this.msgValidarCamp = true;
-      break;
+    const { nombre , descripcion } = this.nuevoEquipo;
 
-      case descripcion !== undefined && !this.ValidarCamp(descripcion):
-      this.msgValidarCamp = true;
-      break;
+    // switch (true) {
+    //   case !this.ValidarCamp(nombre_equipo):
+    //   this.msgValidarCamp = true;
+    //   break;
 
-      default:
-        this.serviceteam.addEquipo(this.nuevoEquipo).subscribe(
-          (response) => { console.log('Equipo agregado con éxito:', response);
-            this.verequipo.push(this.nuevoEquipo);
-          },
-          (error) => {console.error('Error al agregar equipo:', error);
-          }
-        );
-    }
+    //   case descripcion !== undefined && !this.ValidarCamp(descripcion):
+    //   this.msgValidarCamp = true;
+    //   break;
+
+    //   default:
+
+    // }
+
+    console.log(this.nuevoEquipo)
+    this.serviceteam.addEquipo(this.nuevoEquipo).subscribe(
+      (response) => { console.log('Equipo agregado con éxito:', response);
+        alert("Nuevo equipo agregado con exito")
+        this.verequipo.push(this.nuevoEquipo);
+      },
+      (error) => {console.error('Error al agregar equipo:', error);
+      }
+    );
   }
 
   modEquipo() {

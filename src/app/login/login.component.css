@@ -1,65 +1,91 @@
-.body{
-  padding: 2em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
+/*Estilo al contenedor que contiene el div-img y div-login*/
+#container-main {
+  /*Temporal*/
+  position: relative;
+  /*Temporal*/
+  top: -30px;
+  padding: 2rem;
   height: 100vh;
-  background-size: 100%;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
   width: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-p{
+/* Estilos para los mensajes de error
+p {
   font-size: 16px;
-  color: red;
+  color: #ff0000;
   position: absolute;
-}
+} */
 
-.msgCamp{
+/* .msgCamp {
   right: 19%;
   top: 23%;
 }
 
-.msgEmail{
+.msgEmail {
   right: 23%;
   top: 46%;
+} */
+
+.form-title {
+  font-size: 60px;
+  font-weight: 600;
+  margin-top: 0.5rem;
 }
 
-#container-main {
-  height: 100%;
-  width: 100%;
-}
-
-.titulo {
-  font-size: 50 px;
-  margin-top: 1em;
-}
-
-/*  */
+/*Centra el contenido de los diferentes contenedores(Main,Divs,img)*/
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
 }
 
+/*Estilo del logo*/
 img {
-  width: 50%;
+  position: relative;
+  top: 43px;
+  width: 20%;
 }
 
-/*  */
-.user,
+.label-email,
+.label-password {
+  color: #000;
+  margin-left: 5px;
+  font-weight: 300;
+}
+
+/*Estilos de los campos Email y Password*/
+.email,
 .password {
+  margin-top: -15px;
   background-color: #ededec;
   border: none;
-  border-radius: 0.3em;
-  padding: 0.4em;
+  border-radius: 0.3rem;
+  padding: 0.7rem;
+  background-size: 1.25em;
+  /*Tamaño del icono.*/
+  background-repeat: no-repeat;
+  background-position: 98%;
+  /*Posicion del icono.*/
+
+  &.email {
+    background-image: url(../../assets/icon/User.svg);
+  }
+
+  &.password {
+    background-image: url(../../assets/icon/Passicon2.svg);
+  }
 }
 
-.user:focus,
+/*Da texto al campo Email y Password cuando este se encuentra vacio*/
+.email::placeholder,
+.password::placeholder {
+  color: #000;
+  opacity: 0.5;
+}
+
+.email:focus,
 .password:focus {
   outline: none;
 
@@ -68,73 +94,41 @@ img {
   }
 }
 
-/* Da texto al campo de user y password cuando este se encuentra vacio */
-.user::placeholder,
-.password::placeholder {
-  color: #000;
-}
-
-.user,
-.password {
-  background-size: 1.25em;
-  background-repeat: no-repeat;
-  background-position: 98%;
-}
-
-.user {
-  background-image: url(src\assets\resources\Usericon2.svg);
-}
-
-.password {
-  background-image: url(src\assets\resources\Passicon2.svg);
-}
-
-/* Estilos del boton ingresar en el login */
-.btn_ingresar {
+/*Estilos del boton "Enter"*/
+.btn_enter {
   background-color: #1e512c;
   border-radius: 0.625rem;
   border: none;
   color: #fff;
   width: 100%;
   padding: 0.3em;
-  font-size: 20px;
-  margin-bottom: 1em;
-}
-
-/*div correspondiente a la imagen*/
-#div-img {
-  width: 100%;
-  height: 100%;
+  font-size: 22px;
 }
 
 /*div correspondiente al login*/
 #div-login {
-  border-left: 2em solid #cad629;
   height: 100%;
-  width: 100%;
+  width: 45%;
   padding: 1em;
-  border-top-right-radius: 1.875rem;
-  border-bottom-right-radius: 1.875rem;
+  border-radius: 10px;
   background-color: rgb(251, 252, 241);
 }
 
-/*Contiene la configuracion de los dos divs anteriores*/
-#container-divs {
-  display: grid;
-  padding: 0;
-  background-color: rgb(251, 252, 241, 0.5);
-  border-radius: 1.875rem;
-  grid-template-columns: 1fr 1fr;
-}
-
 /*Formulario de inicio de Sesión*/
-#formulario {
+#form-body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  font-size: 1.5em;
-  grid-gap: 1em;
-  padding: 1.5em;
+  font-size: 16px;
+  gap: 20px;
+  padding: 16px;
+}
+
+.label-showpass {
+  color: #000;
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
 }
 
 /*Estilos de checkBox*/
@@ -149,17 +143,7 @@ input[type="checkbox"] {
 
 input[type="checkbox"]:checked {
   background-color: #1e512c;
-  border: 2px solid black;
-}
-
-.body {
-  /*background-image: url(src\assets\resources\ImagenFondo.jpeg);
-  background-size: 100%;*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  height: 100vh;
+  border: 2px solid #000;
 }
 
 @media only screen and (max-width: 900px) {
@@ -167,4 +151,3 @@ input[type="checkbox"]:checked {
     display: flex;
   }
 }
-

@@ -1,5 +1,5 @@
 <div id="body">
-  <app-forden [modorden]="modorden" (mensajeCambiado)="modOrden($event)" *ngIf="modorden.id_orden"></app-forden>
+  <app-forden [modorden]="modorden" (mensajeCambiado)="modOrden($event)" *ngIf="modorden.idOrder"></app-forden>
   <div class="contenedor_carrusel">
     <h2>Ordenes Pendientes</h2>
     <ul class="carrusel">
@@ -19,5 +19,5 @@
   </div>
 </div>
 <button class="agregar" (click)="newOrden()">
-  Agregar 
+  Agregar
 </button>

@@ -6,31 +6,21 @@
     <form>
       <fieldset class="fieldSelect">
         <label for="estado">Estado</label>
-        <select name="id_estado" [(ngModel)]="equipo.estado.id_estado">
+        <select name="id_estado" [(ngModel)]="equipo.estado">
           <option
             *ngFor="let estado of verestado"
-            [value]="equipo.estado.id_estado"
+            [value]="equipo.estado"
           >
-            {{ estado.nombre_estado }}
+            {{ estado.nombre }}
           </option>
         </select>
 
-        <label for="jornada" >Jornada</label>
-        <select name="id_jornada" [(ngModel)]="equipo.jornada.id_jornada">
-          <option
-            *ngFor="let jornada of verjornada"
-            [value]="equipo.jornada.id_jornada"
-          >
-            {{ jornada.nombre_jornada }}
-          </option>
-        </select>
-
-        <label for="rol">Rol</label>
+        <!-- <label for="rol">Rol</label>
         <select name="id_rol" [(ngModel)]="equipo.rol.id_rol">
           <option *ngFor="let rol of verroles" [value]="equipo.rol.id_rol">
             {{ rol.nombre_rol }}
           </option>
-        </select>
+        </select> -->
       </fieldset>
 
       <fieldset class="fieldInput">
@@ -38,7 +28,7 @@
         <input
           type="text"
           name="nombre_equipo"
-          [(ngModel)]="equipo.nombre_equipo"
+          [(ngModel)]="equipo.nombre"
         />
 
         <label for="descripcion">Descripcion</label>

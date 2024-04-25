@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ordenes_matenimiento } from 'src/app/models/ordenes_mantenimiento';
+import { ordenes_matenimiento } from '@/app/Interface/ordenes_mantenimiento';
 
 @Component({
   selector: 'app-orden',
@@ -8,7 +8,7 @@ import { ordenes_matenimiento } from 'src/app/models/ordenes_mantenimiento';
 })
 export class OrdenComponent implements OnInit {
   @Input() orden :ordenes_matenimiento= new ordenes_matenimiento();
-  constructor(){    
+  constructor(){
   }
   ngOnInit(): void {
       console.log(this.orden);

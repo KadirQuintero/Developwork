@@ -1,29 +1,32 @@
-<div id="body-information">
-  <div id="container-main">
-    <header class="cabecera">
-      <img class="cab-img" src="../../assets/resources/logo.png" alt="logo" />
-    </header>
-    <div class="container-info">
-      <h1>Informacion Personal</h1>
-      <article class="container-grid">
-        <section class="sec-info">
-          <p><strong>Nombre:</strong> {{personalog.nombre}}</p>
-          <p><strong>Segundo nombre:</strong> {{personalog.nombre2}}</p>
-          <p><strong>Apellido:</strong> {{personalog.apellido}}</p>
-          <p><strong>Segundo apellido:</strong> {{personalog.apellido2}}</p>
-          <p><strong>Correo:</strong> {{personalog.correo}}</p>
-        </section>
-        <section class="sec-info">
-          <p> <strong>Rol:</strong> {{personalog.rol.nombre_rol}}</p>
-          <p><strong>Equipo:</strong> {{personalog.equipo.nombre_equipo}}</p>
-          <p><strong>Estado:</strong> {{personalog.estado.nombre_estado}}</p>
-          <p><strong>Horas trabajadas:</strong> {{personalog.horas_trabajadas}}</p>
-          <p><strong>Horas extras:</strong> {{personalog.horas_extras}}</p>
-        </section>
-      </article>
-      <Button (click)="CambContra()" class="btn-cambcontra">
+<div class="text-center w-full h-[100vh] flex justify-center items-center">
+  <header></header>
+
+  <main class="rounded-xl bg-[#FBFCF1] bg-opacity-[0.5]">
+    <article class="p-3 bg-[#FBFCF1] rounded-xl">
+      <h1>Personal information</h1>
+
+      <section class="text-lg text-start p-3">
+        <ul class="personal-details">
+          <li>
+            <strong>Name:</strong> {{ personalog.nombre1 }}
+            {{ personalog.nombre2 }}
+          </li>
+          <li>
+            <strong>Last name:</strong> {{ personalog.apellido1 }}
+            {{ personalog.apellido2 }}
+          </li>
+          <li><strong>Email:</strong> {{ personalog.correo }}</li>
+          <li><strong>Role:</strong> {{ personalog.rol }}</li>
+          <li><strong>Status:</strong> {{ personalog.estado }}</li>
+        </ul>
+      </section>
+
+      <Button
+        class="p-1 mb-1 w-[200px] text-white rounded-xl bg-[#1e512c]"
+        (click)="CambContra()"
+      >
         Cambiar contraseña
       </Button>
-    </div>
-  </div>
+    </article>
+  </main>
 </div>

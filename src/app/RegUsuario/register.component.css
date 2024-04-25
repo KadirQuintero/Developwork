@@ -11,7 +11,7 @@
   border-radius: 0.625em;
 }
 
-.cabecera {
+/* .cabecera {
   margin-top: -1.25em;
   text-align: center;
 }
@@ -20,17 +20,17 @@
   position: relative;
   top: 1.375em;
   width: 20%;
-}
+} */
 
 #formulario {
   text-align: center;
   font-size: 1em;
   margin: 0 auto;
-  padding: 0px 8px 0px 8px;
+  padding: 12px;
   border: none;
   height: 100%;
   width: 100%;
-  border-radius: 0px 0px 0.625em 0.625em;
+  border-radius: 0.625em 0.625em 0.625em 0.625em;
   background-color: rgb(251, 252, 241);
 }
 
@@ -43,15 +43,15 @@ h1 {
 }
 
 .input-text {
-  background-image: url(src\assets\resources\Usericon2.svg);
+  background-image: url(../../assets/icon/User.svg);
 }
 
 .input-email {
-  background-image: url(src\assets\resources\Emailicon.svg);
+  background-image: url(../../assets/icon/Email.svg);
 }
 
 .input-pass {
-  background-image: url(src\assets\resources\Eyeicon.svg);
+  background-image: url(../../assets/icon/PassShow.svg);
 }
 
 .field-select{

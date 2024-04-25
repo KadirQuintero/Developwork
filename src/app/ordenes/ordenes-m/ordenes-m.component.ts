@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { TeamservService } from 'src/app/Equipos/teamserv.service';
-import { SordenesService } from 'src/app/Servicios/ordenes/sordenes.service';
-import { ordenes_matenimiento } from 'src/app/models/ordenes_mantenimiento';
-import { persona } from 'src/app/models/persona';
-import { PersonaService } from 'src/app/personas/persona.service';
+import { SordenesService } from 'src/app/Services/ordenes/sordenes.service';
+import { ordenes_matenimiento } from '@/app/Interface/ordenes_mantenimiento';
+import { persona } from '@/app/Interface/persona';
+import { PersonaService } from 'src/app/Services/personas/persona.service';
 
 @Component({
   selector: 'app-ordenes-m',
@@ -12,7 +11,7 @@ import { PersonaService } from 'src/app/personas/persona.service';
 })
 export class OrdenesMComponent implements OnInit {
   ngOnInit(): void {
-   this.refresh();
+    this.refresh();
   }
   modorden: ordenes_matenimiento = new ordenes_matenimiento();
   userLog: persona = new persona();
@@ -29,6 +28,7 @@ export class OrdenesMComponent implements OnInit {
     this.refresh();
     this.modorden = ordenM;
   }
+
   newOrden() {
     var fechaHoraActual = new Date();
     var año = fechaHoraActual.getFullYear();
@@ -47,19 +47,19 @@ export class OrdenesMComponent implements OnInit {
       this.pad(segundos);
     console.log(fechaHoraFormateada);
     this.modorden = new ordenes_matenimiento();
-    this.modorden.id_orden = 'O' + fechaHoraFormateada;
+    this.modorden.idOrder = 'O' + fechaHoraFormateada;
   }
   pad(numero: number): string {
     return numero < 10 ? '0' + numero.toString() : numero.toString();
   }
-  refresh(){
-    this.spersona.setPersonaLog().subscribe((Response) => {
-      this.sordenes.ordenes(Response).subscribe((Response) => {
-        this.ordenesP = Response;
-      });
-      this.sordenes.ordenesP(Response).subscribe((Response) => {
-        this.ordenesR = Response;
-      });
-    });
+  refresh() {
+    // this.spersona.setPersonaLog().subscribe((Response) => {
+    //   this.sordenes.ordenes(Response).subscribe((Response) => {
+    //     this.ordenesP = Response;
+    //   });
+    //   this.sordenes.ordenesP(Response).subscribe((Response) => {
+    //     this.ordenesR = Response;
+    //   });
+    // });
   }
 }
