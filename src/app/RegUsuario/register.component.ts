@@ -19,6 +19,7 @@ export class registerComponent {
   verequipo: equipo[] = [];
   verestado: estado[] = [];
   verroles: rol[] = [];
+  serviceLocalStorage: any;
 
   constructor(
     private serviceteam: TeamservService,
@@ -120,11 +121,8 @@ export class registerComponent {
     this.persona.contra = this.randomPassword(8);
     this.persona.estado = '1';
 
-    console.log('La persona que mando: ', this.persona);
-
     this.personaSerive.postData(this.persona).subscribe(
       (response) => {
-        console.log('Respuesta del servidor:', response);
         alert(`El usuario ${nombre1} ${apellido1} fue registrado con éxito.`);
       },
       (error) => {

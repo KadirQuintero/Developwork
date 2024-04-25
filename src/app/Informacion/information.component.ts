@@ -6,7 +6,7 @@ import { persona } from '@/app/Interface/persona';
 @Component({
   selector: 'app-information',
   templateUrl: './information.component.html',
-  styleUrls: ['./information.component.css'],
+  //styleUrls: ['./information.component.css'],
 })
 export class InformationComponent {
   personalog: persona = new persona();

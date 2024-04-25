@@ -51,11 +51,9 @@ export class LoginComponent {
     //   alert('Formato de correo invalido');
     //   return;
     // }
-
     this.PersonaService.login(this.usuario).subscribe(
       (response: string) => {
-        console.log('Token JWT:', response);
-        if (response != null) {
+        if (response != undefined) {
           this.serviceLocalStorage.setItem('jwt', response);
           this.PersonaService.setPersonaLog();
           this.router.navigate(['/user']);
@@ -65,7 +63,6 @@ export class LoginComponent {
         console.error(
           'Error durante el inicio de sesión:',
           error,
-          console.log('Usuario: ', this.usuario)
         );
       }
     );

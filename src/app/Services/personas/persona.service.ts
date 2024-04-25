@@ -24,7 +24,6 @@ export class PersonaService {
     });
   }
 
-  //Esto no lo usas en ningun lao Lui
   getPersonas(): persona[] {
     this.getData().subscribe(
       (response) => {
@@ -62,16 +61,15 @@ export class PersonaService {
   }
 
   //Loggearse en la aplicacion
-  login(data: persona): Observable<any> {
+  login(user: persona): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
 
-    return this.http.post(this.URL, data, {headers}).pipe(
+    return this.http.post(this.URL, { headers })
+    .pipe(
       catchError((error) => {
-        console.log("La URL: ", this.URL)
-        console.log("La data: ", data);
         console.error('Error en la solicitud:', error);
         throw error;
       })
@@ -101,7 +99,6 @@ export class PersonaService {
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + this.token,
     });
-    console.log(headers);
     return this.http.post(this.URL2, data, { headers });
   }
 
